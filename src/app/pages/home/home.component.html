@@ -115,22 +115,27 @@
      PORTFOLIO CARDS — 3 tall full-bleed
 ══════════════════════════════════════════ -->
 <section class="nl-port-strip">
-  <div class="ps-header reveal">
-    <div class="section-label">Selected Work</div>
-    <a routerLink="/films" class="ps-view-all">View All Projects →</a>
-  </div>
-
   <div class="ps-cards">
+
+    <!-- Header floats over the cards -->
+    <div class="ps-header">
+      <div class="section-label">Selected Work</div>
+      <a routerLink="/films" class="ps-view-all">View All Projects →</a>
+    </div>
+
     @for (card of portfolioCards; track card.slug) {
-    <a [routerLink]="['/', card.type, card.slug]" class="ps-card reveal">
+    <a [routerLink]="['/', card.type, card.slug]" class="ps-card">
       <div class="ps-img-wrap">
         <img [src]="card.img" [alt]="card.title" class="ps-img" (error)="onImgError($event, card.fallback)"
           loading="lazy" />
       </div>
+      <!-- Vertical label visible when card is collapsed -->
+      <span class="ps-collapsed-label">{{ card.title }}</span>
+      <!-- Info revealed on hover -->
       <div class="ps-info">
         <span class="ps-cat">{{ card.category }}</span>
         <h3 class="ps-title">{{ card.title }}</h3>
-        <span class="ps-arrow">→</span>
+        <span class="ps-arrow">↗</span>
       </div>
     </a>
     }
