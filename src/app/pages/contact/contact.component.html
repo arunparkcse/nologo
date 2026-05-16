@@ -1,0 +1,103 @@
+<section class="page-hero page-hero--contact">
+  <div class="hero-label">Get In Touch</div>
+  <h1>LET'S MEET<br>FOR A CUP OF<br>COFFEE<span style="color:var(--color-accent)">.</span></h1>
+  <p class="hero-sub">Ready to tell your story? We'd love to hear from you.</p>
+</section>
+
+<section class="section contact-section">
+  <div class="contact-grid">
+
+    <!-- LEFT: INFO -->
+    <div class="contact-info">
+      <div class="section-label">Our Offices</div>
+      <h2 class="section-title" style="margin-bottom: 3rem;">Connect<br>With Us</h2>
+
+      <div class="office">
+        <div class="office-label">Chennai</div>
+        <p>
+          #19/10, Saraswathi Street<br>
+          Mahalingapuram<br>
+          Chennai – 600 034<br>
+          <a href="tel:04442132519" class="contact-link">044-4213 2519</a>
+        </p>
+      </div>
+
+      <div class="office" style="margin-top: 2.5rem;">
+        <div class="office-label">New Delhi</div>
+        <p>
+          Flat 104, Block D<br>
+          Mayur Vihar Phase 2<br>
+          New Delhi – 110 091<br>
+          <a href="tel:+919841195181" class="contact-link">+91 98411 95181</a><br>
+          <a href="tel:+919176902333" class="contact-link">+91 91769 02333</a>
+        </p>
+      </div>
+
+      <div class="office" style="margin-top: 2.5rem;">
+        <div class="office-label">Email</div>
+        <a href="mailto:info@nologo.in" class="contact-email">info&#64;nologo.in</a>
+      </div>
+
+      <div class="social-row" style="margin-top: 3rem;">
+        <div class="office-label" style="margin-bottom: 1rem;">Follow Us</div>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/nologocommunications/" target="_blank" rel="noopener"
+            class="social-icon">Facebook</a>
+          <a href="https://www.instagram.com/nologocommunications/" target="_blank" rel="noopener"
+            class="social-icon">Instagram</a>
+          <a href="https://www.linkedin.com/in/nologocommunications/" target="_blank" rel="noopener"
+            class="social-icon">LinkedIn</a>
+          <a href="https://www.youtube.com/channel/UC1h9EBzuV4K8pp2lsVQKvQg" target="_blank" rel="noopener"
+            class="social-icon">YouTube</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="contact-form-wrap">
+      @if (!submitted) {
+      <form class="contact-form" (ngSubmit)="onSubmit()">
+        <div class="section-label">Drop Us A Line</div>
+        <h3 class="form-heading">We'll Reach You</h3>
+
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input id="name" type="text" [(ngModel)]="formData.name" name="name" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input id="email" type="email" [(ngModel)]="formData.email" name="email" placeholder="hello&#64;example.com"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service Interested In</label>
+          <select id="service" [(ngModel)]="formData.service" name="service">
+            <option value="">Select a service...</option>
+            @for (svc of services; track svc) {
+            <option [value]="svc">{{ svc }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message *</label>
+          <textarea id="message" [(ngModel)]="formData.message" name="message" rows="5"
+            placeholder="Tell us about your project..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-dark submit-btn">
+          Send Message <span class="arrow">→</span>
+        </button>
+      </form>
+      } @else {
+      <div class="success-message">
+        <div class="success-icon">✓</div>
+        <h3>Message Sent!</h3>
+        <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+      </div>
+      }
+    </div>
+  </div>
+</section>

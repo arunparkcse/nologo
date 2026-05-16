@@ -1,0 +1,38 @@
+/* ── CUSTOM CURSOR ── */
+#nl-cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #c8102e;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+#nl-cursor-follower {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(200, 16, 46, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, border-color 0.3s;
+}
+
+@media (pointer: coarse) {
+
+  #nl-cursor,
+  #nl-cursor-follower {
+    display: none;
+  }
+}
+
+/* ── PAGE CONTENT ── */
+/* Push all pages below the fixed pill nav (~90px tall) */
+.page-content {
+  min-height: 100vh;
+}

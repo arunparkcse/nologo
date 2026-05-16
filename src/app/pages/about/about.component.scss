@@ -1,0 +1,344 @@
+// ── STORY ──
+.story-section {
+  padding: 7rem 4%;
+  background: var(--color-bg);
+}
+
+.page-hero {
+  min-height: 100vh;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+.story-visual {
+  position: relative;
+
+  img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: grayscale(15%);
+  }
+}
+
+.story-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 100px;
+  height: 100px;
+  background: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 560px) {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.badge-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.badge-lbl {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 0.2rem;
+}
+
+.story-text {
+  p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--color-gray);
+    margin-top: 1rem;
+  }
+}
+
+// ── STATS ──
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--color-black);
+
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about-stat {
+  padding: 3.5rem 2rem;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.astat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.astat-lbl {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+// ── VALUES ──
+.values-section {
+  background: var(--color-black);
+  padding: 7rem 4%;
+}
+
+.values-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.value-card {
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: var(--color-accent);
+  }
+}
+
+.value-num {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+}
+
+.value-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.9rem;
+}
+
+.value-desc {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+// ── TEAM ──
+.team-section {
+  padding: 7rem 4%;
+  background: var(--color-bg);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.team-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: #1a1a1a;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(35%);
+    transition: transform 0.6s ease, filter 0.5s;
+  }
+
+  &:hover img {
+    transform: scale(1.06);
+    filter: grayscale(0%);
+  }
+}
+
+.team-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 1.25rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+
+  .team-card:hover & {
+    transform: translateY(0);
+  }
+}
+
+.team-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.team-role {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.2rem;
+  letter-spacing: 0.08em;
+}
+
+// ── WHAT WE DO ──
+.what-we-do {
+  padding: 7rem 4%;
+  background: var(--color-white);
+}
+
+.services-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pill {
+  padding: 0.6rem 1.2rem;
+  border: 1.5px solid var(--color-border);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  transition: 0.2s;
+
+  &:hover {
+    border-color: var(--color-black);
+    color: var(--color-black);
+  }
+
+  &.accent {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(200, 16, 46, 0.04);
+  }
+}
+
+// ── SHARED ──
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 26px;
+    height: 1.5px;
+    background: var(--color-accent);
+  }
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1.8rem;
+  background: var(--color-black);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background: var(--color-accent);
+  }
+
+  .arrow {
+    transition: transform 0.3s;
+  }
+
+  &:hover .arrow {
+    transform: translateX(5px);
+  }
+}
+
+.accent-dot {
+  color: var(--color-accent);
+}

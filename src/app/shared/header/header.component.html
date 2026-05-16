@@ -1,0 +1,72 @@
+<!-- ── PRELOADER ── -->
+<div class="preloader" [class.hidden]="preloaderHidden">
+  <div class="pre-marquee-row">
+    <span>Film · Photography · Creative · CSR · Film · Photography · Creative · CSR ·&nbsp;</span>
+    <span aria-hidden="true">Film · Photography · Creative · CSR · Film · Photography · Creative · CSR ·&nbsp;</span>
+  </div>
+  <div class="pre-center">
+    <div class="pre-count"><span>{{ preloaderCount }}</span></div>
+    <div class="pre-label">Loading</div>
+  </div>
+  <div class="pre-marquee-row pre-marquee-bottom">
+    <span>No Logo · Integrated Communication Agency · Chennai · Delhi ·&nbsp;</span>
+    <span aria-hidden="true">No Logo · Integrated Communication Agency · Chennai · Delhi ·&nbsp;</span>
+  </div>
+</div>
+
+<!-- ── HEADER — 3 separate floating elements ── -->
+<header class="nl-header" [class.scrolled]="scrolled">
+  <div class="nl-header-inner">
+
+    <!-- LEFT: Logo box + tagline -->
+    <a routerLink="/" class="nl-logo" (click)="closeMobileMenu()">
+      <div class="nl-logo-box">
+        <img src="https://www.nologo.in/assets/images/logo-red.png" alt="Nologo" class="nl-logo-img"
+          (error)="logoErr($event)" />
+      </div>
+      <div class="logo-tagline">
+        <span class="lt-name">No Logo</span>
+        <span class="lt-sub">Comm. Agency</span>
+      </div>
+    </a>
+
+    <!-- CENTER: Nav pill -->
+    <nav class="nl-nav-pill" aria-label="Main navigation">
+      <ul class="nl-nav-links">
+        @for (item of navItems; track item.path) {
+        <li>
+          <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: item.path === '/'}"
+            (click)="closeMobileMenu()">{{ item.label }}</a>
+        </li>
+        }
+      </ul>
+    </nav>
+
+    <!-- RIGHT: CTA + mobile hamburger -->
+    <div class="nl-header-right">
+      <a routerLink="/contact" class="nl-cta-btn" (click)="closeMobileMenu()">
+        Let's Talk <span class="cta-arrow">→</span>
+      </a>
+      <button class="nl-hamburger" [class.open]="mobileOpen" (click)="toggleMobile()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ── MOBILE DRAWER ── -->
+<div class="nl-mobile-drawer" [class.open]="mobileOpen">
+  <ul class="nl-mobile-links">
+    @for (item of navItems; track item.path) {
+    <li>
+      <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: item.path === '/'}"
+        (click)="closeMobileMenu()">{{ item.label }}</a>
+    </li>
+    }
+  </ul>
+  <div class="nl-mobile-contact">
+    <a href="tel:04442132519">044-4213 2519</a>
+    <a href="mailto:info@nologo.in">info&#64;nologo.in</a>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<!-- PAGE HERO -->
+<section class="page-hero page-hero--photography">
+  <div class="hero-label">Our Work</div>
+  <h1>PHOTO<br>GRAPHY<span class="accent-dot">.</span></h1>
+  <p class="hero-sub">Moments that speak volumes — brand, editorial, portrait and documentary photography.</p>
+</section>
+
+<!-- PORTFOLIO NAV -->
+<div class="portfolio-nav-wrap">
+  <div class="portfolio-nav">
+    <a routerLink="/films" class="nav-tab">Film</a>
+    <a routerLink="/photography" class="nav-tab active">Photography</a>
+    <a routerLink="/creative" class="nav-tab">Creative</a>
+    <a routerLink="/csr" class="nav-tab">CSR / Social</a>
+  </div>
+  <div class="portfolio-count">{{ photos.length }} Projects</div>
+</div>
+
+<!-- FEATURED PHOTO (first item, full-width) -->
+@if (photos.length > 0) {
+<a class="photo-featured" [routerLink]="['/' + photos[0].type + '/' + photos[0].slug]">
+  <img [src]="photos[0].thumb" [alt]="photos[0].title" loading="lazy" />
+  <div class="photo-featured-overlay">
+    <div class="photo-featured-content">
+      <div class="feat-cat">{{ photos[0].category }}</div>
+      <h2 class="feat-title">{{ photos[0].title }}</h2>
+      <span class="feat-cta">View Series <span class="arrow">→</span></span>
+    </div>
+  </div>
+</a>
+}
+
+<!-- MASONRY-STYLE GRID -->
+<div class="photo-grid">
+  @for (photo of photos; track photo.slug; let i = $index) {
+  @if (i > 0) {
+  <a class="photo-card" [routerLink]="['/' + photo.type + '/' + photo.slug]"
+    [class.tall]="i === 1 || i === 4 || i === 7">
+    <div class="photo-img">
+      <img [src]="photo.thumb" [alt]="photo.title" loading="lazy" />
+    </div>
+    <div class="photo-card-overlay">
+      <div class="photo-cat">{{ photo.category }}</div>
+      <div class="photo-name">{{ photo.title }}</div>
+      <div class="photo-arr">+</div>
+    </div>
+  </a>
+  }
+  }
+</div>
+
+<!-- CTA BAND -->
+<section class="page-cta">
+  <div class="cta-label">Capture Your Story</div>
+  <h2 class="cta-heading">Every Frame<br>Tells A Story<span class="accent-dot">.</span></h2>
+  <a routerLink="/contact" class="btn btn-white">Get In Touch <span class="arrow">→</span></a>
+</section>

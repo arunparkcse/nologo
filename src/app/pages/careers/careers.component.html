@@ -1,0 +1,91 @@
+<section class="page-hero page-hero--careers">
+  <div class="hero-label">Join Us</div>
+  <h1>ARE YOU FULL<br>OF INCREDIBLE<br>IDEAS<span style="color: var(--color-accent);">?</span></h1>
+  <p class="hero-sub">We're a creative blend of problem solvers, storytellers and designers always on the lookout for
+    talented individuals.</p>
+</section>
+
+<!-- CULTURE IMAGE STRIP -->
+<div class="culture-strip">
+  <div class="culture-img">
+    <img src="https://template.dsngrid.com/mexdot/light/assets/img/team/5.jpg" alt="Culture" loading="lazy" />
+  </div>
+  <div class="culture-img">
+    <img src="https://template.dsngrid.com/mexdot/light/assets/img/team/6.jpg" alt="Culture" loading="lazy" />
+  </div>
+  <div class="culture-img">
+    <img src="https://template.dsngrid.com/mexdot/light/assets/img/photography/14.jpg" alt="Culture" loading="lazy" />
+  </div>
+  <div class="culture-img">
+    <img src="https://template.dsngrid.com/mexdot/light/assets/img/team/7.jpg" alt="Culture" loading="lazy" />
+  </div>
+  <div class="culture-img">
+    <img src="https://template.dsngrid.com/mexdot/light/assets/img/team/8.jpg" alt="Culture" loading="lazy" />
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="section careers-intro">
+  <div class="intro-text">
+    <div class="section-label">Work With Us</div>
+    <h2 class="section-title">Join The<br>Nologo Family<span class="accent-dot">.</span></h2>
+    <p class="intro-desc">
+      We're a creative blend of problem solvers, storytellers and designers always on the lookout
+      for talented individuals to join nologo. Send your CV to
+      <a href="mailto:info@nologo.in" class="email-link">info&#64;nologo.in</a>
+      telling us why you think you'd be an amazing fit.
+    </p>
+  </div>
+</section>
+
+<!-- PERKS -->
+<section class="section perks-section">
+  <div class="section-label">Why Nologo</div>
+  <h2 class="section-title" style="margin-bottom: 3rem;">What You Get<span class="accent-dot">.</span></h2>
+  <div class="perks-grid">
+    @for (perk of perks; track perk.label) {
+    <div class="perk-card">
+      <div class="perk-num">0{{ $index + 1 }}</div>
+      <h3 class="perk-title">{{ perk.label }}</h3>
+      <p class="perk-desc">{{ perk.desc }}</p>
+    </div>
+    }
+  </div>
+</section>
+
+<!-- OPENINGS -->
+<section class="section openings-section" style="background: var(--color-white);">
+  <div class="section-label">Open Positions</div>
+  <h2 class="section-title" style="margin-bottom: 3rem;">Current Vacancies<span class="accent-dot">.</span></h2>
+  <div class="openings-list">
+    @for (job of openings; track job.role) {
+    <div class="job-item">
+      <div class="job-info">
+        <div class="job-role">{{ job.role }}</div>
+        <div class="job-meta">
+          <span>{{ job.dept }}</span>
+          <span class="sep">·</span>
+          <span>{{ job.type }}</span>
+          <span class="sep">·</span>
+          <span>{{ job.location }}</span>
+        </div>
+      </div>
+      <a href="mailto:info@nologo.in?subject=Application: {{ job.role }}" class="btn btn-outline apply-btn">
+        Apply <span class="arrow">→</span>
+      </a>
+    </div>
+    }
+  </div>
+
+  <div class="open-application">
+    <div class="section-label" style="color: var(--color-accent)">Open Application</div>
+    <h3
+      style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: #fff; text-transform: uppercase; margin: 1rem 0 0.5rem;">
+      Don't see your role?
+    </h3>
+    <p>We're always looking for exceptional talent. Reach out.</p>
+    <a href="mailto:info@nologo.in" class="btn btn-white" style="margin-top: 1.5rem; display: inline-flex;">
+      Send Your CV <span class="arrow">→</span>
+    </a>
+  </div>
+</section>

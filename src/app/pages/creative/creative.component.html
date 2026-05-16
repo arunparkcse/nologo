@@ -1,0 +1,59 @@
+<!-- PAGE HERO -->
+<section class="page-hero page-hero--creative">
+  <div class="hero-label">Our Work</div>
+  <h1>CREATIVE<br>DESIGN<span class="accent-dot">.</span></h1>
+  <p class="hero-sub">Visual storytelling through print, digital and brand design that resonates and endures.</p>
+</section>
+
+<!-- PORTFOLIO NAV -->
+<div class="portfolio-nav-wrap">
+  <div class="portfolio-nav">
+    <a routerLink="/films" class="nav-tab">Film</a>
+    <a routerLink="/photography" class="nav-tab">Photography</a>
+    <a routerLink="/creative" class="nav-tab active">Creative</a>
+    <a routerLink="/csr" class="nav-tab">CSR / Social</a>
+  </div>
+  <div class="portfolio-count">{{ works.length }} Projects</div>
+</div>
+
+<!-- CREATIVE GRID: first 2 full-width side by side, rest 3-col -->
+<div class="creative-hero-row">
+  @for (work of works; track work.slug; let i = $index) {
+  @if (i < 2) { <a class="creative-hero-card" [routerLink]="['/' + work.type + '/' + work.slug]">
+    <div class="creative-img">
+      <img [src]="work.thumb" [alt]="work.title" loading="lazy" />
+    </div>
+    <div class="creative-card-overlay">
+      <div class="c-cat">{{ work.category }}</div>
+      <div class="c-title">{{ work.title }}</div>
+      <div class="c-client">{{ work.client }} · {{ work.year }}</div>
+    </div>
+    <div class="c-arr">→</div>
+    </a>
+    }
+    }
+</div>
+
+<div class="creative-grid">
+  @for (work of works; track work.slug; let i = $index) {
+  @if (i >= 2) {
+  <a class="creative-card" [routerLink]="['/' + work.type + '/' + work.slug]">
+    <div class="creative-img-sm">
+      <img [src]="work.thumb" [alt]="work.title" loading="lazy" />
+    </div>
+    <div class="creative-card-info">
+      <div class="c-cat">{{ work.category }}</div>
+      <div class="c-title-sm">{{ work.title }}</div>
+    </div>
+    <div class="c-arr-sm">→</div>
+  </a>
+  }
+  }
+</div>
+
+<!-- CTA BAND -->
+<section class="page-cta">
+  <div class="cta-label">Design Your Story</div>
+  <h2 class="cta-heading">Let's Build<br>Something Beautiful<span class="accent-dot">.</span></h2>
+  <a routerLink="/contact" class="btn btn-white">Start A Project <span class="arrow">→</span></a>
+</section>

@@ -1,0 +1,316 @@
+<!-- ══════════════════════════════════════════
+     HERO — carousel (2 slides)
+══════════════════════════════════════════ -->
+<section class="nl-hero">
+  <!-- SVG circle decoration -->
+  <svg class="hero-svg-bg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="400" cy="400" r="360" fill="none" stroke="#c8102e" stroke-width="1" opacity="0.12" />
+    <circle cx="400" cy="400" r="280" fill="none" stroke="#c8102e" stroke-width="0.5" opacity="0.08" />
+    <circle cx="400" cy="400" r="180" fill="none" stroke="#c8102e" stroke-width="0.5" opacity="0.06" />
+  </svg>
+
+  <!-- Crossfade slides -->
+  <div class="hero-carousel">
+
+    <!-- SLIDE 1: Brand content -->
+    <div class="hero-slide" [class.active]="heroSlide === 0">
+      <div class="hero-slide-img"></div>
+      <div class="hero-inner">
+        <div class="hero-badge reveal">
+          <span class="badge-pulse"></span>
+          Integrated Communication Agency — Est. 2010
+        </div>
+        <h1 class="hero-headline reveal">
+          <span class="hl-line">FILM<span class="accent-dot">.</span></span>
+          <span class="hl-line hl-ghost">PHOTO<span class="accent-dot">.</span></span>
+          <span class="hl-line">CREATIVE<span class="accent-dot">.</span></span>
+        </h1>
+        <div class="hero-subrow reveal">
+          <p class="hero-sub">
+            We craft films that move people, photography that tells<br>
+            stories, and design that builds brands — for over a decade.
+          </p>
+          <div class="hero-stats">
+            <div class="hs-item">
+              <span class="hs-num">100<sup>+</sup></span>
+              <span class="hs-label">Projects Delivered</span>
+            </div>
+            <div class="hs-divider"></div>
+            <div class="hs-item">
+              <span class="hs-num">14<sup>+</sup></span>
+              <span class="hs-label">Brand Clients</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-cta reveal">
+          <a routerLink="/films" class="btn btn-dark">View Our Work</a>
+          <a routerLink="/contact" class="btn-ghost">Start a Project →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: YouTube showreel -->
+    <div class="hero-slide hero-slide-yt" [class.active]="heroSlide === 1">
+      @if (!ytActive) {
+      <div class="yt-thumb" (click)="activateYT()">
+        <img src="https://img.youtube.com/vi/vY6_yzUk7es/maxresdefault.jpg" alt="Nologo Showreel" class="yt-thumb-img"
+          (error)="onImgError($event, 'https://img.youtube.com/vi/vY6_yzUk7es/hqdefault.jpg')" />
+        <div class="yt-overlay">
+          <div class="yt-play-btn" aria-label="Play showreel">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+          <p class="yt-label">Agency Showreel — Click to Play</p>
+        </div>
+      </div>
+      } @else {
+      <iframe class="yt-iframe" src="https://www.youtube.com/embed/vY6_yzUk7es?autoplay=1&rel=0" title="Nologo Showreel"
+        frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      }
+    </div>
+
+  </div>
+
+  <!-- Scrolling text ticker -->
+  <div class="hero-ticker">
+    <div class="hero-ticker-track">
+      <span>Film Production</span><span class="ticker-dot">·</span>
+      <span>Photography</span><span class="ticker-dot">·</span>
+      <span>Creative Design</span><span class="ticker-dot">·</span>
+      <span>CSR Films</span><span class="ticker-dot">·</span>
+      <span>Brand Identity</span><span class="ticker-dot">·</span>
+      <span>Documentaries</span><span class="ticker-dot">·</span>
+      <span>Annual Reports</span><span class="ticker-dot">·</span>
+      <span>Ad Films</span><span class="ticker-dot">·</span>
+      <!-- duplicate for seamless loop -->
+      <span>Film Production</span><span class="ticker-dot">·</span>
+      <span>Photography</span><span class="ticker-dot">·</span>
+      <span>Creative Design</span><span class="ticker-dot">·</span>
+      <span>CSR Films</span><span class="ticker-dot">·</span>
+      <span>Brand Identity</span><span class="ticker-dot">·</span>
+      <span>Documentaries</span><span class="ticker-dot">·</span>
+      <span>Annual Reports</span><span class="ticker-dot">·</span>
+      <span>Ad Films</span><span class="ticker-dot">·</span>
+    </div>
+  </div>
+
+  <!-- Carousel dots -->
+  <div class="hero-dots">
+    <button class="hero-dot" [class.active]="heroSlide === 0" (click)="goToHeroSlide(0)" aria-label="Slide 1"></button>
+    <button class="hero-dot" [class.active]="heroSlide === 1" (click)="goToHeroSlide(1)" aria-label="Slide 2"></button>
+  </div>
+
+  <!-- Right side: vertical tag + scroll -->
+  <div class="hero-side-right">
+    <span class="hero-side-dot"></span>
+    <span class="hero-side-text">EST. 2010 — INTEGRATED AGENCY</span>
+    <span class="hero-side-scroll">SCROLL</span>
+    <span class="hero-scroll-line"><span class="hero-scroll-line-inner"></span></span>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PORTFOLIO CARDS — 3 tall full-bleed
+══════════════════════════════════════════ -->
+<section class="nl-port-strip">
+  <div class="ps-header reveal">
+    <div class="section-label">Selected Work</div>
+    <a routerLink="/films" class="ps-view-all">View All Projects →</a>
+  </div>
+
+  <div class="ps-cards">
+    @for (card of portfolioCards; track card.slug) {
+    <a [routerLink]="['/', card.type, card.slug]" class="ps-card reveal">
+      <div class="ps-img-wrap">
+        <img [src]="card.img" [alt]="card.title" class="ps-img" (error)="onImgError($event, card.fallback)"
+          loading="lazy" />
+      </div>
+      <div class="ps-info">
+        <span class="ps-cat">{{ card.category }}</span>
+        <h3 class="ps-title">{{ card.title }}</h3>
+        <span class="ps-arrow">→</span>
+      </div>
+    </a>
+    }
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     MISSION PULL QUOTE
+══════════════════════════════════════════ -->
+<section class="nl-mission section">
+  <div class="mission-wrap reveal">
+    <div class="section-label">Our Philosophy</div>
+    <blockquote class="mission-quote">
+      We believe every brand has a story worth telling —
+      <em>beautifully, honestly, powerfully.</em>
+    </blockquote>
+    <p class="mission-body">
+      From a CSR film that moves boardrooms to tears, to a photography series
+      that redefines a brand's identity — Nologo brings craft and intention
+      to every frame, every pixel, every word.
+    </p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════ -->
+<section class="nl-services section">
+  <div class="svc-header reveal">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Three verticals.<br>One vision.</h2>
+  </div>
+
+  <div class="svc-grid">
+    @for (svc of services; track svc.num) {
+    <div class="svc-card reveal">
+      <div class="svc-top">
+        <span class="svc-num">{{ svc.num }}</span>
+        <h3 class="svc-title">{{ svc.title }}</h3>
+      </div>
+      <p class="svc-desc">{{ svc.desc }}</p>
+      <div class="svc-tags">
+        @for (tag of svc.tags; track tag) {
+        <span class="svc-tag">{{ tag }}</span>
+        }
+      </div>
+      <a [routerLink]="svc.link" class="svc-link">Explore →</a>
+    </div>
+    }
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS SLIDER
+══════════════════════════════════════════ -->
+<section class="nl-testimonials section">
+  <div class="te-header reveal">
+    <div class="section-label">Client Stories</div>
+    <h2 class="section-title">What they say.</h2>
+  </div>
+
+  <div class="te-slider-wrap reveal">
+    <div class="te-track" [style.transform]="'translateX(-' + (teIdx * 100) + '%'">
+      @for (te of testimonials; track te.company) {
+      <div class="te-slide">
+        <div class="te-stars">
+          @for (s of [1,2,3,4,5]; track s) {
+          <span class="star" [class.lit]="s <= te.stars">★</span>
+          }
+        </div>
+        <blockquote class="te-quote">"{{ te.quote }}"</blockquote>
+        <div class="te-author-row">
+          <img [src]="te.avatar" [alt]="te.author" class="te-avatar"
+            (error)="onImgError($event, 'https://template.dsngrid.com/mexdot/light/assets/img/team/1.jpg')" />
+          <div class="te-meta">
+            <span class="te-name">{{ te.author }}</span>
+            <span class="te-company">{{ te.company }}</span>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <button class="te-btn te-prev" (click)="prevTestimonial()" aria-label="Previous">←</button>
+    <button class="te-btn te-next" (click)="nextTestimonial()" aria-label="Next">→</button>
+    <div class="te-dots">
+      @for (te of testimonials; let i = $index; track te.company) {
+      <button class="te-dot" [class.active]="i === teIdx" (click)="goToTestimonial(i)"
+        [attr.aria-label]="'Testimonial ' + (i + 1)"></button>
+      }
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TEAM
+══════════════════════════════════════════ -->
+<section class="nl-team section">
+  <div class="team-header reveal">
+    <div class="section-label">The Studio</div>
+    <h2 class="section-title">People behind<br>the lens.</h2>
+  </div>
+
+  <div class="team-grid">
+    @for (member of team; let i = $index; track i) {
+    <div class="team-card reveal">
+      <div class="team-img-wrap">
+        <img [src]="member.img" [alt]="member.name" class="team-img"
+          (error)="onImgError($event, 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80')"
+          loading="lazy" />
+        <div class="team-hover">
+          <span class="team-name">{{ member.name }}</span>
+          <span class="team-role">{{ member.role }}</span>
+          <span class="team-dept">{{ member.dept }}</span>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     BLOG / PERSPECTIVES
+══════════════════════════════════════════ -->
+<section class="nl-blog section">
+  <div class="blog-header reveal">
+    <div class="section-label">Perspectives</div>
+    <h2 class="section-title">From the studio.</h2>
+  </div>
+
+  <div class="blog-grid">
+    @for (post of blogs; let i = $index; track i) {
+    <div class="blog-card reveal">
+      <div class="blog-img-wrap">
+        <img [src]="post.img" [alt]="post.title" class="blog-img"
+          (error)="onImgError($event, 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80')"
+          loading="lazy" />
+      </div>
+      <div class="blog-body">
+        <span class="blog-date">{{ post.date }}</span>
+        <h3 class="blog-title">{{ post.title }}</h3>
+        <span class="blog-link">Read More →</span>
+      </div>
+    </div>
+    }
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CLIENTS MARQUEE
+══════════════════════════════════════════ -->
+<section class="nl-clients">
+  <div class="clients-label section-label reveal">Trusted by</div>
+  <div class="clients-track-outer">
+    <div class="clients-track">
+      @for (client of clients; let i = $index; track i) {
+      <span class="client-chip">{{ client }}</span>
+      }
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CTA BAND
+══════════════════════════════════════════ -->
+<section class="nl-cta">
+  <div class="cta-inner reveal">
+    <div class="section-label cta-label">Let's Create Together</div>
+    <h2 class="cta-headline">TIME TO<br><em>ROAR.</em></h2>
+    <p class="cta-sub">
+      Have a story worth telling? A brand that needs a voice?<br>
+      Let's make something extraordinary together.
+    </p>
+    <a routerLink="/contact" class="btn btn-white">Get in Touch</a>
+  </div>
+</section>
+ 

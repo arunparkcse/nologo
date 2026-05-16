@@ -1,0 +1,85 @@
+<!-- PAGE HERO -->
+<section class="page-hero page-hero--csr">
+  <div class="hero-label">CSR / Social</div>
+  <h1>LET'S DO<br>SOME GOOD<span class="accent-dot">.</span></h1>
+  <p class="hero-sub">We partner with purpose-driven organisations to communicate their impact stories and inspire
+    meaningful action.</p>
+</section>
+
+<!-- IMPACT STATS -->
+<section class="stats-band">
+  @for (stat of stats; track stat.label) {
+  <div class="stat-item">
+    <div class="stat-num">{{ stat.number }}</div>
+    <div class="stat-lbl">{{ stat.label }}</div>
+  </div>
+  }
+</section>
+
+<!-- CSR INTRO -->
+<section class="csr-intro">
+  <div class="csr-intro-grid">
+    <div class="intro-text">
+      <div class="section-label">Our Purpose</div>
+      <h2 class="section-title">Purpose-Driven<br>Communication</h2>
+      <p>Nologo started focusing exclusively on CSR communication because of our shared desire to use our experience to
+        change the world for the better.</p>
+      <p>We are a leading communications partner for purpose-driven organizations — helping shape, share and
+        strategically target impact stories, initiatives and ideas with the people who matter.</p>
+      <a routerLink="/contact" class="btn btn-dark" style="margin-top: 2rem; display: inline-flex;">
+        Work With Us <span class="arrow">→</span>
+      </a>
+    </div>
+    <div class="services-list">
+      <div class="section-label">Our CSR Services</div>
+      @for (svc of services; track svc) {
+      <div class="csr-service">
+        <span class="csr-arrow">→</span>
+        <span>{{ svc }}</span>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO NAV -->
+<div class="portfolio-nav-wrap">
+  <div class="portfolio-nav">
+    <a routerLink="/films" class="nav-tab">Film</a>
+    <a routerLink="/photography" class="nav-tab">Photography</a>
+    <a routerLink="/creative" class="nav-tab">Creative</a>
+    <a routerLink="/csr" class="nav-tab active">CSR / Social</a>
+  </div>
+  <div class="portfolio-count">{{ projects.length }} Projects</div>
+</div>
+
+<!-- CSR GRID -->
+<div class="csr-grid">
+  @for (project of projects; track project.slug) {
+  <a class="csr-card" [routerLink]="['/' + project.type + '/' + project.slug]">
+    <div class="csr-img">
+      <img [src]="project.thumb" [alt]="project.title" loading="lazy" />
+      @if (project.videoId) {
+      <div class="play-indicator">
+        <svg viewBox="0 0 24 24" fill="white" width="16" height="16">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+      }
+    </div>
+    <div class="csr-card-overlay">
+      <div class="csr-cat">{{ project.category }}</div>
+      <div class="csr-title">{{ project.title }}</div>
+      <div class="csr-client">{{ project.client }}</div>
+    </div>
+    <div class="csr-arr">→</div>
+  </a>
+  }
+</div>
+
+<!-- CTA BAND -->
+<section class="page-cta">
+  <div class="cta-label">Make An Impact</div>
+  <h2 class="cta-heading">Ready To Change<br>The World<span class="accent-dot">?</span></h2>
+  <a routerLink="/contact" class="btn btn-white">Talk To Us <span class="arrow">→</span></a>
+</section>

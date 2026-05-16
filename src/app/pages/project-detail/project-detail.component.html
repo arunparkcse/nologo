@@ -1,0 +1,155 @@
+@if (project) {
+  <!-- HERO (back button lives inside here) -->
+  <section class="detail-hero">
+    <div class="detail-hero-img">
+      <img [src]="project.images[activeImage] || project.thumb" [alt]="project.title" />
+      <div class="detail-hero-overlay"></div>
+    </div>
+
+    <!-- BACK BUTTON — floats over hero -->
+    <div class="detail-back">
+      <button class="back-btn" (click)="goBack()">
+        <span class="back-arrow">←</span> Back to {{ project.type | titlecase }}
+      </button>
+    </div>
+
+    <div class="detail-hero-content">
+      <div class="detail-type">{{ project.category }}</div>
+      <h1 class="detail-title">{{ project.title }}</h1>
+      <div class="detail-meta-row">
+        <span class="meta-item"><span class="meta-label">Client</span>{{ project.client }}</span>
+        <span class="meta-sep">—</span>
+        <span class="meta-item"><span class="meta-label">Year</span>{{ project.year }}</span>
+        <span class="meta-sep">—</span>
+        <span class="meta-item"><span class="meta-label">Type</span>{{ project.type | titlecase }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="detail-content section-pad">
+    <div class="detail-grid">
+
+      <!-- LEFT: Description + Tags -->
+      <div class="detail-info">
+        <div class="detail-label">About This Project</div>
+        <p class="detail-desc">{{ project.description }}</p>
+        <div class="detail-tags">
+          @for (tag of project.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          }
+        </div>
+        <div class="detail-cta-row">
+          <a routerLink="/contact" class="btn btn-dark">
+            Start A Project <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Video or Image Gallery -->
+      <div class="detail-media">
+        @if (project.videoId && safeVideoUrl) {
+          <div class="detail-video-wrap">
+            <iframe
+              [src]="safeVideoUrl"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        } @else {
+          <div class="detail-gallery">
+            <div class="gallery-main" (click)="openLightbox(activeImage)" title="Click to enlarge">
+              <img [src]="project.images[activeImage]" [alt]="project.title + ' ' + (activeImage + 1)" />
+              <div class="gallery-zoom-hint">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/>
+                </svg>
+              </div>
+            </div>
+            @if (project.images.length > 1) {
+              <div class="gallery-thumbs">
+                @for (img of project.images; track img; let i = $index) {
+                  <div class="gallery-thumb"
+                       [class.active]="i === activeImage"
+                       (click)="setActive(i)">
+                    <img [src]="img" [alt]="project.title + ' ' + (i + 1)" />
+                  </div>
+                }
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PROJECTS -->
+  @if (related.length > 0) {
+    <section class="related-section section-pad" style="background: var(--color-black);">
+      <div class="related-label">More Work</div>
+      <h2 class="related-title">Related Projects</h2>
+      <div class="related-grid">
+        @for (rel of related; track rel.slug) {
+          <a class="related-card" [routerLink]="['/' + rel.type + '/' + rel.slug]">
+            <div class="related-img">
+              <img [src]="rel.thumb" [alt]="rel.title" loading="lazy" />
+            </div>
+            <div class="related-info">
+              <div class="related-cat">{{ rel.category }}</div>
+              <div class="related-name">{{ rel.title }}</div>
+            </div>
+            <div class="related-arr">→</div>
+          </a>
+        }
+      </div>
+    </section>
+  }
+}
+
+<!-- ── LIGHTBOX ── -->
+@if (lightboxOpen && project) {
+  <div class="lightbox-overlay" (click)="closeLightbox()">
+    <div class="lightbox-box" (click)="$event.stopPropagation()">
+
+      <!-- Close -->
+      <button class="lb-close" (click)="closeLightbox()" aria-label="Close">✕</button>
+
+      <!-- Counter -->
+      <div class="lb-counter">{{ lightboxIndex + 1 }} / {{ project.images.length }}</div>
+
+      <!-- Image -->
+      <div class="lb-img-wrap">
+        <img [src]="project.images[lightboxIndex]" [alt]="project.title" class="lb-img" />
+      </div>
+
+      <!-- Prev / Next -->
+      @if (project.images.length > 1) {
+        <button class="lb-nav lb-prev" (click)="lightboxPrev()" aria-label="Previous">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="lb-nav lb-next" (click)="lightboxNext()" aria-label="Next">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+
+        <!-- Dots -->
+        <div class="lb-dots">
+          @for (img of project.images; track img; let i = $index) {
+            <button class="lb-dot" [class.active]="i === lightboxIndex" (click)="lightboxIndex = i"></button>
+          }
+        </div>
+      }
+    </div>
+  </div>
+}
+
+@if (!project) {
+  <div class="not-found">
+    <h2>Project not found</h2>
+    <a routerLink="/" class="btn btn-dark">← Back Home</a>
+  </div>
+}
