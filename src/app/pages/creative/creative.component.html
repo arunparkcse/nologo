@@ -16,36 +16,39 @@
   <div class="portfolio-count">{{ works.length }} Projects</div>
 </div>
 
-<!-- CREATIVE GRID: first 2 full-width side by side, rest 3-col -->
+<!-- HERO ROW: first 2 cards wide -->
 <div class="creative-hero-row">
   @for (work of works; track work.slug; let i = $index) {
-  @if (i < 2) { <a class="creative-hero-card" [routerLink]="['/' + work.type + '/' + work.slug]">
-    <div class="creative-img">
-      <img [src]="work.thumb" [alt]="work.title" loading="lazy" />
+  @if (i < 2) {
+  <a class="c-card c-card--hero" [routerLink]="['/' + work.type + '/' + work.slug]">
+    <img [src]="work.thumb" [alt]="work.title" class="c-card-img" loading="lazy" />
+    <div class="c-card-tags">
+      <span class="c-tag">{{ work.category }}</span>
+      <span class="c-tag">{{ work.year }}</span>
     </div>
-    <div class="creative-card-overlay">
-      <div class="c-cat">{{ work.category }}</div>
-      <div class="c-title">{{ work.title }}</div>
-      <div class="c-client">{{ work.client }} · {{ work.year }}</div>
+    <div class="c-card-body">
+      <h3 class="c-card-title">{{ work.title }}</h3>
+      <span class="c-card-client">{{ work.client }}</span>
     </div>
-    <div class="c-arr">→</div>
-    </a>
-    }
-    }
+  </a>
+  }
+  }
 </div>
 
-<div class="creative-grid">
+<!-- MAIN GRID: remaining cards -->
+<div class="creative-main-grid">
   @for (work of works; track work.slug; let i = $index) {
   @if (i >= 2) {
-  <a class="creative-card" [routerLink]="['/' + work.type + '/' + work.slug]">
-    <div class="creative-img-sm">
-      <img [src]="work.thumb" [alt]="work.title" loading="lazy" />
+  <a class="c-card" [routerLink]="['/' + work.type + '/' + work.slug]">
+    <img [src]="work.thumb" [alt]="work.title" class="c-card-img" loading="lazy" />
+    <div class="c-card-tags">
+      <span class="c-tag">{{ work.category }}</span>
+      <span class="c-tag">{{ work.year }}</span>
     </div>
-    <div class="creative-card-info">
-      <div class="c-cat">{{ work.category }}</div>
-      <div class="c-title-sm">{{ work.title }}</div>
+    <div class="c-card-body">
+      <h3 class="c-card-title">{{ work.title }}</h3>
+      <span class="c-card-client">{{ work.client }}</span>
     </div>
-    <div class="c-arr-sm">→</div>
   </a>
   }
   }
@@ -53,7 +56,9 @@
 
 <!-- CTA BAND -->
 <section class="page-cta">
-  <div class="cta-label">Design Your Story</div>
-  <h2 class="cta-heading">Let's Build<br>Something Beautiful<span class="accent-dot">.</span></h2>
-  <a routerLink="/contact" class="btn btn-white">Start A Project <span class="arrow">→</span></a>
+  <div class="cta-inner">
+    <div class="cta-label">Design Your Story</div>
+    <h2 class="cta-heading">Let's Build<br>Something Beautiful<span class="accent-dot">.</span></h2>
+    <a routerLink="/contact" class="btn btn-white">Start A Project <span class="arrow">→</span></a>
+  </div>
 </section>

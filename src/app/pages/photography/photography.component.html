@@ -30,19 +30,21 @@
 </a>
 }
 
-<!-- MASONRY-STYLE GRID -->
+<!-- PHOTO GRID -->
 <div class="photo-grid">
   @for (photo of photos; track photo.slug; let i = $index) {
   @if (i > 0) {
   <a class="photo-card" [routerLink]="['/' + photo.type + '/' + photo.slug]"
-    [class.tall]="i === 1 || i === 4 || i === 7">
-    <div class="photo-img">
-      <img [src]="photo.thumb" [alt]="photo.title" loading="lazy" />
+    [class.tall]="i === 1 || i === 4 || i === 7"
+    [class.wide]="i === 3 || i === 8">
+    <img [src]="photo.thumb" [alt]="photo.title" class="photo-card-img" loading="lazy" />
+    <div class="photo-card-tags">
+      <span class="photo-tag">{{ photo.category }}</span>
+      <span class="photo-tag">{{ photo.year }}</span>
     </div>
-    <div class="photo-card-overlay">
-      <div class="photo-cat">{{ photo.category }}</div>
-      <div class="photo-name">{{ photo.title }}</div>
-      <div class="photo-arr">+</div>
+    <div class="photo-card-body">
+      <h3 class="photo-card-title">{{ photo.title }}</h3>
+      <span class="photo-card-client">{{ photo.client }}</span>
     </div>
   </a>
   }

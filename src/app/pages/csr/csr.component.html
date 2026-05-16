@@ -57,22 +57,21 @@
 <div class="csr-grid">
   @for (project of projects; track project.slug) {
   <a class="csr-card" [routerLink]="['/' + project.type + '/' + project.slug]">
-    <div class="csr-img">
-      <img [src]="project.thumb" [alt]="project.title" loading="lazy" />
+    <img [src]="project.thumb" [alt]="project.title" class="csr-card-img" loading="lazy" />
+    <div class="csr-card-tags">
+      <span class="csr-tag">{{ project.category }}</span>
       @if (project.videoId) {
-      <div class="play-indicator">
-        <svg viewBox="0 0 24 24" fill="white" width="16" height="16">
-          <path d="M8 5v14l11-7z" />
-        </svg>
-      </div>
+      <span class="csr-tag csr-tag--play">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="9" height="9" style="margin-right:3px"><path d="M8 5v14l11-7z"/></svg>
+        Film
+      </span>
       }
+      <span class="csr-tag">{{ project.year }}</span>
     </div>
-    <div class="csr-card-overlay">
-      <div class="csr-cat">{{ project.category }}</div>
-      <div class="csr-title">{{ project.title }}</div>
-      <div class="csr-client">{{ project.client }}</div>
+    <div class="csr-card-body">
+      <h3 class="csr-card-title">{{ project.title }}</h3>
+      <span class="csr-card-client">{{ project.client }}</span>
     </div>
-    <div class="csr-arr">→</div>
   </a>
   }
 </div>

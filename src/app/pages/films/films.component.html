@@ -48,21 +48,15 @@
   @for (film of films; track film.slug; let i = $index) {
   @if (i > 0) {
   <a class="film-card" [routerLink]="['/' + film.type + '/' + film.slug]">
-    <div class="film-thumb">
-      <img [src]="film.thumb" [alt]="film.title" loading="lazy" />
-      <div class="film-overlay">
-        <div class="film-play">
-          <svg viewBox="0 0 24 24" fill="white" width="18" height="18">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </div>
-      </div>
+    <img [src]="film.thumb" [alt]="film.title" class="film-card-img" loading="lazy" />
+    <div class="film-card-tags">
+      <span class="film-tag">{{ film.category }}</span>
+      <span class="film-tag">{{ film.year }}</span>
     </div>
-    <div class="film-info">
-      <div class="film-cat">{{ film.category }} · {{ film.year }}</div>
-      <div class="film-title">{{ film.title }}</div>
+    <div class="film-card-body">
+      <h3 class="film-card-title">{{ film.title }}</h3>
+      <span class="film-card-client">{{ film.client }}</span>
     </div>
-    <div class="film-arr">→</div>
   </a>
   }
   }
