@@ -300,8 +300,13 @@
 }
 
 @keyframes lbFadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .lightbox-box {
@@ -338,29 +343,36 @@
 }
 
 @keyframes lbSlideIn {
-  from { opacity: 0; transform: scale(0.96); }
-  to   { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .lb-close {
   position: absolute;
   top: -3rem;
   right: 0;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 
   &:hover {
-    background: rgba(255,255,255,0.18);
+    background: rgba(255, 255, 255, 0.18);
     color: #fff;
   }
 }
@@ -373,22 +385,22 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .lb-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
   width: 52px;
   height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 
@@ -400,12 +412,18 @@
 
   &.lb-prev {
     left: 0;
-    &:hover { transform: translateY(-50%) translateX(-2px); }
+
+    &:hover {
+      transform: translateY(-50%) translateX(-2px);
+    }
   }
 
   &.lb-next {
     right: 0;
-    &:hover { transform: translateY(-50%) translateX(2px); }
+
+    &:hover {
+      transform: translateY(-50%) translateX(2px);
+    }
   }
 
   @media (max-width: 600px) {
@@ -423,7 +441,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
@@ -587,15 +605,64 @@
   }
 }
 
-// ── MOBILE RESPONSIVE ──
+// ── MOBILE GALLERY BAR — base (hidden on desktop, shown via media query below) ──
+.gallery-mobile-bar {
+  display: none; // overridden to flex inside the media query
+}
+
+.gallery-dots-mobile {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gdot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+
+  &.active {
+    background: var(--color-accent);
+    transform: scale(1.3);
+  }
+}
+
+.gallery-expand-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.08);
+  border: 1.5px solid rgba(0, 0, 0, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+
+  &:hover,
+  &:active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+  }
+}
+
+// ── MOBILE RESPONSIVE (must come AFTER base styles above) ──
 @media (max-width: 768px) {
 
-  // Back button — tuck closer to top on small screens
+  // Back button
   .detail-back {
     top: 4rem;
   }
 
-  // Hero — shorter on mobile
+  // Hero — shorter
   .detail-hero {
     height: 55vw;
     min-height: 240px;
@@ -609,42 +676,51 @@
     margin-bottom: 0.75rem;
   }
 
-  // Content section
-  .section-pad {
-    padding: 2rem 4%;
+  // Remove horizontal padding from detail-content so gallery goes full-width
+  .detail-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
     min-height: unset;
   }
 
-  // Gallery — 4/3 box, image fills it with cover (no cropping weirdness)
-  .gallery-main {
-    aspect-ratio: 4/3;
-    margin-bottom: 0.75rem;
+  // Re-add padding to text column only
+  .detail-info {
+    padding: 0 4%;
   }
 
-  // Thumbnails — horizontal scroll strip, big enough to tap
-  .gallery-thumbs {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 0.5rem;
-    padding-bottom: 4px;
+  // Gallery fills full width (no parent padding to fight)
+  .detail-gallery {
     width: 100%;
   }
 
-  .gallery-thumbs::-webkit-scrollbar {
+  .gallery-main {
+    aspect-ratio: 4/3;
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+
+  .gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  // Hide desktop thumbnail strip
+  .gallery-thumbs {
     display: none;
   }
 
-  .gallery-thumb {
-    width: 80px;
-    height: 60px;
-    min-width: 80px;
-    flex-shrink: 0;
+  // Show mobile bar: dots left + expand icon right
+  .gallery-mobile-bar {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 4% 0.4rem;
   }
 
-  // Video embed full-width
+  // Video embed
   .detail-video-wrap {
     padding-bottom: 56.25%;
   }
@@ -652,16 +728,6 @@
   // Related grid
   .related-section {
     padding: 3rem 4%;
-  }
-}
-
-// ── GALLERY IMG — MOBILE (flat selector, no nesting, avoids encapsulation issues) ──
-@media (max-width: 768px) {
-  .gallery-main img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
   }
 }
 
@@ -724,11 +790,18 @@
 
     &.lb-prev {
       left: 0.5rem;
-      &:hover { transform: translateY(-50%) translateX(0); }
+
+      &:hover {
+        transform: translateY(-50%) translateX(0);
+      }
     }
+
     &.lb-next {
       right: 0.5rem;
-      &:hover { transform: translateY(-50%) translateX(0); }
+
+      &:hover {
+        transform: translateY(-50%) translateX(0);
+      }
     }
   }
 
