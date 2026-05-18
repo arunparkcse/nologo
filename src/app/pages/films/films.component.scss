@@ -229,7 +229,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.2) 45%, transparent 70%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.2) 45%, transparent 70%);
     pointer-events: none;
     z-index: 1;
   }
@@ -299,7 +299,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.42);
+  color: rgba(255, 255, 255, 0.42);
 }
 
 // ── PAGE CTA ──
@@ -382,4 +382,36 @@
 
 .accent-dot {
   color: var(--color-accent);
+}
+
+// ── PORTFOLIO NAV — MOBILE ──
+@media (max-width: 700px) {
+  .portfolio-nav-wrap {
+    padding: 0;
+    flex-wrap: nowrap;
+  }
+
+  .portfolio-nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 3%;
+    flex: 1;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .nav-tab {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 0.62rem;
+    padding: 1rem 0.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  .portfolio-count {
+    display: none;
+  }
 }

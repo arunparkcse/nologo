@@ -436,8 +436,21 @@
     padding: 1rem 4%;
   }
 
-  .nl-nav-pill {
-    padding: 0.5rem 0.5rem 0.5rem 1.2rem;
-    border-radius: 80px;
+  // hide tagline text so hamburger is never pushed off-screen
+  .logo-tagline {
+    display: none;
+  }
+
+  .nl-logo-img {
+    height: 2.4rem;
+  }
+
+  .nl-hamburger {
+    // guarantee visibility and tap target
+    display: flex !important;
+    width: 32px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
   }
 }

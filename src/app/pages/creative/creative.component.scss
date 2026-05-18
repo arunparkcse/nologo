@@ -24,7 +24,10 @@
   border-bottom: 2px solid transparent;
   transition: 0.2s;
 
-  &:hover { color: var(--color-black); }
+  &:hover {
+    color: var(--color-black);
+  }
+
   &.active {
     color: var(--color-black);
     border-bottom-color: var(--color-accent);
@@ -62,7 +65,10 @@
   padding: 1.5rem 4% 4rem;
   background: #f4f4f4;
 
-  @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   @media (max-width: 560px) {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -86,7 +92,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.15) 45%, transparent 70%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.15) 45%, transparent 70%);
     pointer-events: none;
     z-index: 1;
   }
@@ -167,7 +173,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.42);
+  color: rgba(255, 255, 255, 0.42);
 }
 
 // ── PAGE CTA ──
@@ -181,7 +187,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 50% 50%, rgba(200,16,46,0.07) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 50% 50%, rgba(200, 16, 46, 0.07) 0%, transparent 70%);
     pointer-events: none;
   }
 }
@@ -196,19 +202,20 @@
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255, 255, 255, 0.2);
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
 
-  &::before, &::after {
+  &::before,
+  &::after {
     content: '';
     display: block;
     width: 20px;
     height: 1px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
   }
 }
 
@@ -241,10 +248,47 @@
     color: #fff;
   }
 
-  .arrow { transition: transform 0.3s; }
-  &:hover .arrow { transform: translateX(5px); }
+  .arrow {
+    transition: transform 0.3s;
+  }
+
+  &:hover .arrow {
+    transform: translateX(5px);
+  }
 }
 
 .accent-dot {
   color: var(--color-accent);
+}
+
+// ── PORTFOLIO NAV — MOBILE ──
+@media (max-width: 700px) {
+  .portfolio-nav-wrap {
+    padding: 0;
+    flex-wrap: nowrap;
+  }
+
+  .portfolio-nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 3%;
+    flex: 1;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .nav-tab {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 0.62rem;
+    padding: 1rem 0.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  .portfolio-count {
+    display: none;
+  }
 }

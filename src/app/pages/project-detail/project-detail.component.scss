@@ -150,6 +150,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .detail-grid {
@@ -219,6 +220,10 @@
 }
 
 // ── MEDIA ──
+.detail-gallery {
+  width: 100%;
+}
+
 .detail-video-wrap {
   position: relative;
   padding-bottom: 56.25%;
@@ -461,6 +466,7 @@
 // ── RELATED ──
 .related-section {
   padding: 5rem 4%;
+  overflow-x: hidden;
 }
 
 .related-label {
@@ -578,6 +584,161 @@
   .related-card:hover & {
     opacity: 1;
     transform: translate(0, 0);
+  }
+}
+
+// ── MOBILE RESPONSIVE ──
+@media (max-width: 768px) {
+
+  // Back button — tuck closer to top on small screens
+  .detail-back {
+    top: 4rem;
+  }
+
+  // Hero — shorter on mobile
+  .detail-hero {
+    height: 55vw;
+    min-height: 240px;
+  }
+
+  .detail-hero-content {
+    bottom: 1.5rem;
+  }
+
+  .detail-title {
+    margin-bottom: 0.75rem;
+  }
+
+  // Content section
+  .section-pad {
+    padding: 2rem 4%;
+    min-height: unset;
+  }
+
+  // Gallery — 4/3 box, image fills it with cover (no cropping weirdness)
+  .gallery-main {
+    aspect-ratio: 4/3;
+    margin-bottom: 0.75rem;
+  }
+
+  // Thumbnails — horizontal scroll strip, big enough to tap
+  .gallery-thumbs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.5rem;
+    padding-bottom: 4px;
+    width: 100%;
+  }
+
+  .gallery-thumbs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-thumb {
+    width: 80px;
+    height: 60px;
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  // Video embed full-width
+  .detail-video-wrap {
+    padding-bottom: 56.25%;
+  }
+
+  // Related grid
+  .related-section {
+    padding: 3rem 4%;
+  }
+}
+
+// ── GALLERY IMG — MOBILE (flat selector, no nesting, avoids encapsulation issues) ──
+@media (max-width: 768px) {
+  .gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+// ── LIGHTBOX — MOBILE ──
+@media (max-width: 600px) {
+
+  // Full-screen overlay on mobile
+  .lightbox-overlay {
+    align-items: flex-start;
+    padding-top: 0;
+  }
+
+  .lightbox-box {
+    padding: 0;
+    gap: 0;
+    width: 100%;
+    height: 100dvh;
+    justify-content: center;
+    position: relative;
+  }
+
+  // Image fills most of the screen
+  .lb-img-wrap {
+    max-height: 78dvh;
+    width: 100%;
+  }
+
+  .lb-img {
+    max-height: 78dvh;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  // Close — fixed top-right corner
+  .lb-close {
+    position: fixed;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+  }
+
+  // Counter — fixed top-left corner
+  .lb-counter {
+    position: fixed;
+    top: 1.1rem;
+    left: 0.75rem;
+    z-index: 10;
+  }
+
+  // Nav arrows — fixed sides, vertically centred on image
+  .lb-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    z-index: 10;
+
+    &.lb-prev {
+      left: 0.5rem;
+      &:hover { transform: translateY(-50%) translateX(0); }
+    }
+    &.lb-next {
+      right: 0.5rem;
+      &:hover { transform: translateY(-50%) translateX(0); }
+    }
+  }
+
+  // Dots — fixed bottom centre
+  .lb-dots {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
   }
 }
 
