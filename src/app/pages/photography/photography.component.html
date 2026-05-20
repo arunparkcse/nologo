@@ -1,8 +1,8 @@
 <!-- PAGE HERO -->
 <section class="page-hero page-hero--photography">
-  <div class="hero-label">Our Work</div>
-  <h1>PHOTO<br>GRAPHY<span class="accent-dot">.</span></h1>
-  <p class="hero-sub">Moments that speak volumes — brand, editorial, portrait and documentary photography.</p>
+  <div class="hero-label reveal">Our Work</div>
+  <h1 class="reveal">PHOTO<br>GRAPHY<span class="accent-dot">.</span></h1>
+  <p class="hero-sub reveal">Moments that speak volumes — brand, editorial, portrait and documentary photography.</p>
 </section>
 
 <!-- PORTFOLIO NAV -->
@@ -34,7 +34,7 @@
 <div class="photo-grid">
   @for (photo of photos; track photo.slug; let i = $index) {
   @if (i > 0) {
-  <a class="photo-card" [routerLink]="['/' + photo.type + '/' + photo.slug]"
+  <a class="photo-card reveal-scale" [routerLink]="['/' + photo.type + '/' + photo.slug]"
     [class.tall]="i === 1 || i === 4 || i === 7"
     [class.wide]="i === 3 || i === 8">
     <img [src]="photo.thumb" [alt]="photo.title" class="photo-card-img" loading="lazy" />
@@ -53,7 +53,7 @@
 
 <!-- CTA BAND -->
 <section class="page-cta">
-  <div class="cta-label">Capture Your Story</div>
+  <div class="cta-label reveal">Capture Your Story</div>
   <h2 class="cta-heading">Every Frame<br>Tells A Story<span class="accent-dot">.</span></h2>
   <a routerLink="/contact" class="btn btn-white">Get In Touch <span class="arrow">→</span></a>
 </section>

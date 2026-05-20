@@ -1,15 +1,15 @@
 <!-- PAGE HERO -->
 <section class="page-hero page-hero--csr">
-  <div class="hero-label">CSR / Social</div>
-  <h1>LET'S DO<br>SOME GOOD<span class="accent-dot">.</span></h1>
-  <p class="hero-sub">We partner with purpose-driven organisations to communicate their impact stories and inspire
+  <div class="hero-label reveal">CSR / Social</div>
+  <h1 class="reveal">LET'S DO<br>SOME GOOD<span class="accent-dot">.</span></h1>
+  <p class="hero-sub reveal">We partner with purpose-driven organisations to communicate their impact stories and inspire
     meaningful action.</p>
 </section>
 
 <!-- IMPACT STATS -->
 <section class="stats-band">
   @for (stat of stats; track stat.label) {
-  <div class="stat-item">
+  <div class="stat-item reveal">
     <div class="stat-num">{{ stat.number }}</div>
     <div class="stat-lbl">{{ stat.label }}</div>
   </div>
@@ -19,7 +19,7 @@
 <!-- CSR INTRO -->
 <section class="csr-intro">
   <div class="csr-intro-grid">
-    <div class="intro-text">
+    <div class="intro-text reveal">
       <div class="section-label">Our Purpose</div>
       <h2 class="section-title">Purpose-Driven<br>Communication</h2>
       <p>Nologo started focusing exclusively on CSR communication because of our shared desire to use our experience to
@@ -56,7 +56,7 @@
 <!-- CSR GRID -->
 <div class="csr-grid">
   @for (project of projects; track project.slug) {
-  <a class="csr-card" [routerLink]="['/' + project.type + '/' + project.slug]">
+  <a class="csr-card reveal-scale" [routerLink]="['/' + project.type + '/' + project.slug]">
     <img [src]="project.thumb" [alt]="project.title" class="csr-card-img" loading="lazy" />
     <div class="csr-card-tags">
       <span class="csr-tag">{{ project.category }}</span>

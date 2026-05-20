@@ -1,8 +1,8 @@
 <!-- PAGE HERO -->
 <section class="page-hero page-hero--films">
-  <div class="hero-label">Our Work</div>
-  <h1>FILM<span class="accent-dot">.</span></h1>
-  <p class="hero-sub">Stories in motion — corporate, social impact and documentary films that move audiences.</p>
+  <div class="hero-label reveal">Our Work</div>
+  <h1 class="reveal">FILM<span class="accent-dot">.</span></h1>
+  <p class="hero-sub reveal">Stories in motion — corporate, social impact and documentary films that move audiences.</p>
   <div class="hero-scroll-hint">
     <span>Scroll</span>
     <div class="scroll-line"></div>
@@ -22,7 +22,7 @@
 
 <!-- FEATURED FILM (first item) -->
 @if (films.length > 0) {
-<section class="featured-film">
+<section class="featured-film reveal">
   <a [routerLink]="['/' + films[0].type + '/' + films[0].slug]" class="featured-film-inner">
     <div class="featured-img">
       <img [src]="films[0].thumb" [alt]="films[0].title" loading="lazy" />
@@ -47,7 +47,7 @@
 <div class="films-grid">
   @for (film of films; track film.slug; let i = $index) {
   @if (i > 0) {
-  <a class="film-card" [routerLink]="['/' + film.type + '/' + film.slug]">
+  <a class="film-card reveal-scale" [routerLink]="['/' + film.type + '/' + film.slug]">
     <img [src]="film.thumb" [alt]="film.title" class="film-card-img" loading="lazy" />
     <div class="film-card-tags">
       <span class="film-tag">{{ film.category }}</span>
@@ -64,7 +64,7 @@
 
 <!-- CTA BAND -->
 <section class="page-cta">
-  <div class="cta-inner">
+  <div class="cta-inner reveal">
     <div class="cta-label">Let's Create Together</div>
     <h2 class="cta-heading">Have A Story<br>To Tell<span class="accent-dot">?</span></h2>
     <a routerLink="/contact" class="btn btn-white">Start A Project <span class="arrow">→</span></a>

@@ -14,9 +14,9 @@
     </div>
 
     <div class="detail-hero-content">
-      <div class="detail-type">{{ project.category }}</div>
-      <h1 class="detail-title">{{ project.title }}</h1>
-      <div class="detail-meta-row">
+      <div class="detail-type hero-anim-1">{{ project.category }}</div>
+      <h1 class="detail-title hero-anim-2">{{ project.title }}</h1>
+      <div class="detail-meta-row hero-anim-3">
         <span class="meta-item"><span class="meta-label">Client</span>{{ project.client }}</span>
         <span class="meta-sep">—</span>
         <span class="meta-item"><span class="meta-label">Year</span>{{ project.year }}</span>
@@ -31,7 +31,7 @@
     <div class="detail-grid">
 
       <!-- LEFT: Description + Tags -->
-      <div class="detail-info">
+      <div class="detail-info reveal-left">
         <div class="detail-label">About This Project</div>
         <p class="detail-desc">{{ project.description }}</p>
         <div class="detail-tags">
@@ -47,7 +47,7 @@
       </div>
 
       <!-- RIGHT: Video or Image Gallery -->
-      <div class="detail-media">
+      <div class="detail-media reveal">
         @if (project.videoId && safeVideoUrl) {
           <div class="detail-video-wrap">
             <iframe
@@ -115,11 +115,11 @@
   <!-- RELATED PROJECTS -->
   @if (related.length > 0) {
     <section class="related-section section-pad" style="background: var(--color-black);">
-      <div class="related-label">More Work</div>
-      <h2 class="related-title">Related Projects</h2>
+      <div class="related-label reveal">More Work</div>
+      <h2 class="related-title reveal">Related Projects</h2>
       <div class="related-grid">
         @for (rel of related; track rel.slug) {
-          <a class="related-card" [routerLink]="['/' + rel.type + '/' + rel.slug]">
+          <a class="related-card reveal-scale" [routerLink]="['/' + rel.type + '/' + rel.slug]">
             <div class="related-img">
               <img [src]="rel.thumb" [alt]="rel.title" loading="lazy" />
             </div>

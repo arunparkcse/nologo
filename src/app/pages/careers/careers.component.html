@@ -1,13 +1,13 @@
 <section class="page-hero page-hero--careers">
-  <div class="hero-label">Join Us</div>
-  <h1>ARE YOU FULL<br>OF INCREDIBLE<br>IDEAS<span style="color: var(--color-accent);">?</span></h1>
-  <p class="hero-sub">We're a creative blend of problem solvers, storytellers and designers always on the lookout for
+  <div class="hero-label reveal">Join Us</div>
+  <h1 class="reveal">ARE YOU FULL<br>OF INCREDIBLE<br>IDEAS<span style="color: var(--color-accent);">?</span></h1>
+  <p class="hero-sub reveal">We're a creative blend of problem solvers, storytellers and designers always on the lookout for
     talented individuals.</p>
 </section>
 
 <!-- CULTURE IMAGE STRIP -->
 <div class="culture-strip">
-  <div class="culture-img">
+  <div class="culture-img reveal-scale">
     <img src="https://template.dsngrid.com/mexdot/light/assets/img/team/5.jpg" alt="Culture" loading="lazy" />
   </div>
   <div class="culture-img">
@@ -26,7 +26,7 @@
 
 <!-- INTRO -->
 <section class="section careers-intro">
-  <div class="intro-text">
+  <div class="intro-text reveal">
     <div class="section-label">Work With Us</div>
     <h2 class="section-title">Join The<br>Nologo Family<span class="accent-dot">.</span></h2>
     <p class="intro-desc">
@@ -44,7 +44,7 @@
   <h2 class="section-title" style="margin-bottom: 3rem;">What You Get<span class="accent-dot">.</span></h2>
   <div class="perks-grid">
     @for (perk of perks; track perk.label) {
-    <div class="perk-card">
+    <div class="perk-card reveal-scale">
       <div class="perk-num">0{{ $index + 1 }}</div>
       <h3 class="perk-title">{{ perk.label }}</h3>
       <p class="perk-desc">{{ perk.desc }}</p>
@@ -59,7 +59,7 @@
   <h2 class="section-title" style="margin-bottom: 3rem;">Current Vacancies<span class="accent-dot">.</span></h2>
   <div class="openings-list">
     @for (job of openings; track job.role) {
-    <div class="job-item">
+    <div class="job-item reveal">
       <div class="job-info">
         <div class="job-role">{{ job.role }}</div>
         <div class="job-meta">

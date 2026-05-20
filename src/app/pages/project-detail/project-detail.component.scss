@@ -1,3 +1,24 @@
+// ── HERO ENTRY ANIMATIONS (plays immediately — above the fold) ──
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroSlideLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.hero-anim-1 {
+  animation: heroSlideLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+}
+.hero-anim-2 {
+  animation: heroFadeUp 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.38s both;
+}
+.hero-anim-3 {
+  animation: heroFadeUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.58s both;
+}
+
 .detail-back {
   position: absolute;
   top: 5.5rem;
@@ -64,7 +85,13 @@
     height: 100%;
     object-fit: cover;
     filter: brightness(0.5) grayscale(10%);
+    animation: heroImgZoom 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
+}
+
+@keyframes heroImgZoom {
+  from { transform: scale(1.08); opacity: 0.6; }
+  to   { transform: scale(1);    opacity: 1; }
 }
 
 .detail-hero-overlay {

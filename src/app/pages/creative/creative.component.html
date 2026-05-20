@@ -1,8 +1,8 @@
 <!-- PAGE HERO -->
 <section class="page-hero page-hero--creative">
-  <div class="hero-label">Our Work</div>
-  <h1>CREATIVE<br>DESIGN<span class="accent-dot">.</span></h1>
-  <p class="hero-sub">Visual storytelling through print, digital and brand design that resonates and endures.</p>
+  <div class="hero-label reveal">Our Work</div>
+  <h1 class="reveal">CREATIVE<br>DESIGN<span class="accent-dot">.</span></h1>
+  <p class="hero-sub reveal">Visual storytelling through print, digital and brand design that resonates and endures.</p>
 </section>
 
 <!-- PORTFOLIO NAV -->
@@ -20,7 +20,7 @@
 <div class="creative-hero-row">
   @for (work of works; track work.slug; let i = $index) {
   @if (i < 2) {
-  <a class="c-card c-card--hero" [routerLink]="['/' + work.type + '/' + work.slug]">
+  <a class="c-card c-card--hero reveal-scale" [routerLink]="['/' + work.type + '/' + work.slug]">
     <img [src]="work.thumb" [alt]="work.title" class="c-card-img" loading="lazy" />
     <div class="c-card-tags">
       <span class="c-tag">{{ work.category }}</span>
@@ -39,7 +39,7 @@
 <div class="creative-main-grid">
   @for (work of works; track work.slug; let i = $index) {
   @if (i >= 2) {
-  <a class="c-card" [routerLink]="['/' + work.type + '/' + work.slug]">
+  <a class="c-card reveal-scale" [routerLink]="['/' + work.type + '/' + work.slug]">
     <img [src]="work.thumb" [alt]="work.title" class="c-card-img" loading="lazy" />
     <div class="c-card-tags">
       <span class="c-tag">{{ work.category }}</span>

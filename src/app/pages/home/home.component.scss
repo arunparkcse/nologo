@@ -242,9 +242,11 @@
   min-height: 520px;
   position: relative;   /* so header can float inside */
 
-  /* When any card is hovered, shrink all siblings */
-  &:has(.ps-card:hover) .ps-card:not(:hover) {
-    flex: 0 0 12%;
+  /* When any card is hovered, shrink all siblings (desktop only) */
+  @media (min-width: 901px) {
+    &:has(.ps-card:hover) .ps-card:not(:hover) {
+      flex: 0 0 12%;
+    }
   }
 
   @media (max-width: 900px) {
@@ -304,9 +306,24 @@
 
   @media (max-width: 900px) {
     flex: none;
-    height: 320px;
+    height: 260px;
     border-left: none !important;
     border-top: 1px solid rgba(255,255,255,0.06);
+    // Ensure full tap area and no layout-shift on touch
+    pointer-events: auto;
+
+    // Show info by default on mobile (no hover available)
+    .ps-cat,
+    .ps-title,
+    .ps-arrow {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    // Hide the vertical collapsed label on mobile
+    .ps-collapsed-label {
+      display: none;
+    }
   }
 }
 

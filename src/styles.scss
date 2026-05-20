@@ -1030,6 +1030,8 @@ p {
 .reveal:nth-child(2) { transition-delay: 0.1s; }
 .reveal:nth-child(3) { transition-delay: 0.18s; }
 .reveal:nth-child(4) { transition-delay: 0.26s; }
+.reveal:nth-child(5) { transition-delay: 0.34s; }
+.reveal:nth-child(6) { transition-delay: 0.42s; }
 
 /* Left-slide variant */
 .reveal-left {
@@ -1038,8 +1040,24 @@ p {
   transition: opacity 0.72s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               transform 0.72s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
 .reveal-left.visible {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* Scale-up variant — great for cards */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.93) translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.reveal-scale:nth-child(2) { transition-delay: 0.1s; }
+.reveal-scale:nth-child(3) { transition-delay: 0.2s; }
+.reveal-scale:nth-child(4) { transition-delay: 0.3s; }
+.reveal-scale:nth-child(5) { transition-delay: 0.4s; }
+.reveal-scale:nth-child(6) { transition-delay: 0.5s; }
