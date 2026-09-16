@@ -11,7 +11,7 @@ npm install
 npx ng build --configuration production
 ```
 
-Output goes to `../docs/` (configured in angular.json).  
+Output goes to `docs/` inside this folder (configured in angular.json) — that's the folder GitHub Pages actually serves, since the git repo root is `nologo-ng/`.  
 After build, open `docs/index.html` in a browser or serve via any static host.
 
 ## Development Server

@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { PERSPECTIVES } from '../../data/perspectives.data';
 
 @Component({
   selector: 'app-home',
@@ -17,30 +18,32 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   ytActive = false;
   private heroInterval: any;
 
+  // Featuring 3 of the "Selected Work" case studies from the Sept 2026 brief.
+  // PLACEHOLDER MEDIA — see projects.data.ts for the full note.
   portfolioCards = [
     {
-      slug: 'igsss-life-freedom-dignity',
+      slug: 'treasures-of-tamil-nadu',
       type: 'films',
-      category: 'Brand Film',
-      title: 'Life Freedom Dignity',
-      img: 'https://www.nologo.in/assets/images/csr/life_freedom_dignity.jpg',
+      category: 'Documentary Film',
+      title: 'Treasures of Tamil Nadu',
+      img: 'https://template.dsngrid.com/mexdot/light/assets/img/portfolio/project1/1.jpg',
       fallback: 'https://template.dsngrid.com/mexdot/light/assets/img/portfolio/project1/1.jpg'
     },
     {
-      slug: 'faces-can-talk',
-      type: 'photography',
-      category: 'Photography',
-      title: 'Faces Can Talk',
-      img: 'https://www.nologo.in/assets/images/work/photography/1/thumb.jpg',
-      fallback: 'https://template.dsngrid.com/mexdot/light/assets/img/portfolio/project2/1.jpg'
+      slug: 'unicef-be-a-champion',
+      type: 'films',
+      category: 'Social Impact Film',
+      title: 'UNICEF ‘Be A Champion’',
+      img: 'https://template.dsngrid.com/mexdot/light/assets/img/photography/14.jpg',
+      fallback: 'https://template.dsngrid.com/mexdot/light/assets/img/photography/14.jpg'
     },
     {
-      slug: 'co-optex-bold',
+      slug: 'vijaya-hospitals-rebrand',
       type: 'creative',
-      category: 'Creative Design',
-      title: 'Co-optex Bold',
-      img: 'https://www.nologo.in/assets/images/work/design/12/thumb.jpg',
-      fallback: 'https://template.dsngrid.com/mexdot/light/assets/img/portfolio/project3/1.jpg'
+      category: 'Brand Identity',
+      title: 'Vijaya Hospitals',
+      img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80',
+      fallback: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80'
     }
   ];
 
@@ -106,23 +109,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     { img: 'assets/team/acchuthan.jpg', name: 'Acchuthan KR', role: 'Production', dept: 'Film & Video' }
   ];
 
-  blogs = [
-    {
-      img: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80',
-      date: 'March 2024',
-      title: 'Why CSR Films Outperform Traditional Corporate Videos'
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&q=80',
-      date: 'Feb 2024',
-      title: 'The Power of Documentary Photography in Brand Storytelling'
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80',
-      date: 'Jan 2024',
-      title: 'Annual Report Design: From Data to Narrative'
-    }
-  ];
+  blogs = PERSPECTIVES;
 
   clients = [
     'HGS', 'Co-optex', 'CBM India', 'Quess Corp', 'The Banyan',

@@ -771,6 +771,95 @@ export const PROJECTS: Project[] = [
     ],
     description: 'the booklet for igsss focuses on the stories of kashmir flood survivors and a rehabilitation programme that changed their lives. through a series of interesting illustrations, anecdotes, and photos, we designed it to create the desired impact.',
     tags: ['Annual Report', 'Foundation', 'Print Design']
+  },
+
+  // ── SELECTED WORK (Sept 2026 site update) ──────────────────────────
+  // PLACEHOLDER MEDIA: thumb/images below reuse existing safe placeholder
+  // assets from elsewhere in this file — swap for real stills/video IDs
+  // and confirm client/year (marked "TBC") as soon as they're available.
+  {
+    slug: 'treasures-of-tamil-nadu',
+    type: 'films',
+    title: 'Treasures of Tamil Nadu',
+    category: 'Documentary Film',
+    client: 'TBC',
+    year: 'TBC',
+    thumb: `${MX}/portfolio/project1/1.jpg`,
+    images: [`${MX}/portfolio/project1/1.jpg`],
+    description: 'Treasures of Tamil Nadu is a film celebrating the state’s GI-tagged products through the stories of the people who make them. From jewellery and textiles to food and handicrafts, every treasure becomes a story of skill passed down through generations, connecting the maker, the product and the place it comes from.',
+    tags: ['Documentary', 'Culture', 'Brand Film']
+  },
+  {
+    slug: 'crocs-made-in-india',
+    type: 'films',
+    title: 'CROCS — The World’s Most Delightfully Comfortable Shoes',
+    category: 'Brand Film',
+    client: 'Crocs',
+    year: 'TBC',
+    thumb: `${MX}/portfolio/project2/1.jpg`,
+    images: [`${MX}/portfolio/project2/1.jpg`],
+    description: 'This film takes us behind the scenes of how Crocs are made in India, told through the voices of the people who make them. From technology and precision to rigorous quality checks, we show how every pair meets Crocs’ global standards — told with the brand’s signature sense of fun and playfulness.',
+    tags: ['Brand Film', 'Manufacturing', 'Corporate']
+  },
+  {
+    slug: 'saregama-avan-paathu-sirikkala',
+    type: 'films',
+    title: 'Saregama — Avan Paathu Sirikkala',
+    category: 'Music Video',
+    client: 'Saregama',
+    year: 'TBC',
+    thumb: `${MX}/portfolio/project3/1.jpg`,
+    images: [`${MX}/portfolio/project3/1.jpg`],
+    description: 'For Saregama’s Avan Paathu Sirikkala, we tapped into the universal awkwardness and charm of unspoken feelings. The song was visualised through a familiar moment when you like someone, but have absolutely no idea what they’re thinking; we created a story that made the song feel instantly relatable — while keeping the music at the centre of the experience.',
+    tags: ['Music Video', 'Romance', 'Film']
+  },
+  {
+    slug: 'unicef-be-a-champion',
+    type: 'films',
+    title: 'UNICEF ‘Be A Champion’',
+    category: 'Social Impact Film',
+    client: 'UNICEF',
+    year: 'TBC',
+    thumb: `${MX}/photography/14.jpg`,
+    images: [`${MX}/photography/14.jpg`],
+    description: 'For UNICEF’s Be a Champion campaign, we created a film celebrating the potential of every girl to be a champion. Featuring Sachin Tendulkar and cricket celebrities, the film uses the influence of a sporting legend to encourage girls to believe in themselves, dream bigger and pursue their ambitions.',
+    tags: ['CSR', 'Social Impact', 'Sports']
+  },
+  {
+    slug: 'tiranga-song',
+    type: 'films',
+    title: 'Tiranga',
+    category: 'Music Video',
+    client: 'TBC',
+    year: 'TBC',
+    thumb: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+    images: ['https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80'],
+    description: 'The Tiranga song captures India through the hopes and dreams of its children. As children across the country raise the national flag, they share their vision of the India they dream of — one filled with possibility, pride and hope.',
+    tags: ['Music Video', 'Patriotic', 'Children']
+  },
+  {
+    slug: 'ijm-some-bonds-must-break',
+    type: 'films',
+    title: 'IJM — Some Bonds Must Break',
+    category: 'Social Impact Film',
+    client: 'IJM (International Justice Mission)',
+    year: 'TBC',
+    thumb: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80',
+    images: ['https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80'],
+    description: 'For IJM, Some Bonds Must Break is a fictional account inspired by the lives of bonded labourers in Tamil Nadu. The film portrays the abuse, exploitation and lack of freedom they face every day, bringing their lived realities to the forefront and highlighting the need to break the cycles that keep people trapped in bonded labour.',
+    tags: ['Social Impact', 'Documentary', 'Human Rights']
+  },
+  {
+    slug: 'vijaya-hospitals-rebrand',
+    type: 'creative',
+    title: 'Vijaya Hospitals',
+    category: 'Brand Identity',
+    client: 'Vijaya Hospitals',
+    year: 'TBC',
+    thumb: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80',
+    images: ['https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80'],
+    description: 'A pioneer in Chennai’s healthcare since 1972, Vijaya Hospitals had gradually faded amid a changing healthcare landscape. The brand was given a much-deserved facelift, bringing its legacy into the present with the best medical professionals and the same devotion to Chennai and its people. ‘We Know This City by Heart’ became the thought that brought it all together.',
+    tags: ['Brand Identity', 'Healthcare', 'Rebrand']
   }
 ];
 

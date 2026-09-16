@@ -8,6 +8,7 @@ import { CsrComponent } from './pages/csr/csr.component';
 import { CareersComponent } from './pages/careers/careers.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProjectDetailComponent } from './pages/project-detail/project-detail.component';
+import { PerspectiveDetailComponent } from './pages/perspective-detail/perspective-detail.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, title: 'No Logo — Integrated Communication Agency' },
@@ -18,6 +19,7 @@ export const routes: Routes = [
   { path: 'csr', component: CsrComponent, title: 'CSR / Social — No Logo' },
   { path: 'careers', component: CareersComponent, title: 'Careers — No Logo' },
   { path: 'contact', component: ContactComponent, title: 'Contact — No Logo' },
+  { path: 'perspectives/:slug', component: PerspectiveDetailComponent, title: 'Perspectives — No Logo' },
   { path: ':type/:slug', component: ProjectDetailComponent, title: 'Project — No Logo' },
   { path: '**', redirectTo: '' }
 ];

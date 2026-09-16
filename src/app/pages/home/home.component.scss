@@ -924,15 +924,18 @@
 
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
+  max-width: 900px;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
+    max-width: none;
   }
 }
 
 .blog-card {
+  display: block;
   background: #fff;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.06);

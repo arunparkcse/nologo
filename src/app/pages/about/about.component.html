@@ -2,7 +2,7 @@
 <section class="page-hero page-hero--about">
   <div class="hero-label reveal">About Us</div>
   <h1 class="reveal">OUR<br>STORY<span class="accent-dot">.</span></h1>
-  <p class="hero-sub reveal">An unending journey in the world of communication — seeking uncharted territories since 2010.</p>
+  <p class="hero-sub reveal">We don't start with the logo.<br>We start with what makes you, you.</p>
 </section>
 
 <!-- STORY SECTION -->
@@ -17,14 +17,13 @@
       </div>
     </div>
     <div class="story-text reveal">
-      <div class="section-label">The Beginning</div>
+      <div class="section-label">Our Story</div>
       <h2 class="section-title">Born From A<br>Love Of Stories</h2>
-      <p>It all began with an unquenchable thirst for travel. There is something absolutely magnetic in ever-stretching
-        oneself into the unknown, breaking through boundaries and transcending barriers — evolution is inevitable.</p>
-      <p>For those who have tasted such liberation, there is no looking back. Anything that touches human life — nay,
-        life with humanity — touches us. The world is abound with examples; the more we seek, the more we find.</p>
-      <p>Nologo is our unending journey in the world of communication where we constantly seek unchartered territories
-        and explore creative means of sharing myriad stories of life and living.</p>
+      <p>Many years ago, a bunch of youngsters, bitten by the travel bug and curious about the world, set out on a journey.</p>
+      <p>Along the way, they met like-minded people — clients, collaborators and team members across sectors and geographies — who shared their belief that good communication begins with good thinking.</p>
+      <p>Somewhere along that journey, <strong>nologo</strong> was born.</p>
+      <p>From brand identities and films to campaigns, social impact and digital content, we've continued to explore new ways of making communication relevant, distinctive and memorable.</p>
+      <p style="color: var(--color-black); font-weight: 700;">18 years on, the journey continues&hellip;</p>
       <a routerLink="/contact" class="btn btn-dark" style="margin-top: 2.5rem; display: inline-flex;">
         Work With Us <span class="arrow">→</span>
       </a>
@@ -80,30 +79,13 @@
     <div class="section-label" style="color: var(--color-accent)">What Drives Us</div>
     <h2 class="section-title" style="color: #fff; margin-bottom: 4rem;">Our Values</h2>
     <div class="values-grid">
+      @for (value of values; track value.icon) {
       <div class="value-card">
-        <div class="value-num">01</div>
-        <h3 class="value-title">Authenticity</h3>
-        <p class="value-desc">Every story we tell is rooted in truth. We never fabricate — we find the real, the raw and
-          the remarkable.</p>
+        <div class="value-num">{{ value.icon }}</div>
+        <h3 class="value-title">{{ value.title }}</h3>
+        <p class="value-desc">{{ value.desc }}</p>
       </div>
-      <div class="value-card">
-        <div class="value-num">02</div>
-        <h3 class="value-title">Exploration</h3>
-        <p class="value-desc">Constantly seeking uncharted territories — in geography, in ideas, in the stories that
-          mainstream media ignores.</p>
-      </div>
-      <div class="value-card">
-        <div class="value-num">03</div>
-        <h3 class="value-title">Impact</h3>
-        <p class="value-desc">We measure success by ripples in the world. A story well told changes minds, opens hearts,
-          moves people to act.</p>
-      </div>
-      <div class="value-card">
-        <div class="value-num">04</div>
-        <h3 class="value-title">Craft</h3>
-        <p class="value-desc">Every frame, every word chosen with intention. We believe in doing things beautifully or
-          not at all.</p>
-      </div>
+      }
     </div>
   </div>
 </section>
@@ -115,17 +97,16 @@
   <div class="section-label">What We Do</div>
   <h2 class="section-title" style="margin-bottom: 2.5rem;">Integrated<br>Communication<span class="accent-dot">.</span>
   </h2>
-  <div class="services-pills">
-    <span class="pill accent">Film Production</span>
-    <span class="pill">Photography</span>
-    <span class="pill">Creative Design</span>
-    <span class="pill accent">CSR Communication</span>
-    <span class="pill">Brand Strategy</span>
-    <span class="pill">Annual Reports</span>
-    <span class="pill">Social Media</span>
-    <span class="pill accent">Video Production</span>
-    <span class="pill">Print Design</span>
-    <span class="pill">Advocacy Campaigns</span>
+  <div class="wwd-grid">
+    @for (svc of whatWeDo; track svc.num) {
+    <div class="wwd-card">
+      <div class="wwd-num">{{ svc.num }}</div>
+      <div class="wwd-text">
+        <h3 class="wwd-title">{{ svc.title }}</h3>
+        <p class="wwd-desc">{{ svc.desc }}</p>
+      </div>
+    </div>
+    }
   </div>
   <div style="margin-top: 3.5rem;">
     <a routerLink="/films" class="btn btn-dark">View Our Work <span class="arrow">→</span></a>

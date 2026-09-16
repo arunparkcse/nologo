@@ -271,19 +271,21 @@
   </div>
 
   <div class="blog-grid">
-    @for (post of blogs; let i = $index; track i) {
-    <div class="blog-card reveal">
+    @for (post of blogs; track post.slug) {
+    <a [routerLink]="['/perspectives', post.slug]" class="blog-card reveal">
       <div class="blog-img-wrap">
-        <img [src]="post.img" [alt]="post.title" class="blog-img"
+        <img [src]="post.image" [alt]="post.title" class="blog-img"
           (error)="onImgError($event, 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80')"
           loading="lazy" />
       </div>
       <div class="blog-body">
+        @if (post.date) {
         <span class="blog-date">{{ post.date }}</span>
+        }
         <h3 class="blog-title">{{ post.title }}</h3>
         <span class="blog-link">Read More →</span>
       </div>
-    </div>
+    </a>
     }
   </div>
 </section>

@@ -1,0 +1,39 @@
+@if (post) {
+  <section class="persp-hero">
+    <div class="persp-back">
+      <button class="back-btn" (click)="goBack()">
+        <span class="back-arrow">←</span> Back
+      </button>
+    </div>
+    <div class="persp-hero-inner reveal">
+      <div class="section-label">Perspectives</div>
+      <h1 class="persp-title">{{ post.title }}</h1>
+      @if (post.date) {
+        <div class="persp-date">{{ post.date }}</div>
+      }
+    </div>
+  </section>
+
+  <section class="persp-media reveal">
+    <img [src]="post.image" [alt]="post.title" (error)="onImgError($event)" loading="lazy" />
+  </section>
+
+  <section class="persp-body-section">
+    <article class="persp-body reveal">
+      @for (para of post.body; let i = $index; track i) {
+        <p [class.lede]="i === 0">{{ para }}</p>
+      }
+    </article>
+    <div class="persp-cta reveal">
+      <div class="section-label">Got Something Brewing?</div>
+      <a routerLink="/contact" class="btn btn-dark">Let's Talk <span class="arrow">→</span></a>
+    </div>
+  </section>
+}
+
+@if (!post) {
+  <div class="not-found">
+    <h2>Perspective not found</h2>
+    <a routerLink="/" class="btn btn-dark">← Back Home</a>
+  </div>
+}

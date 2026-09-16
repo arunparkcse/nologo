@@ -36,10 +36,25 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
   ];
 
   values = [
-    { icon: '01', title: 'Authenticity', desc: 'Every story we tell is rooted in truth. We seek genuine human experiences and translate them into communication that resonates.' },
-    { icon: '02', title: 'Exploration',  desc: 'We are constantly seeking uncharted territories — pushing the boundaries of medium, message and meaning.' },
-    { icon: '03', title: 'Impact',       desc: 'From brand films to CSR campaigns, we measure success by the ripples our work creates in the world.' },
-    { icon: '04', title: 'Craft',        desc: 'Every frame, every layout, every word is chosen with intention. The quality of our craft is non-negotiable.' }
+    { icon: '01', title: 'Stay curious',         desc: 'We ask questions, look closer and never assume we already know the answer.' },
+    { icon: '02', title: 'Keep it simple',        desc: 'We believe clarity takes thinking. We strip away the unnecessary until the idea speaks for itself.' },
+    { icon: '03', title: 'Be original',           desc: 'We don’t chase what’s already been done. We look for an approach that feels right for the brand, the audience and the moment.' },
+    { icon: '04', title: 'Stay human',            desc: 'People are at the centre of everything we create. We listen, respect context and never lose sight of who we’re communicating with.' },
+    { icon: '05', title: 'Care about the work',   desc: 'From the first thought to the final frame, we care about the details — and about making something we can stand behind.' },
+    { icon: '06', title: 'Do it together',        desc: 'The best ideas rarely belong to one person. We believe in open conversations, different perspectives and making the work better together.' }
+  ];
+
+  whatWeDo = [
+    { num: '01', title: 'Brand Strategy',            desc: 'Positioning, purpose, messaging and communication strategy.' },
+    { num: '02', title: 'Brand Identity',            desc: 'Naming, visual identity, brand language and guidelines.' },
+    { num: '03', title: 'Campaigns',                 desc: 'Big ideas, creative platforms and integrated campaigns.' },
+    { num: '04', title: 'Films',                     desc: 'Brand films, corporate films, documentaries, impact films and digital video.' },
+    { num: '05', title: 'Design',                    desc: 'Print, digital, publications, presentations and visual communication.' },
+    { num: '06', title: 'Content',                   desc: 'Copywriting, editorial, scripts, social content and branded content.' },
+    { num: '07', title: 'Digital & Social',          desc: 'Digital campaigns, social media strategy, content and creative.' },
+    { num: '08', title: 'Animation & Motion',        desc: 'Explainers, motion graphics, animation and visual storytelling.' },
+    { num: '09', title: 'Photography',               desc: 'Brand, people, products, events and documentary photography.' },
+    { num: '10', title: 'Communication Collateral',  desc: 'Brochures, reports, presentations, toolkits and campaign material.' }
   ];
 
   ngAfterViewInit() {
