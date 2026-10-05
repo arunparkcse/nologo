@@ -3,6 +3,15 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { PERSPECTIVES } from '../../data/perspectives.data';
 
+interface Testimonial {
+  quote: string;
+  author: string;
+  company: string;
+  role?: string;
+  avatar?: string;
+  stars?: number;
+}
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -71,34 +80,14 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     }
   ];
 
-  testimonials = [
+  // Real client testimonials. More are expected to come in — append new
+  // entries here (avatar/stars are optional; omit rather than fabricate).
+  testimonials: Testimonial[] = [
     {
-      quote: 'Nologo brought our CSR story to life in a way we never imagined possible. The film moved our employees to tears and inspired action.',
-      author: 'Head of CSR',
-      company: 'Hinduja Global Solutions',
-      avatar: 'https://template.dsngrid.com/mexdot/light/assets/img/team/1.jpg',
-      stars: 5
-    },
-    {
-      quote: 'Their eye for photography is unmatched. The Co-optex campaigns they shot redefined how our brand is perceived. Sales followed.',
-      author: 'Marketing Director',
-      company: 'Co-optex',
-      avatar: 'https://template.dsngrid.com/mexdot/light/assets/img/team/2.jpg',
-      stars: 5
-    },
-    {
-      quote: 'Working with Nologo felt like a true collaboration. They understood the soul of our work and translated it into visuals perfectly.',
-      author: 'Communications Lead',
-      company: 'The Banyan',
-      avatar: 'https://template.dsngrid.com/mexdot/light/assets/img/team/3.jpg',
-      stars: 5
-    },
-    {
-      quote: 'The annual report they designed for us was unlike anything we had seen. Clean, impactful and human — exactly what we wanted.',
-      author: 'Executive Director',
-      company: 'Ekam Oneness Foundation',
-      avatar: 'https://template.dsngrid.com/mexdot/light/assets/img/team/4.jpg',
-      stars: 5
+      quote: 'Nologo has been a trusted creative partner across multiple film production projects. Their team consistently delivers high-quality visual storytelling that is closely aligned with project objectives and briefs. Beyond strong execution, Nologo brings valuable creative insight and strategic direction to every engagement, while remaining highly collaborative and responsive to feedback. We have appreciated their professionalism, flexibility, and commitment to producing impactful content.',
+      author: 'Sudeshna Mukherjee',
+      role: 'Head of Communications',
+      company: 'UN Women India Country Office'
     }
   ];
 
@@ -167,6 +156,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   private startTestimonialAuto() {
+    if (this.testimonials.length <= 1) return;
     this.teInterval = setInterval(() => { this.nextTestimonial(); }, 5000);
   }
 
@@ -186,5 +176,14 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   onImgError(event: Event, fallback: string) {
     (event.target as HTMLImageElement).src = fallback;
+  }
+
+  initials(name: string): string {
+    return name
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map(w => w[0].toUpperCase())
+      .join('');
   }
 }
