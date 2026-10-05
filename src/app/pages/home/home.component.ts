@@ -156,7 +156,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   private startTestimonialAuto() {
-    if (this.testimonials.length <= 1) return;
     this.teInterval = setInterval(() => { this.nextTestimonial(); }, 5000);
   }
 

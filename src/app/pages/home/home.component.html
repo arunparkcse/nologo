@@ -227,7 +227,6 @@
       </div>
       }
     </div>
-    @if (testimonials.length > 1) {
     <button class="te-btn te-prev" (click)="prevTestimonial()" aria-label="Previous">←</button>
     <button class="te-btn te-next" (click)="nextTestimonial()" aria-label="Next">→</button>
     <div class="te-dots">
@@ -236,7 +235,6 @@
         [attr.aria-label]="'Testimonial ' + (i + 1)"></button>
       }
     </div>
-    }
   </div>
 </section>
 
