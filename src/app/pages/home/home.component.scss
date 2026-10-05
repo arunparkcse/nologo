@@ -688,6 +688,9 @@
 
 .te-slider-wrap {
   position: relative;
+}
+
+.te-track-clip {
   overflow: hidden;
 }
 
@@ -718,7 +721,6 @@
 }
 
 .te-quote {
-  max-width: 980px;
   font-family: 'Barlow Condensed', sans-serif;
   font-size: clamp(1.4rem, 2.8vw, 2.2rem);
   font-weight: 600;

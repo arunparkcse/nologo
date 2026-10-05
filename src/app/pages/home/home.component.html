@@ -201,6 +201,7 @@
   </div>
 
   <div class="te-slider-wrap reveal">
+    <div class="te-track-clip">
     <div class="te-track" [style.transform]="'translateX(-' + (teIdx * 100) + '%'">
       @for (te of testimonials; track te.company) {
       <div class="te-slide">
@@ -226,6 +227,7 @@
         </div>
       </div>
       }
+    </div>
     </div>
     <button class="te-btn te-prev" (click)="prevTestimonial()" aria-label="Previous">←</button>
     <button class="te-btn te-next" (click)="nextTestimonial()" aria-label="Next">→</button>
