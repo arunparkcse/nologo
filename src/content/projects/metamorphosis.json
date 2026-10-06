@@ -1,0 +1,25 @@
+{
+  "order": 43,
+  "slug": "metamorphosis",
+  "type": "creative",
+  "title": "Metamorphosis",
+  "category": "Brochure Design",
+  "client": "Social Enterprise",
+  "year": "2020",
+  "thumb": "https://www.nologo.in/assets/images/work/design/2/image1.jpg",
+  "images": [
+    "https://www.nologo.in/assets/images/work/design/2/image1.jpg",
+    "https://www.nologo.in/assets/images/work/design/2/image2.jpg",
+    "https://www.nologo.in/assets/images/work/design/2/image3.jpg",
+    "https://www.nologo.in/assets/images/work/design/2/image4.jpg",
+    "https://www.nologo.in/assets/images/work/design/2/image5.jpg",
+    "https://www.nologo.in/assets/images/work/design/2/image6.jpg",
+    "https://www.nologo.in/assets/images/work/design/2/image7.jpg"
+  ],
+  "description": "Metamorphosis is a publication that celebrates the individuals and organisations rewriting the rules of social enterprise in India. Bold design meets purposeful storytelling.",
+  "tags": [
+    "Annual Report",
+    "Foundation",
+    "Print Design"
+  ]
+}

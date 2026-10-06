@@ -1,7 +1,7 @@
 <section class="page-hero page-hero--contact">
-  <div class="hero-label reveal">Get In Touch</div>
-  <h1 class="reveal">GOT SOMETHING<br>BREWING<span style="color:var(--color-accent)">?</span></h1>
-  <p class="hero-sub reveal">Let's talk.</p>
+  <div class="hero-label reveal">{{ page.hero.label }}</div>
+  <h1 class="reveal pre-line">{{ page.hero.title }}<span style="color:var(--color-accent)">{{ page.hero.accent }}</span></h1>
+  <p class="hero-sub reveal pre-line">{{ page.hero.sub }}</p>
 </section>
 
 <section class="section contact-section">
@@ -9,45 +9,36 @@
 
     <!-- LEFT: INFO -->
     <div class="contact-info reveal-left">
-      <div class="section-label">Our Offices</div>
-      <h2 class="section-title" style="margin-bottom: 3rem;">Connect<br>With Us</h2>
+      <div class="section-label">{{ page.officesLabel }}</div>
+      <h2 class="section-title pre-line" style="margin-bottom: 3rem;">{{ page.officesTitle }}</h2>
 
-      <div class="office">
-        <div class="office-label">Chennai</div>
+      @for (office of page.offices; track $index) {
+      <div class="office" [style.margin-top]="$first ? null : '2.5rem'">
+        <div class="office-label">{{ office.city }}</div>
         <p>
-          #19/10, Saraswathi Street<br>
-          Mahalingapuram<br>
-          Chennai – 600 034<br>
-          <a href="tel:04442132519" class="contact-link">044-4213 2519</a>
+          <span class="pre-line">{{ office.address }}</span>
+          @for (phone of office.phones; track $index) {
+          <br><a [href]="'tel:' + phone.number" class="contact-link">{{ phone.label }}</a>
+          }
         </p>
       </div>
-
-      <div class="office" style="margin-top: 2.5rem;">
-        <div class="office-label">New Delhi</div>
-        <p>
-          Flat 104, Block D<br>
-          Mayur Vihar Phase 2<br>
-          New Delhi – 110 091<br>
-          <a href="tel:+919841195181" class="contact-link">+91 98411 95181</a><br>
-          <a href="tel:+919176902333" class="contact-link">+91 91769 02333</a>
-        </p>
-      </div>
+      }
 
       <div class="office" style="margin-top: 2.5rem;">
         <div class="office-label">Email</div>
-        <a href="mailto:info@nologo.in" class="contact-email">info&#64;nologo.in</a>
+        <a [href]="'mailto:' + site.email" class="contact-email">{{ site.email }}</a>
       </div>
 
       <div class="social-row" style="margin-top: 3rem;">
         <div class="office-label" style="margin-bottom: 1rem;">Follow Us</div>
         <div class="social-icons">
-          <a href="https://www.facebook.com/nologocommunications/" target="_blank" rel="noopener"
+          <a [href]="site.social.facebook" target="_blank" rel="noopener"
             class="social-icon">Facebook</a>
-          <a href="https://www.instagram.com/nologocommunications/" target="_blank" rel="noopener"
+          <a [href]="site.social.instagram" target="_blank" rel="noopener"
             class="social-icon">Instagram</a>
-          <a href="https://www.linkedin.com/in/nologocommunications/" target="_blank" rel="noopener"
+          <a [href]="site.social.linkedin" target="_blank" rel="noopener"
             class="social-icon">LinkedIn</a>
-          <a href="https://www.youtube.com/channel/UC1h9EBzuV4K8pp2lsVQKvQg" target="_blank" rel="noopener"
+          <a [href]="site.social.youtube" target="_blank" rel="noopener"
             class="social-icon">YouTube</a>
         </div>
       </div>
@@ -57,8 +48,8 @@
     <div class="contact-form-wrap reveal">
       @if (!submitted) {
       <form class="contact-form" (ngSubmit)="onSubmit()">
-        <div class="section-label">Drop Us A Line</div>
-        <h3 class="form-heading">We'll Reach You</h3>
+        <div class="section-label">{{ page.form.label }}</div>
+        <h3 class="form-heading">{{ page.form.heading }}</h3>
 
         <div class="form-group">
           <label for="name">Your Name *</label>
@@ -75,7 +66,7 @@
           <label for="service">Service Interested In</label>
           <select id="service" [(ngModel)]="formData.service" name="service">
             <option value="">Select a service...</option>
-            @for (svc of services; track svc) {
+            @for (svc of page.form.services; track $index) {
             <option [value]="svc">{{ svc }}</option>
             }
           </select>
@@ -94,8 +85,8 @@
       } @else {
       <div class="success-message">
         <div class="success-icon">✓</div>
-        <h3>Message Sent!</h3>
-        <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+        <h3>{{ page.form.successTitle }}</h3>
+        <p>{{ page.form.successText }}</p>
       </div>
       }
     </div>

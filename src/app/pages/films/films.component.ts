@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Project, getProjectsByType } from '../../data/projects.data';
+import { PAGES } from '../../data/content';
 
 @Component({
   selector: 'app-films',
@@ -11,5 +12,6 @@ import { Project, getProjectsByType } from '../../data/projects.data';
   styleUrl: './films.component.scss'
 })
 export class FilmsComponent {
+  page = PAGES.films;
   films: Project[] = getProjectsByType('films');
 }

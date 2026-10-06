@@ -1,0 +1,19 @@
+{
+  "order": 6,
+  "slug": "sakhi",
+  "type": "csr",
+  "title": "Sakhi",
+  "category": "CSR",
+  "client": "Sakhi",
+  "year": "2021",
+  "thumb": "https://www.nologo.in/assets/images/csr/sakhi/sakhi_01.jpg",
+  "images": [
+    "https://www.nologo.in/assets/images/csr/sakhi/sakhi_01.jpg",
+    "https://www.nologo.in/assets/images/csr/sakhi/sakhi_02.jpg",
+    "https://www.nologo.in/assets/images/csr/sakhi/sakhi_03.jpg"
+  ],
+  "description": "",
+  "tags": [
+    "CSR"
+  ]
+}

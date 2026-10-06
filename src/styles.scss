@@ -883,6 +883,11 @@ p {
   color: var(--color-accent);
 }
 
+/* CMS text uses \n for line breaks. Keep the bound element's template content on one line. */
+.pre-line {
+  white-space: pre-line;
+}
+
 /* ─── Shared Section Label & Title ─── */
 .section-label {
   font-size: 0.68rem;

@@ -1,0 +1,21 @@
+{
+  "order": 18,
+  "slug": "skills-development-program",
+  "type": "films",
+  "title": "Skills Development Program",
+  "category": "Corporate Film",
+  "client": "Nologo",
+  "year": "2019",
+  "thumb": "https://img.youtube.com/vi/5XchAU2pj34/hqdefault.jpg",
+  "images": [
+    "https://img.youtube.com/vi/5XchAU2pj34/hqdefault.jpg"
+  ],
+  "videoId": "5XchAU2pj34",
+  "videoType": "youtube",
+  "description": "A Skill Development Program is the backbone of any progressing society. This film is a tribute to the power of skill and the transformation it brings to lives.",
+  "tags": [
+    "Corporate Film",
+    "CSR",
+    "Brand Film"
+  ]
+}

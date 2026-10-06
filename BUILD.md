@@ -8,17 +8,19 @@
 ```bash
 cd nologo-ng
 npm install
-npx ng build --configuration production
+npm run build
 ```
 
 Output goes to `docs/` inside this folder (configured in angular.json) — that's the folder GitHub Pages actually serves, since the git repo root is `nologo-ng/`.  
 After build, open `docs/index.html` in a browser or serve via any static host.
 
+> Always use `npm run build` / `npm start`, not `npx ng build` / `npx ng serve` directly — the npm scripts generate the content bundle first, and the app won't compile without it.
+
 ## Development Server
 
 ```bash
-npx ng serve
-# Open http://localhost:4200
+npm start
+# Open http://localhost:4200 — edits under src/content/ reload live
 ```
 
 ## Project Structure
@@ -31,7 +33,9 @@ nologo-ng/
 │   │   ├── app.routes.ts           # All routes including :type/:slug detail
 │   │   ├── app.config.ts           # Angular app config (standalone)
 │   │   ├── data/
-│   │   │   └── projects.data.ts    # Central JSON data for all projects
+│   │   │   ├── content.ts          # Typed access to all site content
+│   │   │   ├── projects.data.ts    # Project lookups (getProjectBySlug, getProjectsByType)
+│   │   │   └── generated/          # Built from src/content/ — gitignored, never edit
 │   │   └── pages/
 │   │       ├── home/               # Home — mexdot-style hero, portfolio, services, CTA
 │   │       ├── about/              # About — story + image, stats, values, team, pills
@@ -42,9 +46,13 @@ nologo-ng/
 │   │       ├── careers/            # Careers — culture strip + perks + job openings
 │   │       ├── contact/            # Contact — offices + form
 │   │       └── project-detail/     # Generic detail page (reads :type/:slug from route)
+│   ├── content/                    # ALL editable site content (see below)
 │   ├── styles.scss                 # Global styles (Mexdot Creative theme)
 │   └── index.html                  # App shell
-├── angular.json                    # Build config (outputPath: ../docs)
+├── scripts/
+│   ├── generate-content.mjs        # src/content/ → src/app/data/generated/content.json
+│   └── dev.mjs                     # npm start: content watcher + ng serve
+├── angular.json                    # Build config (outputPath: docs)
 └── package.json
 ```
 
@@ -62,19 +70,27 @@ nologo-ng/
 | `/contact` | ContactComponent | Offices + contact form |
 | `/:type/:slug` | ProjectDetailComponent | Detail page for any project |
 
-## Project Data (`projects.data.ts`)
+## Content (`src/content/`)
 
-All project data lives in one file. Each project has:
-- `slug` — URL-safe identifier
-- `type` — `films` | `photography` | `creative` | `csr`
-- `title`, `category`, `client`, `year`
-- `thumb` — thumbnail image URL
-- `images[]` — gallery images
-- `description` — project description
-- `tags[]` — categories/labels
-- `videoId` + `videoType` — optional YouTube or Vimeo embed
+All copy, images and lists shown on the site live here as JSON — no content is hardcoded in components.
 
-Images use real nologo.in CDN paths + YouTube thumbnails for films.
+| Path | What | One file per |
+|------|------|--------------|
+| `projects/*.json` | Portfolio projects (films, photography, creative, csr) | project |
+| `perspectives/*.json` | Perspectives articles | article |
+| `testimonials/*.json` | Client testimonials | testimonial |
+| `team/*.json` | Team members | person |
+| `pages/*.json` | Page copy for home, about, contact, careers, films, photography, creative, csr | page |
+| `site.json` | Shared contact details, socials, footer text | — |
+
+- Adding/removing an item = adding/removing a file in its folder.
+- Collections are sorted by each file's `order` field; files without one sort last.
+- Text fields use `
+` for line breaks. In paragraphs, `**text**` renders bold.
+- Home "Selected Work" lists project **slugs** in `pages/home.json` — the card uses that project's own thumb and title.
+- `npm run content` regenerates and validates (missing fields, duplicate slugs, unknown Selected Work slugs) without a full build.
+
+Each project has: `slug`, `type` (`films` | `photography` | `creative` | `csr`), `title`, `category`, `client`, `year`, `thumb`, `images[]`, `description`, `tags[]`, and optional `videoId` + `videoType` (`youtube` | `vimeo`).
 
 ## Design System
 

@@ -1,0 +1,26 @@
+{
+  "order": 31,
+  "slug": "play-with-light",
+  "type": "photography",
+  "title": "Play with Light",
+  "category": "Fine Art Photography",
+  "client": "Personal Project",
+  "year": "2020",
+  "thumb": "https://www.nologo.in/assets/images/work/photography/8/image1.jpg",
+  "images": [
+    "https://www.nologo.in/assets/images/work/photography/8/image1.jpg",
+    "https://www.nologo.in/assets/images/work/photography/8/image2.jpg",
+    "https://www.nologo.in/assets/images/work/photography/8/image3.jpg",
+    "https://www.nologo.in/assets/images/work/photography/8/image4.jpg",
+    "https://www.nologo.in/assets/images/work/photography/8/image5.jpg",
+    "https://www.nologo.in/assets/images/work/photography/8/image6.jpg",
+    "https://www.nologo.in/assets/images/work/photography/8/image7.jpg",
+    "https://www.nologo.in/assets/images/work/photography/8/image8.jpg"
+  ],
+  "description": "A lifestyle and fashion series celebrating mood, colour and character. Shot for brand campaigns, this series captures the vibrancy of everyday life elevated by thoughtful composition and lighting.",
+  "tags": [
+    "Nature",
+    "Wildlife",
+    "Macro"
+  ]
+}

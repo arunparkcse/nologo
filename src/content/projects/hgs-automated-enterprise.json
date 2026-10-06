@@ -1,0 +1,21 @@
+{
+  "order": 13,
+  "slug": "hgs-automated-enterprise",
+  "type": "films",
+  "title": "Automated Enterprise",
+  "category": "Corporate Film",
+  "client": "Hinduja Global Solutions",
+  "year": "2017",
+  "thumb": "https://img.youtube.com/vi/VaMJiy66jfI/hqdefault.jpg",
+  "images": [
+    "https://img.youtube.com/vi/VaMJiy66jfI/hqdefault.jpg"
+  ],
+  "videoId": "VaMJiy66jfI",
+  "videoType": "youtube",
+  "description": "The films speak about the technological solutions delivered by Hinduja Global Solutions (HGS) through voice contact service centres, management of healthcare industry’s front office and back office, and deploying robotic process automation to deliver optimized outcomes to its clients.",
+  "tags": [
+    "Corporate Film",
+    "CSR",
+    "Brand Film"
+  ]
+}

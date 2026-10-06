@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "label": "CSR / Social",
+    "title": "LET'S DO\nSOME GOOD",
+    "accent": ".",
+    "sub": "We partner with purpose-driven organisations to communicate their impact stories and inspire meaningful action."
+  },
+  "stats": [
+    { "number": "14+", "label": "CSR Campaigns" },
+    { "number": "8+", "label": "NGO Partners" },
+    { "number": "10+", "label": "Years of Impact" },
+    { "number": "∞", "label": "Lives Touched" }
+  ],
+  "intro": {
+    "label": "Our Purpose",
+    "title": "Purpose-Driven\nCommunication",
+    "paragraphs": [
+      "Nologo started focusing exclusively on CSR communication because of our shared desire to use our experience to change the world for the better.",
+      "We are a leading communications partner for purpose-driven organizations — helping shape, share and strategically target impact stories, initiatives and ideas with the people who matter."
+    ]
+  },
+  "servicesLabel": "Our CSR Services",
+  "services": [
+    "CSR Branding", "CSR Campaigns", "Social Media Outreach",
+    "Video Production", "Print & Digital Design", "Impact Reporting",
+    "Annual Reports", "Fundraising Campaigns", "Advocacy Films"
+  ]
+}

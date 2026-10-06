@@ -1,0 +1,21 @@
+{
+  "order": 2,
+  "slug": "hgs-volunteering-film",
+  "type": "csr",
+  "title": "HGS Volunteer film",
+  "category": "Corporate Film",
+  "client": "Hinduja Global Solutions",
+  "year": "2016",
+  "thumb": "https://img.youtube.com/vi/qMka15H_ExI/hqdefault.jpg",
+  "images": [
+    "https://img.youtube.com/vi/qMka15H_ExI/hqdefault.jpg"
+  ],
+  "videoId": "qMka15H_ExI",
+  "videoType": "youtube",
+  "description": "The HGS Volunteer film is about the various volunteering activities undertaken by the employees of HGS for the CSR program of the company. The film showcases the various volunteering activities undertaken by the employees of HGS for the CSR program of the company.",
+  "tags": [
+    "Corporate Film",
+    "CSR",
+    "Brand Film"
+  ]
+}

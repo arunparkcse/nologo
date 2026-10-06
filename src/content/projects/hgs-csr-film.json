@@ -1,0 +1,21 @@
+{
+  "order": 1,
+  "slug": "hgs-csr-film",
+  "type": "csr",
+  "title": "HGS CSR Film",
+  "category": "Corporate Film",
+  "client": "Hinduja Global Solutions",
+  "year": "2019",
+  "thumb": "https://img.youtube.com/vi/d4B_wxVSgdg/hqdefault.jpg",
+  "images": [
+    "https://img.youtube.com/vi/d4B_wxVSgdg/hqdefault.jpg"
+  ],
+  "videoId": "d4B_wxVSgdg",
+  "videoType": "youtube",
+  "description": "The brand film for HGS talks about the significance of \"giving\" and demonstrates how the concept of giving is an integral part of the work culture of the organisation. The film flows like an emotional journey through the lives of the beneficiaries of the CSR programme of HGS and narrates how the holistic nature of the program makes a difference in their lives.",
+  "tags": [
+    "Corporate Film",
+    "CSR",
+    "Brand Film"
+  ]
+}

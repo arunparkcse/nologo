@@ -1,0 +1,23 @@
+{
+  "order": 39,
+  "slug": "the-banyan-report",
+  "type": "creative",
+  "title": "The Banyan Annual Report",
+  "category": "Annual Report Design",
+  "client": "The Banyan",
+  "year": "2019",
+  "thumb": "https://www.nologo.in/assets/images/work/design/banyan/The-Banyan_01.jpg",
+  "images": [
+    "https://www.nologo.in/assets/images/work/design/banyan/The-Banyan_01.jpg",
+    "https://www.nologo.in/assets/images/work/design/banyan/The-Banyan_02.jpg",
+    "https://www.nologo.in/assets/images/work/design/banyan/The-Banyan_03.jpg",
+    "https://www.nologo.in/assets/images/work/design/banyan/The-Banyan_04.jpg",
+    "https://www.nologo.in/assets/images/work/design/banyan/The-Banyan_05.jpg"
+  ],
+  "description": "An annual report for The Banyan, dedicated to mental health and homelessness. A publication that brings data, stories and impact together in a human narrative.",
+  "tags": [
+    "Annual Report",
+    "NGO",
+    "Publication"
+  ]
+}

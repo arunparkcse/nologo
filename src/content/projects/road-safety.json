@@ -1,0 +1,21 @@
+{
+  "order": 5,
+  "slug": "road-safety",
+  "type": "csr",
+  "title": "Road Safety",
+  "category": "CSR",
+  "client": "Cheyyar SEZ Developers",
+  "year": "2015",
+  "thumb": "https://www.nologo.in/assets/images/csr/road_safety/road_safety1.jpg",
+  "images": [
+    "https://www.nologo.in/assets/images/csr/road_safety/road_safety2.jpg",
+    "https://www.nologo.in/assets/images/csr/road_safety/road_safety3.jpg",
+    "https://www.nologo.in/assets/images/csr/road_safety/road_safety4.jpg",
+    "https://www.nologo.in/assets/images/csr/road_safety/road_safety5.jpg",
+    "https://www.nologo.in/assets/images/csr/road_safety/road_safety6.jpg"
+  ],
+  "description": "We designed a series of CSR Campaign materials for Road Safety based on the concept â€œOur Children are Watching Usâ€. The concept talked about how children watch and imitate the elders in their family. But it is of great concern if a dangerous behaviour or indifference or negligence on road is imitated by the children. So the messaging was focused towards all the people who are influencers to the upcoming generation.",
+  "tags": [
+    "CSR"
+  ]
+}

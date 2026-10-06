@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { PAGES, SITE } from '../../data/content';
 
 @Component({
   selector: 'app-contact',
@@ -11,14 +12,15 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+  page = PAGES.contact;
+  site = SITE;
+
   formData = {
     name: '',
     email: '',
     service: '',
     message: ''
   };
-
-  services = ['Film Production', 'Photography', 'Creative Design', 'CSR Communication', 'Other'];
 
   submitted = false;
 

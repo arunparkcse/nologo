@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "label": "Our Work",
+    "title": "FILM",
+    "accent": ".",
+    "sub": "Stories in motion — corporate, social impact and documentary films that move audiences."
+  },
+  "featuredLabel": "Featured Film",
+  "cta": {
+    "label": "Let's Create Together",
+    "title": "Have A Story\nTo Tell",
+    "accent": "?",
+    "buttonLabel": "Start A Project"
+  }
+}

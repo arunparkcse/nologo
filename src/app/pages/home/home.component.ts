@@ -1,16 +1,8 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { PERSPECTIVES } from '../../data/perspectives.data';
-
-interface Testimonial {
-  quote: string;
-  author: string;
-  company: string;
-  role?: string;
-  avatar?: string;
-  stars?: number;
-}
+import { DomSanitizer } from '@angular/platform-browser';
+import { PAGES, PROJECTS, PERSPECTIVES, TESTIMONIALS, TEAM, Project } from '../../data/content';
 
 @Component({
   selector: 'app-home',
@@ -27,87 +19,25 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   ytActive = false;
   private heroInterval: any;
 
-  // Featuring 3 of the "Selected Work" case studies from the Sept 2026 brief.
-  // PLACEHOLDER MEDIA — see projects.data.ts for the full note.
-  portfolioCards = [
-    {
-      slug: 'treasures-of-tamil-nadu',
-      type: 'films',
-      category: 'Documentary Film',
-      title: 'Treasures of Tamil Nadu',
-      img: 'https://template.dsngrid.com/mexdot/light/assets/img/portfolio/project1/1.jpg',
-      fallback: 'https://template.dsngrid.com/mexdot/light/assets/img/portfolio/project1/1.jpg'
-    },
-    {
-      slug: 'unicef-be-a-champion',
-      type: 'films',
-      category: 'Social Impact Film',
-      title: 'UNICEF ‘Be A Champion’',
-      img: 'https://template.dsngrid.com/mexdot/light/assets/img/photography/14.jpg',
-      fallback: 'https://template.dsngrid.com/mexdot/light/assets/img/photography/14.jpg'
-    },
-    {
-      slug: 'vijaya-hospitals-rebrand',
-      type: 'creative',
-      category: 'Brand Identity',
-      title: 'Vijaya Hospitals',
-      img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80',
-      fallback: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80'
-    }
-  ];
+  page = PAGES.home;
 
-  services = [
-    {
-      num: '01',
-      title: 'Film Production',
-      desc: 'From concept to screen — we craft compelling films that move audiences, ignite conversation and drive meaningful change.',
-      tags: ['Corporate Films', 'Documentaries', 'CSR Films', 'Ad Films'],
-      link: '/films'
-    },
-    {
-      num: '02',
-      title: 'Photography',
-      desc: 'We capture moments that speak volumes. Our photography spans brands, people, products and the worlds in between.',
-      tags: ['Brand Photography', 'Product Shoots', 'Editorial', 'Portraiture'],
-      link: '/photography'
-    },
-    {
-      num: '03',
-      title: 'Creative Design',
-      desc: 'Visual storytelling through print, digital and motion. We build identities that resonate and campaigns that convert.',
-      tags: ['Brand Identity', 'Print Design', 'Annual Reports', 'Campaigns'],
-      link: '/creative'
-    }
-  ];
+  // Featured projects are picked by slug in the CMS; card image/title come from the project itself.
+  selectedWork: Project[] = this.page.selectedWork.projects
+    .map(slug => PROJECTS.find(p => p.slug === slug))
+    .filter((p): p is Project => !!p);
 
-  // Real client testimonials. More are expected to come in — append new
-  // entries here (avatar/stars are optional; omit rather than fabricate).
-  testimonials: Testimonial[] = [
-    {
-      quote: 'Nologo has been a trusted creative partner across multiple film production projects. Their team consistently delivers high-quality visual storytelling that is closely aligned with project objectives and briefs. Beyond strong execution, Nologo brings valuable creative insight and strategic direction to every engagement, while remaining highly collaborative and responsive to feedback. We have appreciated their professionalism, flexibility, and commitment to producing impactful content.',
-      author: 'Sudeshna Mukherjee',
-      role: 'Head of Communications',
-      company: 'UN Women India Country Office'
-    }
-  ];
+  // Doubled so the CSS marquee/ticker loops seamlessly.
+  ticker = [...this.page.hero.ticker, ...this.page.hero.ticker];
+  clients = [...this.page.clients.items, ...this.page.clients.items];
 
-  team = [
-    { img: 'assets/team/goutham.jpg', name: 'Goutham Jho', role: 'Creative Director', dept: 'Film & Photography' },
-    { img: 'assets/team/sanjay.jpg', name: 'Sanjay S', role: 'Brand Strategy', dept: 'Creative & Design' },
-    { img: 'assets/team/natisha.jpg', name: 'Natisha Xavier', role: 'CSR Lead', dept: 'Social Impact' },
-    { img: 'assets/team/acchuthan.jpg', name: 'Acchuthan KR', role: 'Production', dept: 'Film & Video' }
-  ];
-
+  testimonials = TESTIMONIALS;
+  team = TEAM;
   blogs = PERSPECTIVES;
 
-  clients = [
-    'HGS', 'Co-optex', 'CBM India', 'Quess Corp', 'The Banyan',
-    'Hand in Hand', 'UCAM', 'Ma Foi Foundation', 'Sharon', 'Karghaa',
-    'Cheyyar SEZ', 'Ekam', 'IGSSS', 'Sakthi Foundation',
-    'HGS', 'Co-optex', 'CBM India', 'Quess Corp', 'The Banyan',
-    'Hand in Hand', 'UCAM', 'Ma Foi Foundation', 'Sharon', 'Karghaa',
-    'Cheyyar SEZ', 'Ekam', 'IGSSS', 'Sakthi Foundation'
-  ];
+  showreelId = encodeURIComponent(this.page.hero.showreelYoutubeId);
+  showreelUrl = inject(DomSanitizer).bypassSecurityTrustResourceUrl(
+    `https://www.youtube.com/embed/${this.showreelId}?autoplay=1&rel=0`
+  );
 
   goToHeroSlide(n: number) {
     this.heroSlide = n;

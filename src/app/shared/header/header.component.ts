@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { SITE } from '../../data/content';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent implements OnInit {
+  site = SITE;
   mobileOpen = false;
   scrolled = false;
   preloaderHidden = false;

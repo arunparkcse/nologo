@@ -1,0 +1,21 @@
+{
+  "order": 21,
+  "slug": "quess-brand-film",
+  "type": "films",
+  "title": "Quess",
+  "category": "Brand Film",
+  "client": "Quess Corp",
+  "year": "2018",
+  "thumb": "https://img.youtube.com/vi/GVEIpfSrC2Y/hqdefault.jpg",
+  "images": [
+    "https://img.youtube.com/vi/GVEIpfSrC2Y/hqdefault.jpg"
+  ],
+  "videoId": "GVEIpfSrC2Y",
+  "videoType": "youtube",
+  "description": "A compelling brand film for Quess Corp — one of India's largest business services providers — that captures the spirit of their workforce and the scale of their human-centred impact across multiple sectors.",
+  "tags": [
+    "Brand Film",
+    "Corporate",
+    "HR"
+  ]
+}

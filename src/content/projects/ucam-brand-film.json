@@ -1,0 +1,21 @@
+{
+  "order": 25,
+  "slug": "ucam-brand-film",
+  "type": "films",
+  "title": "Ucam Brand Film",
+  "category": "Brand Film",
+  "client": "Ucam",
+  "year": "2021",
+  "thumb": "https://img.youtube.com/vi/hxTNpGwG56U/hqdefault.jpg",
+  "images": [
+    "https://img.youtube.com/vi/hxTNpGwG56U/hqdefault.jpg"
+  ],
+  "videoId": "hxTNpGwG56U",
+  "videoType": "youtube",
+  "description": "A powerful brand film for Ucam that captures the spirit of their workforce and the scale of their human-centred impact across multiple sectors.",
+  "tags": [
+    "Brand Film",
+    "Corporate",
+    "HR"
+  ]
+}

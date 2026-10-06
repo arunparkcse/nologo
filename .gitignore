@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Generated from src/content by scripts/generate-content.mjs
+/src/app/data/generated/

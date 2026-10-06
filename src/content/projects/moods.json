@@ -1,0 +1,29 @@
+{
+  "order": 33,
+  "slug": "moods",
+  "type": "photography",
+  "title": "Moods",
+  "category": "Lifestyle Photography",
+  "client": "Brand Project",
+  "year": "2020",
+  "thumb": "https://www.nologo.in/assets/images/work/photography/6/image1.jpg",
+  "images": [
+    "https://www.nologo.in/assets/images/work/photography/6/image1.jpg",
+    "https://www.nologo.in/assets/images/work/photography/6/image3.jpg",
+    "https://www.nologo.in/assets/images/work/photography/6/image4.jpg",
+    "https://www.nologo.in/assets/images/work/photography/6/image5.jpg",
+    "https://www.nologo.in/assets/images/work/photography/6/image6.jpg",
+    "https://www.nologo.in/assets/images/work/photography/6/image7.jpg",
+    "https://www.nologo.in/assets/images/work/photography/6/image8.jpg",
+    "https://www.nologo.in/assets/images/work/photography/6/image9.jpg",
+    "https://www.nologo.in/assets/images/work/photography/6/image10.jpg",
+    "https://www.nologo.in/assets/images/work/photography/6/image11.jpg",
+    "https://www.nologo.in/assets/images/work/photography/6/image12.jpg"
+  ],
+  "description": "A lifestyle and fashion series celebrating mood, colour and character. Shot for brand campaigns, this series captures the vibrancy of everyday life elevated by thoughtful composition and lighting.",
+  "tags": [
+    "Lifestyle",
+    "Fashion",
+    "Brand"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "order": 41,
+  "slug": "change-makers",
+  "type": "creative",
+  "title": "Change Makers",
+  "category": "Publication Design",
+  "client": "Social Enterprise",
+  "year": "2020",
+  "thumb": "https://www.nologo.in/assets/images/work/design/7/image1.jpg",
+  "images": [
+    "https://www.nologo.in/assets/images/work/design/7/image1.jpg",
+    "https://www.nologo.in/assets/images/work/design/7/image2.jpg",
+    "https://www.nologo.in/assets/images/work/design/7/image3.jpg",
+    "https://www.nologo.in/assets/images/work/design/7/image4.jpg",
+    "https://www.nologo.in/assets/images/work/design/7/image5.jpg"
+  ],
+  "description": "Change Makers is a publication that celebrates the individuals and organisations rewriting the rules of social enterprise in India. Bold design meets purposeful storytelling.",
+  "tags": [
+    "Editorial",
+    "Publication",
+    "Social"
+  ]
+}

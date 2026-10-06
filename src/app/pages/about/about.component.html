@@ -1,31 +1,32 @@
 <!-- PAGE HERO -->
 <section class="page-hero page-hero--about">
-  <div class="hero-label reveal">About Us</div>
-  <h1 class="reveal">OUR<br>STORY<span class="accent-dot">.</span></h1>
-  <p class="hero-sub reveal">We don't start with the logo.<br>We start with what makes you, you.</p>
+  <div class="hero-label reveal">{{ page.hero.label }}</div>
+  <h1 class="reveal pre-line">{{ page.hero.title }}<span class="accent-dot">{{ page.hero.accent }}</span></h1>
+  <p class="hero-sub reveal pre-line">{{ page.hero.sub }}</p>
 </section>
 
 <!-- STORY SECTION -->
 <section class="story-section">
   <div class="story-grid">
     <div class="story-visual reveal-left">
-      <img src="https://www.nologo.in/abt.png" alt="No Logo Story" loading="lazy"
-        onerror="this.src='https://template.dsngrid.com/mexdot/light/assets/img/photography/14.jpg'" />
+      <img [src]="page.story.image" alt="No Logo Story" loading="lazy"
+        (error)="onImgError($event, 'https://template.dsngrid.com/mexdot/light/assets/img/photography/14.jpg')" />
       <div class="story-badge">
-        <div class="badge-num">2010</div>
-        <div class="badge-lbl">Est.</div>
+        <div class="badge-num">{{ page.story.badgeNumber }}</div>
+        <div class="badge-lbl">{{ page.story.badgeLabel }}</div>
       </div>
     </div>
     <div class="story-text reveal">
-      <div class="section-label">Our Story</div>
-      <h2 class="section-title">Born From A<br>Love Of Stories</h2>
-      <p>Many years ago, a bunch of youngsters, bitten by the travel bug and curious about the world, set out on a journey.</p>
-      <p>Along the way, they met like-minded people — clients, collaborators and team members across sectors and geographies — who shared their belief that good communication begins with good thinking.</p>
-      <p>Somewhere along that journey, <strong>nologo</strong> was born.</p>
-      <p>From brand identities and films to campaigns, social impact and digital content, we've continued to explore new ways of making communication relevant, distinctive and memorable.</p>
-      <p style="color: var(--color-black); font-weight: 700;">18 years on, the journey continues&hellip;</p>
+      <div class="section-label">{{ page.story.label }}</div>
+      <h2 class="section-title pre-line">{{ page.story.title }}</h2>
+      @for (para of page.story.paragraphs; track $index) {
+      <p [innerHTML]="para | richText"></p>
+      }
+      @if (page.story.closing) {
+      <p style="color: var(--color-black); font-weight: 700;">{{ page.story.closing }}</p>
+      }
       <a routerLink="/contact" class="btn btn-dark" style="margin-top: 2.5rem; display: inline-flex;">
-        Work With Us <span class="arrow">→</span>
+        {{ page.story.buttonLabel }} <span class="arrow">→</span>
       </a>
     </div>
   </div>
@@ -33,35 +34,26 @@
 
 <!-- STATS BAR -->
 <section class="about-stats">
+  @for (stat of page.stats; track $index) {
   <div class="about-stat reveal">
-    <div class="astat-num">10<span class="accent-dot">+</span></div>
-    <div class="astat-lbl">Years of Storytelling</div>
+    <div class="astat-num">{{ stat.value }}<span class="accent-dot">{{ stat.suffix }}</span></div>
+    <div class="astat-lbl">{{ stat.label }}</div>
   </div>
-  <div class="about-stat reveal">
-    <div class="astat-num">100<span class="accent-dot">+</span></div>
-    <div class="astat-lbl">Stories Told</div>
-  </div>
-  <div class="about-stat reveal">
-    <div class="astat-num">2</div>
-    <div class="astat-lbl">Cities — Chennai & Delhi</div>
-  </div>
-  <div class="about-stat reveal">
-    <div class="astat-num">4</div>
-    <div class="astat-lbl">Service Verticals</div>
-  </div>
+  }
 </section>
 
 <!-- TEAM -->
 <section class="nl-team">
   <div class="team-header reveal">
-    <div class="section-label">The Studio</div>
-    <h2 class="section-title" style="color: var(--color-black)">People behind<br>the lens.</h2>
+    <div class="section-label">{{ page.team.label }}</div>
+    <h2 class="section-title pre-line" style="color: var(--color-black)">{{ page.team.title }}</h2>
   </div>
   <div class="team-grid">
-    @for (member of team; let i = $index; track i) {
+    @for (member of team; track member.name) {
     <div class="team-card reveal">
       <div class="team-img-wrap">
-        <img [src]="member.img" [alt]="member.name" class="team-img" (error)="onImgError($event, member.fallback)" loading="lazy" />
+        <img [src]="member.img" [alt]="member.name" class="team-img"
+          (error)="onImgError($event, 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80')" loading="lazy" />
         <div class="team-hover">
           <span class="team-name">{{ member.name }}</span>
           <span class="team-role">{{ member.role }}</span>
@@ -76,12 +68,12 @@
 <!-- VALUES -->
 <section class="values-section">
   <div class="values-inner">
-    <div class="section-label" style="color: var(--color-accent)">What Drives Us</div>
-    <h2 class="section-title" style="color: #fff; margin-bottom: 4rem;">Our Values</h2>
+    <div class="section-label" style="color: var(--color-accent)">{{ page.values.label }}</div>
+    <h2 class="section-title" style="color: #fff; margin-bottom: 4rem;">{{ page.values.title }}</h2>
     <div class="values-grid">
-      @for (value of values; track value.icon) {
+      @for (value of page.values.items; track $index) {
       <div class="value-card">
-        <div class="value-num">{{ value.icon }}</div>
+        <div class="value-num">{{ ($index + 1).toString().padStart(2, '0') }}</div>
         <h3 class="value-title">{{ value.title }}</h3>
         <p class="value-desc">{{ value.desc }}</p>
       </div>
@@ -90,17 +82,14 @@
   </div>
 </section>
 
-
-
 <!-- WHAT WE DO -->
 <section class="what-we-do">
-  <div class="section-label">What We Do</div>
-  <h2 class="section-title" style="margin-bottom: 2.5rem;">Integrated<br>Communication<span class="accent-dot">.</span>
-  </h2>
+  <div class="section-label">{{ page.whatWeDo.label }}</div>
+  <h2 class="section-title pre-line" style="margin-bottom: 2.5rem;">{{ page.whatWeDo.title }}<span class="accent-dot">{{ page.whatWeDo.accent }}</span></h2>
   <div class="wwd-grid">
-    @for (svc of whatWeDo; track svc.num) {
+    @for (svc of page.whatWeDo.items; track $index) {
     <div class="wwd-card">
-      <div class="wwd-num">{{ svc.num }}</div>
+      <div class="wwd-num">{{ ($index + 1).toString().padStart(2, '0') }}</div>
       <div class="wwd-text">
         <h3 class="wwd-title">{{ svc.title }}</h3>
         <p class="wwd-desc">{{ svc.desc }}</p>
@@ -109,6 +98,6 @@
     }
   </div>
   <div style="margin-top: 3.5rem;">
-    <a routerLink="/films" class="btn btn-dark">View Our Work <span class="arrow">→</span></a>
+    <a [routerLink]="page.whatWeDo.buttonLink" class="btn btn-dark">{{ page.whatWeDo.buttonLabel }} <span class="arrow">→</span></a>
   </div>
 </section>

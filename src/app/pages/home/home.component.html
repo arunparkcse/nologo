@@ -18,33 +18,30 @@
       <div class="hero-inner">
         <div class="hero-badge reveal">
           <span class="badge-pulse"></span>
-          Integrated Communication Agency — Est. 2010
+          {{ page.hero.badge }}
         </div>
         <h1 class="hero-headline reveal">
-          <span class="hl-line">FILM<span class="accent-dot">.</span></span>
-          <span class="hl-line hl-ghost">PHOTO<span class="accent-dot">.</span></span>
-          <span class="hl-line">CREATIVE<span class="accent-dot">.</span></span>
+          @for (line of page.hero.headline; track $index) {
+          <span class="hl-line" [class.hl-ghost]="line.ghost">{{ line.text }}<span class="accent-dot">{{ page.hero.accent }}</span></span>
+          }
         </h1>
         <div class="hero-subrow reveal">
-          <p class="hero-sub">
-            We craft films that move people, photography that tells<br>
-            stories, and design that builds brands — for over a decade.
-          </p>
+          <p class="hero-sub pre-line">{{ page.hero.sub }}</p>
           <div class="hero-stats">
-            <div class="hs-item">
-              <span class="hs-num">100<sup>+</sup></span>
-              <span class="hs-label">Projects Delivered</span>
-            </div>
+            @for (stat of page.hero.stats; track $index) {
+            @if (!$first) {
             <div class="hs-divider"></div>
+            }
             <div class="hs-item">
-              <span class="hs-num">14<sup>+</sup></span>
-              <span class="hs-label">Brand Clients</span>
+              <span class="hs-num">{{ stat.value }}<sup>+</sup></span>
+              <span class="hs-label">{{ stat.label }}</span>
             </div>
+            }
           </div>
         </div>
         <div class="hero-cta reveal">
-          <a routerLink="/films" class="btn btn-dark">View Our Work</a>
-          <a routerLink="/contact" class="btn-ghost">Start a Project →</a>
+          <a [routerLink]="page.hero.primaryButton.link" class="btn btn-dark">{{ page.hero.primaryButton.label }}</a>
+          <a [routerLink]="page.hero.secondaryButton.link" class="btn-ghost">{{ page.hero.secondaryButton.label }}</a>
         </div>
       </div>
     </div>
@@ -53,19 +50,19 @@
     <div class="hero-slide hero-slide-yt" [class.active]="heroSlide === 1">
       @if (!ytActive) {
       <div class="yt-thumb" (click)="activateYT()">
-        <img src="https://img.youtube.com/vi/vY6_yzUk7es/maxresdefault.jpg" alt="Nologo Showreel" class="yt-thumb-img"
-          (error)="onImgError($event, 'https://img.youtube.com/vi/vY6_yzUk7es/hqdefault.jpg')" />
+        <img [src]="'https://img.youtube.com/vi/' + showreelId + '/maxresdefault.jpg'" alt="Nologo Showreel" class="yt-thumb-img"
+          (error)="onImgError($event, 'https://img.youtube.com/vi/' + showreelId + '/hqdefault.jpg')" />
         <div class="yt-overlay">
           <div class="yt-play-btn" aria-label="Play showreel">
             <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36">
               <path d="M8 5v14l11-7z" />
             </svg>
           </div>
-          <p class="yt-label">Agency Showreel — Click to Play</p>
+          <p class="yt-label">{{ page.hero.showreelLabel }}</p>
         </div>
       </div>
       } @else {
-      <iframe class="yt-iframe" src="https://www.youtube.com/embed/vY6_yzUk7es?autoplay=1&rel=0" title="Nologo Showreel"
+      <iframe class="yt-iframe" [src]="showreelUrl" title="Nologo Showreel"
         frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
       }
     </div>
@@ -75,23 +72,9 @@
   <!-- Scrolling text ticker -->
   <div class="hero-ticker">
     <div class="hero-ticker-track">
-      <span>Film Production</span><span class="ticker-dot">·</span>
-      <span>Photography</span><span class="ticker-dot">·</span>
-      <span>Creative Design</span><span class="ticker-dot">·</span>
-      <span>CSR Films</span><span class="ticker-dot">·</span>
-      <span>Brand Identity</span><span class="ticker-dot">·</span>
-      <span>Documentaries</span><span class="ticker-dot">·</span>
-      <span>Annual Reports</span><span class="ticker-dot">·</span>
-      <span>Ad Films</span><span class="ticker-dot">·</span>
-      <!-- duplicate for seamless loop -->
-      <span>Film Production</span><span class="ticker-dot">·</span>
-      <span>Photography</span><span class="ticker-dot">·</span>
-      <span>Creative Design</span><span class="ticker-dot">·</span>
-      <span>CSR Films</span><span class="ticker-dot">·</span>
-      <span>Brand Identity</span><span class="ticker-dot">·</span>
-      <span>Documentaries</span><span class="ticker-dot">·</span>
-      <span>Annual Reports</span><span class="ticker-dot">·</span>
-      <span>Ad Films</span><span class="ticker-dot">·</span>
+      @for (item of ticker; track $index) {
+      <span>{{ item }}</span><span class="ticker-dot">·</span>
+      }
     </div>
   </div>
 
@@ -104,7 +87,7 @@
   <!-- Right side: vertical tag + scroll -->
   <div class="hero-side-right">
     <span class="hero-side-dot"></span>
-    <span class="hero-side-text">EST. 2010 — INTEGRATED AGENCY</span>
+    <span class="hero-side-text">{{ page.hero.sideText }}</span>
     <span class="hero-side-scroll">SCROLL</span>
     <span class="hero-scroll-line"><span class="hero-scroll-line-inner"></span></span>
   </div>
@@ -119,14 +102,14 @@
 
     <!-- Header floats over the cards -->
     <div class="ps-header">
-      <div class="section-label">Selected Work</div>
-      <a routerLink="/films" class="ps-view-all">View All Projects →</a>
+      <div class="section-label">{{ page.selectedWork.label }}</div>
+      <a [routerLink]="page.selectedWork.viewAllLink" class="ps-view-all">{{ page.selectedWork.viewAllLabel }}</a>
     </div>
 
-    @for (card of portfolioCards; track card.slug) {
+    @for (card of selectedWork; track card.slug) {
     <a [routerLink]="['/', card.type, card.slug]" class="ps-card">
       <div class="ps-img-wrap">
-        <img [src]="card.img" [alt]="card.title" class="ps-img" (error)="onImgError($event, card.fallback)"
+        <img [src]="card.thumb" [alt]="card.title" class="ps-img" (error)="onImgError($event, 'https://template.dsngrid.com/mexdot/light/assets/img/portfolio/project1/1.jpg')"
           loading="lazy" />
       </div>
       <!-- Vertical label visible when card is collapsed -->
@@ -148,16 +131,12 @@
 ══════════════════════════════════════════ -->
 <section class="nl-mission section">
   <div class="mission-wrap reveal">
-    <div class="section-label">Our Philosophy</div>
+    <div class="section-label">{{ page.mission.label }}</div>
     <blockquote class="mission-quote">
-      We believe every brand has a story worth telling —
-      <em>beautifully, honestly, powerfully.</em>
+      {{ page.mission.quote }}
+      <em>{{ page.mission.quoteEmphasis }}</em>
     </blockquote>
-    <p class="mission-body">
-      From a CSR film that moves boardrooms to tears, to a photography series
-      that redefines a brand's identity — Nologo brings craft and intention
-      to every frame, every pixel, every word.
-    </p>
+    <p class="mission-body">{{ page.mission.body }}</p>
   </div>
 </section>
 
@@ -167,15 +146,15 @@
 ══════════════════════════════════════════ -->
 <section class="nl-services section">
   <div class="svc-header reveal">
-    <div class="section-label">What We Do</div>
-    <h2 class="section-title">Three verticals.<br>One vision.</h2>
+    <div class="section-label">{{ page.services.label }}</div>
+    <h2 class="section-title pre-line">{{ page.services.title }}</h2>
   </div>
 
   <div class="svc-grid">
-    @for (svc of services; track svc.num) {
+    @for (svc of page.services.items; track $index) {
     <div class="svc-card reveal">
       <div class="svc-top">
-        <span class="svc-num">{{ svc.num }}</span>
+        <span class="svc-num">{{ ($index + 1).toString().padStart(2, '0') }}</span>
         <h3 class="svc-title">{{ svc.title }}</h3>
       </div>
       <p class="svc-desc">{{ svc.desc }}</p>
@@ -196,8 +175,8 @@
 ══════════════════════════════════════════ -->
 <section class="nl-testimonials section">
   <div class="te-header reveal">
-    <div class="section-label">Client Stories</div>
-    <h2 class="section-title">What they say.</h2>
+    <div class="section-label">{{ page.testimonials.label }}</div>
+    <h2 class="section-title">{{ page.testimonials.title }}</h2>
   </div>
 
   <div class="te-slider-wrap reveal">
@@ -246,12 +225,12 @@
 ══════════════════════════════════════════ -->
 <section class="nl-team section">
   <div class="team-header reveal">
-    <div class="section-label">The Studio</div>
-    <h2 class="section-title">People behind<br>the lens.</h2>
+    <div class="section-label">{{ page.team.label }}</div>
+    <h2 class="section-title pre-line">{{ page.team.title }}</h2>
   </div>
 
   <div class="team-grid">
-    @for (member of team; let i = $index; track i) {
+    @for (member of team; track member.name) {
     <div class="team-card reveal">
       <div class="team-img-wrap">
         <img [src]="member.img" [alt]="member.name" class="team-img"
@@ -274,8 +253,8 @@
 ══════════════════════════════════════════ -->
 <section class="nl-blog section">
   <div class="blog-header reveal">
-    <div class="section-label">Perspectives</div>
-    <h2 class="section-title">From the studio.</h2>
+    <div class="section-label">{{ page.perspectives.label }}</div>
+    <h2 class="section-title">{{ page.perspectives.title }}</h2>
   </div>
 
   <div class="blog-grid">
@@ -303,7 +282,7 @@
      CLIENTS MARQUEE
 ══════════════════════════════════════════ -->
 <section class="nl-clients">
-  <div class="clients-label section-label reveal">Trusted by</div>
+  <div class="clients-label section-label reveal">{{ page.clients.label }}</div>
   <div class="clients-track-outer">
     <div class="clients-track">
       @for (client of clients; let i = $index; track i) {
@@ -319,13 +298,10 @@
 ══════════════════════════════════════════ -->
 <section class="nl-cta">
   <div class="cta-inner reveal">
-    <div class="section-label cta-label">Let's Create Together</div>
-    <h2 class="cta-headline">TIME TO<br><em>ROAR.</em></h2>
-    <p class="cta-sub">
-      Have a story worth telling? A brand that needs a voice?<br>
-      Let's make something extraordinary together.
-    </p>
-    <a routerLink="/contact" class="btn btn-white">Get in Touch</a>
+    <div class="section-label cta-label">{{ page.cta.label }}</div>
+    <h2 class="cta-headline">{{ page.cta.title }}<br><em>{{ page.cta.emphasis }}</em></h2>
+    <p class="cta-sub pre-line">{{ page.cta.sub }}</p>
+    <a routerLink="/contact" class="btn btn-white">{{ page.cta.buttonLabel }}</a>
   </div>
 </section>
  

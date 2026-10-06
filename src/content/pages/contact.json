@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "label": "Get In Touch",
+    "title": "GOT SOMETHING\nBREWING",
+    "accent": "?",
+    "sub": "Let's talk."
+  },
+  "officesLabel": "Our Offices",
+  "officesTitle": "Connect\nWith Us",
+  "offices": [
+    {
+      "city": "Chennai",
+      "address": "#19/10, Saraswathi Street\nMahalingapuram\nChennai – 600 034",
+      "phones": [
+        { "label": "044-4213 2519", "number": "04442132519" }
+      ]
+    },
+    {
+      "city": "New Delhi",
+      "address": "Flat 104, Block D\nMayur Vihar Phase 2\nNew Delhi – 110 091",
+      "phones": [
+        { "label": "+91 98411 95181", "number": "+919841195181" },
+        { "label": "+91 91769 02333", "number": "+919176902333" }
+      ]
+    }
+  ],
+  "form": {
+    "label": "Drop Us A Line",
+    "heading": "We'll Reach You",
+    "services": ["Film Production", "Photography", "Creative Design", "CSR Communication", "Other"],
+    "successTitle": "Message Sent!",
+    "successText": "Thank you for reaching out. We'll get back to you within 24 hours."
+  }
+}

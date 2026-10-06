@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "badge": "Integrated Communication Agency — Est. 2010",
+    "headline": [
+      { "text": "FILM", "ghost": false },
+      { "text": "PHOTO", "ghost": true },
+      { "text": "CREATIVE", "ghost": false }
+    ],
+    "accent": ".",
+    "sub": "We craft films that move people, photography that tells\nstories, and design that builds brands — for over a decade.",
+    "stats": [
+      { "value": "100", "label": "Projects Delivered" },
+      { "value": "14", "label": "Brand Clients" }
+    ],
+    "primaryButton": { "label": "View Our Work", "link": "/films" },
+    "secondaryButton": { "label": "Start a Project →", "link": "/contact" },
+    "showreelYoutubeId": "vY6_yzUk7es",
+    "showreelLabel": "Agency Showreel — Click to Play",
+    "sideText": "EST. 2010 — INTEGRATED AGENCY",
+    "ticker": [
+      "Film Production", "Photography", "Creative Design", "CSR Films",
+      "Brand Identity", "Documentaries", "Annual Reports", "Ad Films"
+    ]
+  },
+  "selectedWork": {
+    "label": "Selected Work",
+    "viewAllLabel": "View All Projects →",
+    "viewAllLink": "/films",
+    "projects": ["treasures-of-tamil-nadu", "unicef-be-a-champion", "vijaya-hospitals-rebrand"]
+  },
+  "mission": {
+    "label": "Our Philosophy",
+    "quote": "We believe every brand has a story worth telling —",
+    "quoteEmphasis": "beautifully, honestly, powerfully.",
+    "body": "From a CSR film that moves boardrooms to tears, to a photography series that redefines a brand's identity — Nologo brings craft and intention to every frame, every pixel, every word."
+  },
+  "services": {
+    "label": "What We Do",
+    "title": "Three verticals.\nOne vision.",
+    "items": [
+      {
+        "title": "Film Production",
+        "desc": "From concept to screen — we craft compelling films that move audiences, ignite conversation and drive meaningful change.",
+        "tags": ["Corporate Films", "Documentaries", "CSR Films", "Ad Films"],
+        "link": "/films"
+      },
+      {
+        "title": "Photography",
+        "desc": "We capture moments that speak volumes. Our photography spans brands, people, products and the worlds in between.",
+        "tags": ["Brand Photography", "Product Shoots", "Editorial", "Portraiture"],
+        "link": "/photography"
+      },
+      {
+        "title": "Creative Design",
+        "desc": "Visual storytelling through print, digital and motion. We build identities that resonate and campaigns that convert.",
+        "tags": ["Brand Identity", "Print Design", "Annual Reports", "Campaigns"],
+        "link": "/creative"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Client Stories",
+    "title": "What they say."
+  },
+  "team": {
+    "label": "The Studio",
+    "title": "People behind\nthe lens."
+  },
+  "perspectives": {
+    "label": "Perspectives",
+    "title": "From the studio."
+  },
+  "clients": {
+    "label": "Trusted by",
+    "items": [
+      "HGS", "Co-optex", "CBM India", "Quess Corp", "The Banyan",
+      "Hand in Hand", "UCAM", "Ma Foi Foundation", "Sharon", "Karghaa",
+      "Cheyyar SEZ", "Ekam", "IGSSS", "Sakthi Foundation"
+    ]
+  },
+  "cta": {
+    "label": "Let's Create Together",
+    "title": "TIME TO",
+    "emphasis": "ROAR.",
+    "sub": "Have a story worth telling? A brand that needs a voice?\nLet's make something extraordinary together.",
+    "buttonLabel": "Get in Touch"
+  }
+}
