@@ -1,5 +1,5 @@
 <!-- PAGE HERO -->
-<section class="page-hero page-hero--films">
+<section class="page-hero page-hero--category" [style.--hero-bg]="page.heroImage ? 'url(' + page.heroImage + ')' : null">
   <div class="hero-label reveal">{{ page.hero.label }}</div>
   <h1 class="reveal pre-line">{{ page.hero.title }}<span class="accent-dot">{{ page.hero.accent }}</span></h1>
   <p class="hero-sub reveal pre-line">{{ page.hero.sub }}</p>
@@ -12,10 +12,9 @@
 <!-- PORTFOLIO NAV -->
 <div class="portfolio-nav-wrap">
   <div class="portfolio-nav">
-    <a routerLink="/films" class="nav-tab active">Film</a>
-    <a routerLink="/photography" class="nav-tab">Photography</a>
-    <a routerLink="/creative" class="nav-tab">Creative</a>
-    <a routerLink="/csr" class="nav-tab">CSR / Social</a>
+    @for (tab of tabs; track tab.slug) {
+    <a [routerLink]="'/' + tab.slug" class="nav-tab" [class.active]="tab.slug === page.slug">{{ tab.name }}</a>
+    }
   </div>
   <div class="portfolio-count">{{ films.length }} Projects</div>
 </div>

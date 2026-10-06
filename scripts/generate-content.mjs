@@ -7,7 +7,11 @@ const ROOT = process.cwd();
 const CONTENT_DIR = path.join(ROOT, 'src/content');
 const OUT_FILE = path.join(ROOT, 'src/app/data/generated/content.json');
 
-const COLLECTIONS = ['projects', 'perspectives', 'testimonials', 'team'];
+const COLLECTIONS = ['categories', 'projects', 'perspectives', 'testimonials', 'team'];
+
+// Category slugs become top-level URLs, so they can't reuse an existing route or folder.
+const RESERVED_SLUGS = new Set(['about', 'careers', 'contact', 'perspectives', 'admin', 'assets']);
+const LAYOUTS = new Set(['featured', 'masonry', 'showcase', 'impact']);
 
 class ContentError extends Error {}
 
@@ -57,11 +61,20 @@ function readPages() {
 
 function validate(content) {
   const errors = [];
+  const categorySlugs = new Set();
+  for (const c of content.categories) {
+    if (!c.slug || !c.name || !c.hero || !c.cta) errors.push(`category missing slug/name/hero/cta: ${c.slug ?? JSON.stringify(c).slice(0, 60)}`);
+    if (categorySlugs.has(c.slug)) errors.push(`duplicate category slug "${c.slug}"`);
+    if (RESERVED_SLUGS.has(c.slug)) errors.push(`category slug "${c.slug}" is reserved (it would clash with an existing page)`);
+    if (!LAYOUTS.has(c.layout)) errors.push(`category "${c.slug}" has unknown layout "${c.layout}" (use one of: ${[...LAYOUTS].join(', ')})`);
+    categorySlugs.add(c.slug);
+  }
   const seen = new Set();
   for (const p of content.projects) {
     if (!p.slug || !p.type || !p.title) errors.push(`project missing slug/type/title: ${JSON.stringify(p).slice(0, 80)}`);
     const key = `${p.type}/${p.slug}`;
     if (seen.has(key)) errors.push(`duplicate project ${key}`);
+    if (p.type && !categorySlugs.has(p.type)) errors.push(`project "${p.slug}" is in unknown category "${p.type}"`);
     seen.add(key);
   }
   const slugs = new Set(content.projects.map(p => p.slug));
@@ -85,7 +98,7 @@ function generate() {
   if (!fs.existsSync(OUT_FILE) || fs.readFileSync(OUT_FILE, 'utf8') !== json) {
     fs.writeFileSync(OUT_FILE, json);
   }
-  console.log(`[content] ${content.projects.length} projects, ${content.perspectives.length} perspectives, ` +
+  console.log(`[content] ${content.categories.length} categories, ${content.projects.length} projects, ${content.perspectives.length} perspectives, ` +
     `${content.testimonials.length} testimonials, ${content.team.length} team, ${Object.keys(content.pages).length} pages` +
     (formatted ? ` (formatted ${formatted} file${formatted === 1 ? '' : 's'})` : ''));
 }

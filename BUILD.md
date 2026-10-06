@@ -38,8 +38,19 @@ Notes:
 - "Publish" in the CMS only saves files on your machine — nothing goes live until you build and deploy.
 - Uploaded images go to `src/assets/uploads/`. Deleting an entry doesn't delete its image; remove unused images from the CMS **Media** tab.
 - Use **Sort by → Display order** in a list to see entries in the order the site shows them.
-- A project's **URL slug** is its page address; changing it on an existing project breaks old links.
+- A project's **URL slug** is its page address; changing it on an existing project breaks old links. The same goes for moving a project to another category (`/films/x` → `/events/x`).
 - The CMS needs internet access the first time it loads (the editor itself is loaded from a CDN).
+
+### Adding a new portfolio page
+
+Portfolio pages (Film, Photography, Creative, CSR) are **Categories**. To add one, e.g. "Events":
+
+1. **Categories → New Category page**: set the URL slug (`events` → `/events`), name, page design, hero and call-to-action. Publish.
+2. Open each project that belongs there and set **Portfolio page** to the new category.
+
+The page, its top-menu link, footer link and portfolio tab appear automatically. Page designs available: **Featured** (like Film), **Masonry** (like Photography), **Showcase** (like Creative), **Impact** (like CSR).
+
+A category can't be deleted while projects still use it — the build stops and lists them. Move or delete those projects first.
 
 ## Project Structure
 
@@ -57,10 +68,11 @@ nologo-ng/
 │   │   └── pages/
 │   │       ├── home/               # Home — mexdot-style hero, portfolio, services, CTA
 │   │       ├── about/              # About — story + image, stats, values, team, pills
-│   │       ├── films/              # Films — featured film + grid, each tile → detail page
-│   │       ├── photography/        # Photos — full-width featured + masonry grid
-│   │       ├── creative/           # Creative — 2-col hero row + 3-col grid
-│   │       ├── csr/                # CSR — stats band + intro + portfolio grid
+│   │       ├── category/           # Serves every /:category page, picks the layout below
+│   │       ├── films/              # Layout 'featured' — featured item + grid
+│   │       ├── photography/        # Layout 'masonry' — full-width featured + masonry grid
+│   │       ├── creative/           # Layout 'showcase' — 2-col hero row + 3-col grid
+│   │       ├── csr/                # Layout 'impact' — stats band + intro + services + grid
 │   │       ├── careers/            # Careers — culture strip + perks + job openings
 │   │       ├── contact/            # Contact — offices + form
 │   │       └── project-detail/     # Generic detail page (reads :type/:slug from route)
@@ -81,13 +93,11 @@ nologo-ng/
 |-------|-----------|-------|
 | `/` | HomeComponent | Full mexdot-style home |
 | `/about` | AboutComponent | Story + team section |
-| `/films` | FilmsComponent | Featured + grid, tiles linked |
-| `/photography` | PhotographyComponent | Featured + masonry grid |
-| `/creative` | CreativeComponent | Hero row + grid, tiles linked |
-| `/csr` | CsrComponent | Stats + services + grid |
 | `/careers` | CareersComponent | Culture strip + openings |
 | `/contact` | ContactComponent | Offices + contact form |
-| `/:type/:slug` | ProjectDetailComponent | Detail page for any project |
+| `/:category` | CategoryPageComponent | Any category in `src/content/categories/` (films, photography, creative, csr, …); renders the category's layout |
+| `/perspectives/:slug` | PerspectiveDetailComponent | Perspectives article |
+| `/:type/:slug` | ProjectDetailComponent | Detail page for any project (`type` = category slug) |
 
 ## Content (`src/content/`)
 
@@ -95,22 +105,22 @@ All copy, images and lists shown on the site live here as JSON — no content is
 
 | Path | What | One file per |
 |------|------|--------------|
-| `projects/*.json` | Portfolio projects (films, photography, creative, csr) | project |
+| `categories/*.json` | Portfolio pages (films, photography, creative, csr, …) — each is a page at `/<slug>` | category |
+| `projects/*.json` | Portfolio projects, each assigned to a category | project |
 | `perspectives/*.json` | Perspectives articles | article |
 | `testimonials/*.json` | Client testimonials | testimonial |
 | `team/*.json` | Team members | person |
-| `pages/*.json` | Page copy for home, about, contact, careers, films, photography, creative, csr | page |
+| `pages/*.json` | Page copy for home, about, contact, careers | page |
 | `site.json` | Shared contact details, socials, footer text | — |
 
 - Adding/removing an item = adding/removing a file in its folder.
 - Collections are sorted by each file's `order` field; files without one sort last.
-- Text fields use `
-` for line breaks. In paragraphs, `**text**` renders bold.
+- Text fields use `\n` for line breaks. In paragraphs, `**text**` renders bold.
 - Home "Selected Work" lists project **slugs** in `pages/home.json` — the card uses that project's own thumb and title.
 - Files are auto-formatted (sorted keys) on every generate, so `git diff` after a CMS edit shows only real changes.
-- `npm run content` regenerates and validates (missing fields, duplicate slugs, unknown Selected Work slugs) without a full build.
+- `npm run content` regenerates and validates (missing fields, duplicate slugs, reserved category slugs, projects in a missing category, unknown Selected Work slugs) without a full build.
 
-Each project has: `slug`, `type` (`films` | `photography` | `creative` | `csr`), `title`, `category`, `client`, `year`, `thumb`, `images[]`, `description`, `tags[]`, and optional `videoId` + `videoType` (`youtube` | `vimeo`).
+Each project has: `slug`, `type` (the slug of its category), `title`, `category`, `client`, `year`, `thumb`, `images[]`, `description`, `tags[]`, and optional `videoId` + `videoType` (`youtube` | `vimeo`).
 
 ## Design System
 

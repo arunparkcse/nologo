@@ -5,10 +5,17 @@
     "label": "Design Your Story",
     "title": "Let's Build\nSomething Beautiful"
   },
+  "footerLabel": "Creative Design",
   "hero": {
     "accent": ".",
     "label": "Our Work",
     "sub": "Visual storytelling through print, digital and brand design that resonates and endures.",
     "title": "CREATIVE\nDESIGN"
-  }
+  },
+  "heroImage": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1600&q=80",
+  "layout": "showcase",
+  "name": "Creative",
+  "navLabel": "Creative",
+  "order": 3,
+  "slug": "creative"
 }

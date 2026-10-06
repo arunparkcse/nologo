@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Project, getProjectsByType } from '../../data/projects.data';
-import { PAGES } from '../../data/content';
+import { CATEGORIES, Category } from '../../data/content';
 
+/** Page design for categories with layout: 'featured'. Rendered by CategoryPageComponent. */
 @Component({
   selector: 'app-films',
   standalone: true,
@@ -12,6 +13,12 @@ import { PAGES } from '../../data/content';
   styleUrl: './films.component.scss'
 })
 export class FilmsComponent {
-  page = PAGES.films;
-  films: Project[] = getProjectsByType('films');
+  page!: Category;
+  films: Project[] = [];
+  tabs = CATEGORIES;
+
+  @Input({ required: true }) set category(c: Category) {
+    this.page = c;
+    this.films = getProjectsByType(c.slug);
+  }
 }

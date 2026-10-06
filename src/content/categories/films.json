@@ -6,10 +6,17 @@
     "title": "Have A Story\nTo Tell"
   },
   "featuredLabel": "Featured Film",
+  "footerLabel": "Film Production",
   "hero": {
     "accent": ".",
     "label": "Our Work",
     "sub": "Stories in motion — corporate, social impact and documentary films that move audiences.",
     "title": "FILM"
-  }
+  },
+  "heroImage": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1600&q=80",
+  "layout": "featured",
+  "name": "Film",
+  "navLabel": "Film",
+  "order": 1,
+  "slug": "films"
 }

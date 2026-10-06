@@ -597,23 +597,9 @@ p {
   opacity: 0.4;
 }
 
-.page-hero--films::before {
-  background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1600&q=80');
-  opacity: 0.4;
-}
-
-.page-hero--photography::before {
-  background-image: url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1600&q=80');
-  opacity: 0.4;
-}
-
-.page-hero--creative::before {
-  background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1600&q=80');
-  opacity: 0.4;
-}
-
-.page-hero--csr::before {
-  background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80');
+/* Portfolio category pages: the image comes from the category content (heroImage). */
+.page-hero--category::before {
+  background-image: var(--hero-bg, none);
   opacity: 0.4;
 }
 

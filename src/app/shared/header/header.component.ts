@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { SITE } from '../../data/content';
+import { SITE, navCategories } from '../../data/content';
 
 @Component({
   selector: 'app-header',
@@ -54,10 +54,8 @@ export class HeaderComponent implements OnInit {
   navItems = [
     { label: 'Home',         path: '/'           },
     { label: 'About',        path: '/about'       },
-    { label: 'Film',         path: '/films'       },
-    { label: 'Photography',  path: '/photography' },
-    { label: 'Creative',     path: '/creative'    },
-    { label: 'CSR',          path: '/csr'         },
+    // Portfolio categories (Film, Photography, …) come from the CMS.
+    ...navCategories().map(c => ({ label: c.navLabel || c.name, path: '/' + c.slug })),
     { label: 'Careers',      path: '/careers'     },
     { label: 'Contact',      path: '/contact'     },
   ];

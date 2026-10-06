@@ -5,10 +5,17 @@
     "label": "Capture Your Story",
     "title": "Every Frame\nTells A Story"
   },
+  "footerLabel": "Photography",
   "hero": {
     "accent": ".",
     "label": "Our Work",
     "sub": "Moments that speak volumes — brand, editorial, portrait and documentary photography.",
     "title": "PHOTO\nGRAPHY"
-  }
+  },
+  "heroImage": "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1600&q=80",
+  "layout": "masonry",
+  "name": "Photography",
+  "navLabel": "Photography",
+  "order": 2,
+  "slug": "photography"
 }

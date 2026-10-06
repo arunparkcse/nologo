@@ -10,6 +10,77 @@ public_folder: assets/uploads
 
 # Shared field shapes are YAML anchors (&name) defined at first use and reused (*name).
 collections:
+  # ── Portfolio categories (each is a page at /<slug>) ──────────────
+  - name: categories
+    label: Categories
+    label_singular: Category page
+    description: "Each category is a portfolio page (Film, Photography, …). Add one to create a new page — it gets its own address, menu link, and a grid of the projects assigned to it."
+    folder: src/content/categories
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    identifier_field: name
+    summary: "{{name}} — /{{slug}}"
+    sortable_fields: [order, name]
+    editor: { preview: false }
+    fields:
+      - &order { label: Display order, name: order, widget: number, value_type: int, required: false, hint: "Lower numbers appear first. Leave empty to show last." }
+      - { label: URL slug, name: slug, widget: string, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers and hyphens only"], hint: "The page address, e.g. events → /events. Can't be about, careers, contact, perspectives, admin or assets. Don't change it once projects use it." }
+      - { label: Name, name: name, widget: string, hint: "Shown on the portfolio tabs and in the browser tab, e.g. Events" }
+      - label: Page design
+        name: layout
+        widget: select
+        default: featured
+        options:
+          - { label: "Featured — one large item, then a grid (like Film)", value: featured }
+          - { label: "Masonry — large item, then mixed-size tiles (like Photography)", value: masonry }
+          - { label: "Showcase — two large items, then a grid (like Creative)", value: showcase }
+          - { label: "Impact — stats, intro and services, then a grid (like CSR)", value: impact }
+      - { label: Menu label, name: navLabel, widget: string, required: false, hint: "Shorter name for the top menu. Defaults to Name." }
+      - { label: Footer label, name: footerLabel, widget: string, required: false, hint: "Name in the footer's Services list. Defaults to Name." }
+      - { label: Show in top menu, name: showInNav, widget: boolean, default: true, required: false }
+      - { label: Show in footer, name: showInFooter, widget: boolean, default: true, required: false }
+      - { label: Hero background image, name: heroImage, widget: image, required: false }
+      - &hero
+        label: Page hero
+        name: hero
+        widget: object
+        fields:
+          - { label: Small label, name: label, widget: string }
+          - { label: Title (new line = line break), name: title, widget: text }
+          - { label: Accent character, name: accent, widget: string, required: false, hint: "Shown in red after the title, e.g. . or ?" }
+          - { label: Subtitle, name: sub, widget: text }
+      - { label: Featured item label, name: featuredLabel, widget: string, required: false, hint: "'Featured' design only, e.g. Featured Film" }
+      - label: Impact stats
+        name: stats
+        widget: list
+        required: false
+        hint: "'Impact' design only"
+        fields:
+          - { label: Number, name: number, widget: string }
+          - { label: Label, name: label, widget: string }
+      - label: Intro
+        name: intro
+        widget: object
+        required: false
+        hint: "'Impact' design only"
+        fields:
+          - { label: Small label, name: label, widget: string, required: false }
+          - { label: Heading (new line = line break), name: title, widget: text, required: false }
+          - { label: Paragraphs, name: paragraphs, widget: list, required: false, field: { label: Paragraph, name: paragraph, widget: text } }
+      - { label: Services label, name: servicesLabel, widget: string, required: false, hint: "'Impact' design only" }
+      - { label: Services, name: services, widget: list, required: false, hint: "'Impact' design only. Comma separated" }
+      - label: Call-to-action band
+        name: cta
+        widget: object
+        fields:
+          - { label: Small label, name: label, widget: string }
+          - { label: Heading (new line = line break), name: title, widget: text }
+          - { label: Accent character, name: accent, widget: string, required: false }
+          - { label: Button text, name: buttonLabel, widget: string }
+
   # ── Portfolio projects ────────────────────────────────────────────
   - name: projects
     label: Projects
@@ -25,9 +96,9 @@ collections:
     sortable_fields: [order, title, type, year]
     editor: { preview: false }
     fields:
-      - &order { label: Display order, name: order, widget: number, value_type: int, required: false, hint: "Lower numbers appear first. Leave empty to show last." }
+      - *order
       - { label: URL slug, name: slug, widget: string, pattern: ["^[a-zA-Z0-9-]+$", "Letters, numbers and hyphens only"], hint: "Becomes the page address, e.g. /films/<slug>. Don't change it for an existing project or old links break." }
-      - { label: Section, name: type, widget: select, options: [films, photography, creative, csr] }
+      - { label: Portfolio page, name: type, widget: relation, collection: categories, value_field: slug, search_fields: [name, slug], display_fields: [name], hint: "Which portfolio page this project appears on (add new ones under Categories). Changing it changes the project's address, e.g. /films/x → /events/x — old links to it will stop working." }
       - { label: Title, name: title, widget: string }
       - { label: Category, name: category, widget: string, hint: "e.g. Brand Film, Documentary" }
       - { label: Client, name: client, widget: string }
@@ -200,15 +271,7 @@ collections:
         label: About
         file: src/content/pages/about.json
         fields:
-          - &hero
-            label: Page hero
-            name: hero
-            widget: object
-            fields:
-              - { label: Small label, name: label, widget: string }
-              - { label: Title (new line = line break), name: title, widget: text }
-              - { label: Accent character, name: accent, widget: string, required: false, hint: "Shown in red after the title, e.g. . or ?" }
-              - { label: Subtitle, name: sub, widget: text }
+          - *hero
           - label: Story
             name: story
             widget: object
@@ -335,53 +398,6 @@ collections:
               - { label: Heading, name: title, widget: string }
               - { label: Text, name: text, widget: string }
               - { label: Button text, name: buttonLabel, widget: string }
-
-      - name: films
-        label: Films
-        file: src/content/pages/films.json
-        fields:
-          - *hero
-          - { label: Featured film label, name: featuredLabel, widget: string }
-          - &cta
-            label: Call-to-action band
-            name: cta
-            widget: object
-            fields:
-              - { label: Small label, name: label, widget: string }
-              - { label: Heading (new line = line break), name: title, widget: text }
-              - { label: Accent character, name: accent, widget: string, required: false }
-              - { label: Button text, name: buttonLabel, widget: string }
-
-      - name: photography
-        label: Photography
-        file: src/content/pages/photography.json
-        fields: [*hero, *cta]
-
-      - name: creative
-        label: Creative
-        file: src/content/pages/creative.json
-        fields: [*hero, *cta]
-
-      - name: csr
-        label: CSR / Social
-        file: src/content/pages/csr.json
-        fields:
-          - *hero
-          - label: Impact stats
-            name: stats
-            widget: list
-            fields:
-              - { label: Number, name: number, widget: string }
-              - { label: Label, name: label, widget: string }
-          - label: Intro
-            name: intro
-            widget: object
-            fields:
-              - { label: Small label, name: label, widget: string }
-              - { label: Heading (new line = line break), name: title, widget: text }
-              - { label: Paragraphs, name: paragraphs, widget: list, field: { label: Paragraph, name: paragraph, widget: text } }
-          - { label: Services label, name: servicesLabel, widget: string }
-          - { label: Services, name: services, widget: list, hint: "Comma separated" }
 
   # ── Site-wide settings ────────────────────────────────────────────
   - name: settings

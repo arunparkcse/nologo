@@ -1,10 +1,18 @@
 {
+  "cta": {
+    "accent": "?",
+    "buttonLabel": "Talk To Us",
+    "label": "Make An Impact",
+    "title": "Ready To Change\nThe World"
+  },
+  "footerLabel": "CSR / Social",
   "hero": {
     "accent": ".",
     "label": "CSR / Social",
     "sub": "We partner with purpose-driven organisations to communicate their impact stories and inspire meaningful action.",
     "title": "LET'S DO\nSOME GOOD"
   },
+  "heroImage": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80",
   "intro": {
     "label": "Our Purpose",
     "paragraphs": [
@@ -13,6 +21,10 @@
     ],
     "title": "Purpose-Driven\nCommunication"
   },
+  "layout": "impact",
+  "name": "CSR / Social",
+  "navLabel": "CSR",
+  "order": 4,
   "services": [
     "CSR Branding",
     "CSR Campaigns",
@@ -25,6 +37,7 @@
     "Advocacy Films"
   ],
   "servicesLabel": "Our CSR Services",
+  "slug": "csr",
   "stats": [
     {
       "label": "CSR Campaigns",
