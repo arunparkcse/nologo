@@ -3,12 +3,12 @@
   "client": "Hand in Hand",
   "description": "Annual report design for Hand in Hand, translating a year of impact, outreach and social programmes into a compelling visual document for stakeholders.",
   "images": [
-    "https://www.nologo.in/assets/images/work/design/hand_in_hand/hand_1.jpg",
-    "https://www.nologo.in/assets/images/work/design/hand_in_hand/hand_2.jpg",
-    "https://www.nologo.in/assets/images/work/design/hand_in_hand/hand_3.jpg",
-    "https://www.nologo.in/assets/images/work/design/hand_in_hand/hand_4.jpg",
-    "https://www.nologo.in/assets/images/work/design/hand_in_hand/hand_5.jpg",
-    "https://www.nologo.in/assets/images/work/design/hand_in_hand/hand_6.jpg"
+    "https://nologo.in/assets/images/work/design/hand_in_hand/hand_1.jpg",
+    "https://nologo.in/assets/images/work/design/hand_in_hand/hand_2.jpg",
+    "https://nologo.in/assets/images/work/design/hand_in_hand/hand_3.jpg",
+    "https://nologo.in/assets/images/work/design/hand_in_hand/hand_4.jpg",
+    "https://nologo.in/assets/images/work/design/hand_in_hand/hand_5.jpg",
+    "https://nologo.in/assets/images/work/design/hand_in_hand/hand_6.jpg"
   ],
   "order": 40,
   "slug": "hand-in-hand-report",
@@ -17,7 +17,7 @@
     "NGO",
     "Publication"
   ],
-  "thumb": "https://www.nologo.in/assets/images/work/design/hand_in_hand/hand_1.jpg",
+  "thumb": "https://nologo.in/assets/images/work/design/hand_in_hand/hand_1.jpg",
   "title": "Hand in Hand Annual Report",
   "type": "creative",
   "year": "2020"

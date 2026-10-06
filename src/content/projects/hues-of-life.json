@@ -3,7 +3,7 @@
   "client": "No Logo",
   "description": "This video edited with a collage of visuals shot by nologo, is our tribute to the people we have brought in front of our cameras, celebrating their actions and emotions",
   "images": [
-    "https://www.nologo.in/assets/images/work/film/thumb5.jpg"
+    "https://nologo.in/assets/images/work/film/thumb5.jpg"
   ],
   "order": 26,
   "slug": "hues-of-life",
@@ -12,7 +12,7 @@
     "Art Film",
     "People"
   ],
-  "thumb": "https://www.nologo.in/assets/images/work/film/thumb5.jpg",
+  "thumb": "https://nologo.in/assets/images/work/film/thumb5.jpg",
   "title": "Hues of Life",
   "type": "films",
   "videoId": "227863376",

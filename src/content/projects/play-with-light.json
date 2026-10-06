@@ -3,14 +3,14 @@
   "client": "Personal Project",
   "description": "A lifestyle and fashion series celebrating mood, colour and character. Shot for brand campaigns, this series captures the vibrancy of everyday life elevated by thoughtful composition and lighting.",
   "images": [
-    "https://www.nologo.in/assets/images/work/photography/8/image1.jpg",
-    "https://www.nologo.in/assets/images/work/photography/8/image2.jpg",
-    "https://www.nologo.in/assets/images/work/photography/8/image3.jpg",
-    "https://www.nologo.in/assets/images/work/photography/8/image4.jpg",
-    "https://www.nologo.in/assets/images/work/photography/8/image5.jpg",
-    "https://www.nologo.in/assets/images/work/photography/8/image6.jpg",
-    "https://www.nologo.in/assets/images/work/photography/8/image7.jpg",
-    "https://www.nologo.in/assets/images/work/photography/8/image8.jpg"
+    "https://nologo.in/assets/images/work/photography/8/image1.jpg",
+    "https://nologo.in/assets/images/work/photography/8/image2.jpg",
+    "https://nologo.in/assets/images/work/photography/8/image3.jpg",
+    "https://nologo.in/assets/images/work/photography/8/image4.jpg",
+    "https://nologo.in/assets/images/work/photography/8/image5.jpg",
+    "https://nologo.in/assets/images/work/photography/8/image6.jpg",
+    "https://nologo.in/assets/images/work/photography/8/image7.jpg",
+    "https://nologo.in/assets/images/work/photography/8/image8.jpg"
   ],
   "order": 31,
   "slug": "play-with-light",
@@ -19,7 +19,7 @@
     "Wildlife",
     "Macro"
   ],
-  "thumb": "https://www.nologo.in/assets/images/work/photography/8/image1.jpg",
+  "thumb": "https://nologo.in/assets/images/work/photography/8/image1.jpg",
   "title": "Play with Light",
   "type": "photography",
   "year": "2020"

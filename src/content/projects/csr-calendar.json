@@ -3,9 +3,9 @@
   "client": "Cheyyar SEZ Developers",
   "description": "The calendar designed for the CSR program â€˜Beyondâ€™ captures the joy and spirit of the students of â€˜Bon Secours School for Hearing and Speech Impairedâ€™ through a series of lively photographs and captions to go with them. â€˜Beyondâ€™ supports the school through provision of hearing aid and school stationeries for the children every year.",
   "images": [
-    "https://www.nologo.in/assets/images/csr/calendar/calendar2.jpg",
-    "https://www.nologo.in/assets/images/csr/calendar/calendar3.jpg",
-    "https://www.nologo.in/assets/images/csr/calendar/calendar4.jpg"
+    "https://nologo.in/assets/images/csr/calendar/calendar2.jpg",
+    "https://nologo.in/assets/images/csr/calendar/calendar3.jpg",
+    "https://nologo.in/assets/images/csr/calendar/calendar4.jpg"
   ],
   "order": 24,
   "slug": "csr-calendar",
@@ -13,7 +13,7 @@
     "CSR",
     "Calendar"
   ],
-  "thumb": "https://www.nologo.in/assets/images/csr/calendar/calendar1.jpg",
+  "thumb": "https://nologo.in/assets/images/csr/calendar/calendar1.jpg",
   "title": "CSR Calendar",
   "type": "csr",
   "year": "2017"

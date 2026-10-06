@@ -3,7 +3,7 @@
   "client": "Personal Project",
   "description": "A lifestyle and fashion series celebrating mood, colour and character. Shot for brand campaigns, this series captures the vibrancy of everyday life elevated by thoughtful composition and lighting.",
   "images": [
-    "https://www.nologo.in/assets/images/work/photography/9/image1.jpg"
+    "https://nologo.in/assets/images/work/photography/9/image1.jpg"
   ],
   "order": 32,
   "slug": "beyond",
@@ -12,7 +12,7 @@
     "Wildlife",
     "Macro"
   ],
-  "thumb": "https://www.nologo.in/assets/images/work/photography/9/image1.jpg",
+  "thumb": "https://nologo.in/assets/images/work/photography/9/image1.jpg",
   "title": "Beyond",
   "type": "photography",
   "year": "2020"

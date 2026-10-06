@@ -3,16 +3,16 @@
   "client": "Sakhi",
   "description": "",
   "images": [
-    "https://www.nologo.in/assets/images/csr/sakhi/sakhi_01.jpg",
-    "https://www.nologo.in/assets/images/csr/sakhi/sakhi_02.jpg",
-    "https://www.nologo.in/assets/images/csr/sakhi/sakhi_03.jpg"
+    "https://nologo.in/assets/images/csr/sakhi/sakhi_01.jpg",
+    "https://nologo.in/assets/images/csr/sakhi/sakhi_02.jpg",
+    "https://nologo.in/assets/images/csr/sakhi/sakhi_03.jpg"
   ],
   "order": 6,
   "slug": "sakhi",
   "tags": [
     "CSR"
   ],
-  "thumb": "https://www.nologo.in/assets/images/csr/sakhi/sakhi_01.jpg",
+  "thumb": "https://nologo.in/assets/images/csr/sakhi/sakhi_01.jpg",
   "title": "Sakhi",
   "type": "csr",
   "year": "2021"

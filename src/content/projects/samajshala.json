@@ -3,10 +3,10 @@
   "client": "Samajshala",
   "description": "The brochure developed for the CSR program Samjashala of EKAM Foundation talks about the various social outreach activities undertaken by the foundation in the areas of Education, Health and Sanitation, Sports and Infrastructure to support the communities surrounding it. The deliberate usage of minimalistic design and poignant photographs add to its simplicity and appeal.",
   "images": [
-    "https://www.nologo.in/assets/images/csr/samajshala/samajshala_02.jpg",
-    "https://www.nologo.in/assets/images/csr/samajshala/samajshala_03.jpg",
-    "https://www.nologo.in/assets/images/csr/samajshala/samajshala_04.jpg",
-    "https://www.nologo.in/assets/images/csr/samajshala/samajshala_05.jpg"
+    "https://nologo.in/assets/images/csr/samajshala/samajshala_02.jpg",
+    "https://nologo.in/assets/images/csr/samajshala/samajshala_03.jpg",
+    "https://nologo.in/assets/images/csr/samajshala/samajshala_04.jpg",
+    "https://nologo.in/assets/images/csr/samajshala/samajshala_05.jpg"
   ],
   "order": 10,
   "slug": "samajshala",
@@ -14,7 +14,7 @@
     "CSR",
     "Brochure"
   ],
-  "thumb": "https://www.nologo.in/assets/images/csr/samajshala/samajshala_01.jpg",
+  "thumb": "https://nologo.in/assets/images/csr/samajshala/samajshala_01.jpg",
   "title": "Samajshala",
   "type": "csr",
   "year": "2019"

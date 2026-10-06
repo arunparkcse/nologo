@@ -3,12 +3,12 @@
   "client": "Valley of Hope",
   "description": "the booklet for igsss focuses on the stories of kashmir flood survivors and a rehabilitation programme that changed their lives. through a series of interesting illustrations, anecdotes, and photos, we designed it to create the desired impact.",
   "images": [
-    "https://www.nologo.in/assets/images/work/design/11/image1.jpg",
-    "https://www.nologo.in/assets/images/work/design/11/image2.jpg",
-    "https://www.nologo.in/assets/images/work/design/11/image3.jpg",
-    "https://www.nologo.in/assets/images/work/design/11/image4.jpg",
-    "https://www.nologo.in/assets/images/work/design/11/image5.jpg",
-    "https://www.nologo.in/assets/images/work/design/11/image6.jpg"
+    "https://nologo.in/assets/images/work/design/11/image1.jpg",
+    "https://nologo.in/assets/images/work/design/11/image2.jpg",
+    "https://nologo.in/assets/images/work/design/11/image3.jpg",
+    "https://nologo.in/assets/images/work/design/11/image4.jpg",
+    "https://nologo.in/assets/images/work/design/11/image5.jpg",
+    "https://nologo.in/assets/images/work/design/11/image6.jpg"
   ],
   "order": 45,
   "slug": "valley-of-hope",
@@ -17,7 +17,7 @@
     "Foundation",
     "Print Design"
   ],
-  "thumb": "https://www.nologo.in/assets/images/work/design/11/image1.jpg",
+  "thumb": "https://nologo.in/assets/images/work/design/11/image1.jpg",
   "title": "Valley of Hope",
   "type": "creative",
   "year": "2021"
