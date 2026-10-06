@@ -1,0 +1,23 @@
+<section class="nl-team section">
+  @if (block.label || block.title) {
+  <div class="team-header reveal">
+    @if (block.label) { <div class="section-label">{{ block.label }}</div> }
+    @if (block.title) { <h2 class="section-title pre-line">{{ block.title }}</h2> }
+  </div>
+  }
+  <div class="team-grid">
+    @for (member of team; track member.name) {
+    <div class="team-card reveal">
+      <div class="team-img-wrap">
+        <img [src]="member.img" [alt]="member.name" class="team-img"
+          (error)="fallback($event)" loading="lazy" />
+        <div class="team-hover">
+          <span class="team-name">{{ member.name }}</span>
+          <span class="team-role">{{ member.role }}</span>
+          <span class="team-dept">{{ member.dept }}</span>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</section>

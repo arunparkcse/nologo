@@ -1,0 +1,8 @@
+<section class="about-stats">
+  @for (stat of block.items; track $index) {
+  <div class="about-stat reveal">
+    <div class="astat-num">{{ stat.value }}<span class="accent-dot">{{ stat.suffix }}</span></div>
+    <div class="astat-lbl">{{ stat.label }}</div>
+  </div>
+  }
+</section>

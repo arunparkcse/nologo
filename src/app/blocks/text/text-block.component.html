@@ -1,0 +1,9 @@
+<section class="section careers-intro">
+  <div class="intro-text reveal">
+    @if (block.label) { <div class="section-label">{{ block.label }}</div> }
+    @if (block.title) { <h2 class="section-title pre-line">{{ block.title }}<span class="accent-dot">{{ block.accent }}</span></h2> }
+    @for (para of block.paragraphs; track $index) {
+    <p class="intro-desc" [innerHTML]="para | richText"></p>
+    }
+  </div>
+</section>

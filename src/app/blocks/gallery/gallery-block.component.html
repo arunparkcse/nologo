@@ -1,0 +1,7 @@
+<div class="culture-strip">
+  @for (img of block.images; track $index) {
+  <div class="culture-img" [class.reveal-scale]="$first">
+    <img [src]="img" alt="" loading="lazy" />
+  </div>
+  }
+</div>

@@ -1,0 +1,44 @@
+<section class="nl-testimonials section">
+  @if (block.label || block.title) {
+  <div class="te-header reveal">
+    @if (block.label) { <div class="section-label">{{ block.label }}</div> }
+    @if (block.title) { <h2 class="section-title">{{ block.title }}</h2> }
+  </div>
+  }
+  <div class="te-slider-wrap reveal">
+    <div class="te-track-clip">
+    <div class="te-track" [style.transform]="'translateX(-' + (idx * 100) + '%'">
+      @for (te of testimonials; track $index) {
+      <div class="te-slide">
+        @if (te.stars) {
+        <div class="te-stars">
+          @for (s of [1,2,3,4,5]; track s) {
+          <span class="star" [class.lit]="s <= te.stars!">★</span>
+          }
+        </div>
+        }
+        <blockquote class="te-quote">"{{ te.quote }}"</blockquote>
+        <div class="te-author-row">
+          @if (te.avatar) {
+          <img [src]="te.avatar" [alt]="te.author" class="te-avatar" />
+          } @else {
+          <div class="te-avatar te-avatar-initials" aria-hidden="true">{{ initials(te.author) }}</div>
+          }
+          <div class="te-meta">
+            <span class="te-name">{{ te.author }}</span>
+            <span class="te-company">{{ te.role ? te.role + ', ' : '' }}{{ te.company }}</span>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    </div>
+    <button class="te-btn te-prev" (click)="go(idx - 1)" aria-label="Previous">←</button>
+    <button class="te-btn te-next" (click)="go(idx + 1)" aria-label="Next">→</button>
+    <div class="te-dots">
+      @for (te of testimonials; let i = $index; track i) {
+      <button class="te-dot" [class.active]="i === idx" (click)="go(i)" [attr.aria-label]="'Testimonial ' + (i + 1)"></button>
+      }
+    </div>
+  </div>
+</section>

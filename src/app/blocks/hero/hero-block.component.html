@@ -1,0 +1,5 @@
+<section class="page-hero page-hero--category" [style.--hero-bg]="block.image ? 'url(' + block.image + ')' : null">
+  <div class="hero-label reveal">{{ block.label }}</div>
+  <h1 class="reveal pre-line">{{ block.title }}<span class="accent-dot">{{ block.accent }}</span></h1>
+  @if (block.sub) { <p class="hero-sub reveal pre-line">{{ block.sub }}</p> }
+</section>

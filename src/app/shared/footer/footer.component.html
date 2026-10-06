@@ -39,6 +39,9 @@
       <h5 class="fcol-title">Company</h5>
       <ul>
         <li><a routerLink="/about">About Us</a></li>
+        @for (p of customPages; track p.slug) {
+        <li><a [routerLink]="'/' + p.slug">{{ p.footerLabel || p.title }}</a></li>
+        }
         <li><a routerLink="/careers">Careers</a></li>
         <li><a routerLink="/contact">Contact</a></li>
       </ul>

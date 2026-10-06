@@ -1,0 +1,25 @@
+<section class="story-section">
+  <div class="story-grid" [class.story-grid--image-right]="block.imagePosition === 'right'">
+    <div class="story-visual reveal-left">
+      <img [src]="block.image" [alt]="block.title || ''" loading="lazy" />
+      @if (block.badgeNumber) {
+      <div class="story-badge">
+        <div class="badge-num">{{ block.badgeNumber }}</div>
+        <div class="badge-lbl">{{ block.badgeLabel }}</div>
+      </div>
+      }
+    </div>
+    <div class="story-text reveal">
+      @if (block.label) { <div class="section-label">{{ block.label }}</div> }
+      @if (block.title) { <h2 class="section-title pre-line">{{ block.title }}</h2> }
+      @for (para of block.paragraphs; track $index) {
+      <p [innerHTML]="para | richText"></p>
+      }
+      @if (block.buttonLink && isInternal(block.buttonLink)) {
+      <a [routerLink]="block.buttonLink" class="btn btn-dark" style="margin-top: 2.5rem; display: inline-flex;">{{ block.buttonLabel }} <span class="arrow">→</span></a>
+      } @else if (block.buttonLink) {
+      <a [href]="block.buttonLink" target="_blank" rel="noopener" class="btn btn-dark" style="margin-top: 2.5rem; display: inline-flex;">{{ block.buttonLabel }} <span class="arrow">→</span></a>
+      }
+    </div>
+  </div>
+</section>

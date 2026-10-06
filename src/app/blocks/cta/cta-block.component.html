@@ -1,0 +1,12 @@
+<section class="nl-cta">
+  <div class="cta-inner reveal">
+    @if (block.label) { <div class="section-label cta-label">{{ block.label }}</div> }
+    <h2 class="cta-headline">{{ block.title }}@if (block.emphasis) {<br><em>{{ block.emphasis }}</em>}</h2>
+    @if (block.sub) { <p class="cta-sub pre-line">{{ block.sub }}</p> }
+    @if (isInternal(link)) {
+    <a [routerLink]="link" class="btn btn-white">{{ block.buttonLabel }}</a>
+    } @else {
+    <a [href]="link" target="_blank" rel="noopener" class="btn btn-white">{{ block.buttonLabel }}</a>
+    }
+  </div>
+</section>

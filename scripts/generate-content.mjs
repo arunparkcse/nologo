@@ -7,7 +7,15 @@ const ROOT = process.cwd();
 const CONTENT_DIR = path.join(ROOT, 'src/content');
 const OUT_FILE = path.join(ROOT, 'src/app/data/generated/content.json');
 
-const COLLECTIONS = ['categories', 'projects', 'perspectives', 'testimonials', 'team'];
+// [key in generated content, folder under src/content]
+const COLLECTIONS = [
+  ['categories', 'categories'], ['customPages', 'custom-pages'], ['projects', 'projects'],
+  ['perspectives', 'perspectives'], ['testimonials', 'testimonials'], ['team', 'team'],
+];
+
+// Section types a custom page can use (blocks in src/app/blocks).
+const SECTION_TYPES = new Set(['hero', 'text', 'imageText', 'stats', 'cards', 'quote', 'services', 'projects',
+  'team', 'testimonials', 'perspectives', 'clients', 'gallery', 'video', 'cta']);
 
 // Category slugs become top-level URLs, so they can't reuse an existing route or folder.
 const RESERVED_SLUGS = new Set(['about', 'careers', 'contact', 'perspectives', 'admin', 'assets']);
@@ -81,6 +89,25 @@ function validate(content) {
   for (const slug of content.pages.home?.selectedWork?.projects ?? []) {
     if (!slugs.has(slug)) errors.push(`home.selectedWork references unknown project "${slug}"`);
   }
+
+  // Custom pages share the top-level URL space with categories.
+  const pageSlugs = new Set();
+  for (const page of content.customPages) {
+    const where = `custom page "${page.slug ?? page.title ?? '?'}"`;
+    if (!page.slug || !page.title) errors.push(`${where}: missing slug/title`);
+    if (RESERVED_SLUGS.has(page.slug)) errors.push(`${where}: slug is reserved (it would clash with an existing page)`);
+    if (categorySlugs.has(page.slug)) errors.push(`${where}: slug is already used by a category`);
+    if (pageSlugs.has(page.slug)) errors.push(`${where}: duplicate slug`);
+    pageSlugs.add(page.slug);
+    (page.sections ?? []).forEach((s, i) => {
+      const at = `${where}, section ${i + 1}`;
+      if (!SECTION_TYPES.has(s.type)) errors.push(`${at}: unknown section type "${s.type}"`);
+      if (s.type === 'projects') {
+        if (s.category && !categorySlugs.has(s.category)) errors.push(`${at}: unknown category "${s.category}"`);
+        for (const p of s.projects ?? []) if (!slugs.has(p)) errors.push(`${at}: unknown project "${p}"`);
+      }
+    });
+  }
   if (errors.length) throw new ContentError(errors.join('\n'));
 }
 
@@ -89,7 +116,7 @@ function generate() {
   const content = {
     site: readJson(path.join(CONTENT_DIR, 'site.json')),
     pages: readPages(),
-    ...Object.fromEntries(COLLECTIONS.map(c => [c, readCollection(c)]))
+    ...Object.fromEntries(COLLECTIONS.map(([key, folder]) => [key, readCollection(folder)]))
   };
   validate(content);
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
@@ -98,7 +125,7 @@ function generate() {
   if (!fs.existsSync(OUT_FILE) || fs.readFileSync(OUT_FILE, 'utf8') !== json) {
     fs.writeFileSync(OUT_FILE, json);
   }
-  console.log(`[content] ${content.categories.length} categories, ${content.projects.length} projects, ${content.perspectives.length} perspectives, ` +
+  console.log(`[content] ${content.categories.length} categories, ${content.customPages.length} custom pages, ${content.projects.length} projects, ${content.perspectives.length} perspectives, ` +
     `${content.testimonials.length} testimonials, ${content.team.length} team, ${Object.keys(content.pages).length} pages` +
     (formatted ? ` (formatted ${formatted} file${formatted === 1 ? '' : 's'})` : ''));
 }

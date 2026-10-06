@@ -1,0 +1,156 @@
+// Copied from home.component.scss (TESTIMONIALS) so this block looks identical to the original section.
+
+/* ══════════════════════════════════════════
+   TESTIMONIALS
+══════════════════════════════════════════ */
+.nl-testimonials {
+  background: #f8f7f4;
+}
+
+.te-header {
+  margin-bottom: 3rem;
+}
+
+.te-slider-wrap {
+  position: relative;
+}
+
+.te-track-clip {
+  overflow: hidden;
+}
+
+.te-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.te-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 0 0 3.5rem;
+}
+
+.te-stars {
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 1.5rem;
+
+  .star {
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.12);
+
+    &.lit {
+      color: #c8102e;
+    }
+  }
+}
+
+.te-quote {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  font-weight: 600;
+  color: #111;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  margin-bottom: 2rem;
+}
+
+.te-author-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.te-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(30%);
+}
+
+.te-avatar-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.te-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.te-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.te-company {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+/* Arrows */
+.te-btn {
+  position: absolute;
+  bottom: 0;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: 1.5px solid #ddd;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+
+  &:hover {
+    border-color: #111;
+    color: #111;
+  }
+
+  &.te-prev {
+    left: 0;
+  }
+
+  &.te-next {
+    left: 52px;
+  }
+}
+
+/* Dots */
+.te-dots {
+  position: absolute;
+  bottom: 12px;
+  right: 0;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.te-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+
+  &.active {
+    background: #c8102e;
+    transform: scale(1.35);
+  }
+}

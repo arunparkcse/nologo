@@ -1,0 +1,10 @@
+<section class="nl-mission section">
+  <div class="mission-wrap reveal">
+    @if (block.label) { <div class="section-label">{{ block.label }}</div> }
+    <blockquote class="mission-quote">
+      {{ block.quote }}
+      @if (block.emphasis) { <em>{{ block.emphasis }}</em> }
+    </blockquote>
+    @if (block.body) { <p class="mission-body">{{ block.body }}</p> }
+  </div>
+</section>

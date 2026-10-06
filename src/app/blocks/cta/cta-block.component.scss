@@ -1,0 +1,56 @@
+// Copied from home.component.scss (CTA BAND) so this block looks identical to the original section.
+
+/* ══════════════════════════════════════════
+   CTA BAND
+══════════════════════════════════════════ */
+.nl-cta {
+  background: #111;
+  padding: 8rem 4%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(200, 16, 46, 0.08) 0%, transparent 70%);
+  }
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-label {
+  color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 1.5rem;
+
+  &::before {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.cta-headline {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(5rem, 15vw, 14rem);
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 0.88;
+  margin-bottom: 2rem;
+
+  em {
+    font-style: italic;
+    color: #c8102e;
+  }
+}
+
+.cta-sub {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 2.5rem;
+}

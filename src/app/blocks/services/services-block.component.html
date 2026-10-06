@@ -1,0 +1,29 @@
+<section class="nl-services section">
+  @if (block.label || block.title) {
+  <div class="svc-header reveal">
+    @if (block.label) { <div class="section-label">{{ block.label }}</div> }
+    @if (block.title) { <h2 class="section-title pre-line">{{ block.title }}</h2> }
+  </div>
+  }
+  <div class="svc-grid">
+    @for (svc of block.items; track $index) {
+    <div class="svc-card reveal">
+      <div class="svc-top">
+        <span class="svc-num">{{ num($index) }}</span>
+        <h3 class="svc-title">{{ svc.title }}</h3>
+      </div>
+      <p class="svc-desc">{{ svc.desc }}</p>
+      <div class="svc-tags">
+        @for (tag of svc.tags ?? []; track $index) {
+        <span class="svc-tag">{{ tag }}</span>
+        }
+      </div>
+      @if (svc.link && isInternal(svc.link)) {
+      <a [routerLink]="svc.link" class="svc-link">Explore →</a>
+      } @else if (svc.link) {
+      <a [href]="svc.link" target="_blank" rel="noopener" class="svc-link">Explore →</a>
+      }
+    </div>
+    }
+  </div>
+</section>

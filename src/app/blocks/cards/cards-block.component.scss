@@ -1,0 +1,180 @@
+// Copied from about.component.scss (VALUES + WHAT WE DO + SHARED) so this block looks identical to the original section.
+
+// ── VALUES ──
+.values-section {
+  background: var(--color-black);
+  padding: 7rem 4%;
+}
+
+.values-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.value-card {
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: var(--color-accent);
+  }
+}
+
+.value-num {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+}
+
+.value-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.9rem;
+}
+
+.value-desc {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+
+// ── WHAT WE DO ──
+.what-we-do {
+  padding: 7rem 4%;
+  background: var(--color-white);
+}
+
+.wwd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wwd-card {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  background: var(--color-white);
+  transition: background 0.2s;
+
+  &:hover {
+    background: var(--color-bg);
+  }
+}
+
+.wwd-num {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.wwd-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--color-black);
+  margin-bottom: 0.4rem;
+}
+
+.wwd-desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--color-gray);
+}
+
+// ── SHARED ──
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 26px;
+    height: 1.5px;
+    background: var(--color-accent);
+  }
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1.8rem;
+  background: var(--color-black);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background: var(--color-accent);
+  }
+
+  .arrow {
+    transition: transform 0.3s;
+  }
+
+  &:hover .arrow {
+    transform: translateX(5px);
+  }
+}
+
+.accent-dot {
+  color: var(--color-accent);
+}

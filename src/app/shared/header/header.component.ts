@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { SITE, navCategories } from '../../data/content';
+import { SITE, navCategories, navCustomPages } from '../../data/content';
 
 @Component({
   selector: 'app-header',
@@ -56,6 +56,8 @@ export class HeaderComponent implements OnInit {
     { label: 'About',        path: '/about'       },
     // Portfolio categories (Film, Photography, …) come from the CMS.
     ...navCategories().map(c => ({ label: c.navLabel || c.name, path: '/' + c.slug })),
+    // Custom pages only appear here when "Show in top menu" is ticked in the CMS.
+    ...navCustomPages().map(p => ({ label: p.navLabel || p.title, path: '/' + p.slug })),
     { label: 'Careers',      path: '/careers'     },
     { label: 'Contact',      path: '/contact'     },
   ];

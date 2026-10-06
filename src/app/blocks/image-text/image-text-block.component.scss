@@ -1,0 +1,147 @@
+// Copied from about.component.scss (STORY + SHARED) so this block looks identical to the original section.
+
+// ── STORY ──
+.story-section {
+  padding: 7rem 4%;
+  background: var(--color-bg);
+}
+
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+.story-visual {
+  position: relative;
+
+  img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: grayscale(15%);
+  }
+}
+
+.story-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 100px;
+  height: 100px;
+  background: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 560px) {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.badge-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.badge-lbl {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 0.2rem;
+}
+
+.story-text {
+  p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--color-gray);
+    margin-top: 1rem;
+  }
+}
+
+// ── SHARED ──
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 26px;
+    height: 1.5px;
+    background: var(--color-accent);
+  }
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1.8rem;
+  background: var(--color-black);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background: var(--color-accent);
+  }
+
+  .arrow {
+    transition: transform 0.3s;
+  }
+
+  &:hover .arrow {
+    transform: translateX(5px);
+  }
+}
+
+.accent-dot {
+  color: var(--color-accent);
+}
+
+// Block option: image on the right (desktop only — stacks image-first on mobile).
+.story-grid--image-right .story-visual {
+  order: 2;
+
+  @media (max-width: 900px) {
+    order: 0;
+  }
+}

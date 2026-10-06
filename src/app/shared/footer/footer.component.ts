@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { SITE, footerCategories } from '../../data/content';
+import { SITE, footerCategories, footerCustomPages } from '../../data/content';
 
 @Component({
   selector: 'app-footer',
@@ -12,6 +12,7 @@ import { SITE, footerCategories } from '../../data/content';
 export class FooterComponent {
   site = SITE;
   categories = footerCategories();
+  customPages = footerCustomPages();
 
   scrollTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });

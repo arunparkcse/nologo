@@ -1,0 +1,21 @@
+@if (block.label || block.title) {
+  <div class="projects-header reveal">
+    @if (block.label) { <div class="section-label">{{ block.label }}</div> }
+    @if (block.title) { <h2 class="section-title pre-line">{{ block.title }}</h2> }
+  </div>
+  }
+<div class="creative-main-grid">
+  @for (work of items; track work.slug) {
+  <a class="c-card reveal-scale" [routerLink]="['/' + work.type + '/' + work.slug]">
+    <img [src]="work.thumb" [alt]="work.title" class="c-card-img" loading="lazy" />
+    <div class="c-card-tags">
+      <span class="c-tag">{{ work.category }}</span>
+      <span class="c-tag">{{ work.year }}</span>
+    </div>
+    <div class="c-card-body">
+      <h3 class="c-card-title">{{ work.title }}</h3>
+      <span class="c-card-client">{{ work.client }}</span>
+    </div>
+  </a>
+  }
+</div>

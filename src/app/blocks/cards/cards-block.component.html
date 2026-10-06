@@ -1,0 +1,33 @@
+@if (block.theme === 'light') {
+<section class="what-we-do">
+  @if (block.label) { <div class="section-label">{{ block.label }}</div> }
+  @if (block.title) { <h2 class="section-title pre-line" style="margin-bottom: 2.5rem;">{{ block.title }}</h2> }
+  <div class="wwd-grid">
+    @for (item of block.items; track $index) {
+    <div class="wwd-card">
+      <div class="wwd-num">{{ num($index) }}</div>
+      <div class="wwd-text">
+        <h3 class="wwd-title">{{ item.title }}</h3>
+        <p class="wwd-desc">{{ item.desc }}</p>
+      </div>
+    </div>
+    }
+  </div>
+</section>
+} @else {
+<section class="values-section">
+  <div class="values-inner">
+    @if (block.label) { <div class="section-label" style="color: var(--color-accent)">{{ block.label }}</div> }
+    @if (block.title) { <h2 class="section-title pre-line" style="color: #fff; margin-bottom: 4rem;">{{ block.title }}</h2> }
+    <div class="values-grid">
+      @for (item of block.items; track $index) {
+      <div class="value-card">
+        <div class="value-num">{{ num($index) }}</div>
+        <h3 class="value-title">{{ item.title }}</h3>
+        <p class="value-desc">{{ item.desc }}</p>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+}

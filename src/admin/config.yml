@@ -81,6 +81,164 @@ collections:
           - { label: Accent character, name: accent, widget: string, required: false }
           - { label: Button text, name: buttonLabel, widget: string }
 
+  # ── Custom pages (built from sections) ────────────────────────────
+  - name: customPages
+    label: Custom Pages
+    label_singular: Custom page
+    description: "Build a new page from ready-made sections (the same designs used across the site). Each page lives at /<slug>."
+    folder: src/content/custom-pages
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    identifier_field: title
+    summary: "{{title}} — /{{slug}}"
+    sortable_fields: [order, title]
+    editor: { preview: false }
+    fields:
+      - *order
+      - { label: URL slug, name: slug, widget: string, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers and hyphens only"], hint: "The page address, e.g. awards → /awards. Can't match a category or be about, careers, contact, perspectives, admin or assets." }
+      - { label: Page title, name: title, widget: string, hint: "Shown in the browser tab, and as the menu/footer label unless set below" }
+      - { label: Show in top menu, name: showInNav, widget: boolean, default: false, required: false }
+      - { label: Menu label, name: navLabel, widget: string, required: false }
+      - { label: Show in footer, name: showInFooter, widget: boolean, default: false, required: false }
+      - { label: Footer label, name: footerLabel, widget: string, required: false }
+      - label: Sections
+        name: sections
+        widget: list
+        label_singular: section
+        hint: "Add sections in the order they should appear. Drag to reorder."
+        types:
+          - label: Hero (page header)
+            name: hero
+            widget: object
+            summary: "Hero — {{fields.title}}"
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Title (new line = line break), name: title, widget: text }
+              - { label: Accent character, name: accent, widget: string, required: false, hint: "Shown in red after the title, e.g. . or ?" }
+              - { label: Subtitle, name: sub, widget: text, required: false }
+              - { label: Background image, name: image, widget: image, required: false }
+          - label: Text
+            name: text
+            widget: object
+            summary: "Text — {{fields.title}}"
+            fields:
+              - { label: Small label, name: label, widget: string, required: false }
+              - { label: Heading (new line = line break), name: title, widget: text, required: false }
+              - { label: Accent character, name: accent, widget: string, required: false }
+              - { label: Paragraphs, name: paragraphs, widget: list, field: { label: Paragraph, name: paragraph, widget: text }, hint: "Wrap words in **double asterisks** for bold" }
+          - label: Image + text
+            name: imageText
+            widget: object
+            summary: "Image + text — {{fields.title}}"
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Image position, name: imagePosition, widget: select, options: [left, right], default: left, required: false }
+              - { label: Badge number, name: badgeNumber, widget: string, required: false, hint: "Optional red badge on the image, e.g. 2010" }
+              - { label: Badge label, name: badgeLabel, widget: string, required: false }
+              - { label: Small label, name: label, widget: string, required: false }
+              - { label: Heading (new line = line break), name: title, widget: text, required: false }
+              - { label: Paragraphs, name: paragraphs, widget: list, field: { label: Paragraph, name: paragraph, widget: text }, hint: "Wrap words in **double asterisks** for bold" }
+              - { label: Button text, name: buttonLabel, widget: string, required: false }
+              - { label: Button link, name: buttonLink, widget: string, required: false, hint: "A site path like /contact, or a full URL (opens in a new tab)" }
+          - label: Stats bar
+            name: stats
+            widget: object
+            summary: "Stats bar"
+            fields:
+              - label: Stats
+                name: items
+                widget: list
+                fields:
+                  - { label: Number, name: value, widget: string }
+                  - { label: Suffix (red), name: suffix, widget: string, required: false, hint: "e.g. +" }
+                  - { label: Label, name: label, widget: string }
+          - label: Numbered cards
+            name: cards
+            widget: object
+            summary: "Cards — {{fields.title}}"
+            fields:
+              - { label: Style, name: theme, widget: select, options: [{ label: "Dark (like Our Values)", value: dark }, { label: "Light (like What We Do)", value: light }], default: dark, required: false }
+              - { label: Small label, name: label, widget: string, required: false }
+              - { label: Heading (new line = line break), name: title, widget: text, required: false }
+              - label: Cards
+                name: items
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: desc, widget: text }
+          - label: Quote
+            name: quote
+            widget: object
+            summary: "Quote — {{fields.quote}}"
+            fields:
+              - { label: Small label, name: label, widget: string, required: false }
+              - { label: Quote, name: quote, widget: text }
+              - { label: Quote emphasis (italic), name: emphasis, widget: string, required: false }
+              - { label: Body, name: body, widget: text, required: false }
+          - label: Service cards
+            name: services
+            widget: object
+            summary: "Services — {{fields.title}}"
+            fields:
+              - { label: Small label, name: label, widget: string, required: false }
+              - { label: Heading (new line = line break), name: title, widget: text, required: false }
+              - label: Cards
+                name: items
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: desc, widget: text }
+                  - { label: Tags, name: tags, widget: list, required: false }
+                  - { label: Link, name: link, widget: string, required: false, hint: "A site path like /films, or a full URL" }
+          - label: Projects grid
+            name: projects
+            widget: object
+            summary: "Projects — {{fields.title}}"
+            fields:
+              - { label: Small label, name: label, widget: string, required: false }
+              - { label: Heading (new line = line break), name: title, widget: text, required: false }
+              - { label: Pick specific projects, name: projects, widget: relation, collection: projects, value_field: slug, search_fields: [title, client], display_fields: [title], multiple: true, required: false, hint: "Leave empty to show a whole category instead" }
+              - { label: Or show a whole category, name: category, widget: relation, collection: categories, value_field: slug, search_fields: [name], display_fields: [name], required: false, hint: "Used when no specific projects are picked. Leave both empty to show all projects." }
+              - { label: Maximum to show, name: limit, widget: number, value_type: int, min: 1, required: false }
+          - { label: Team, name: team, widget: object, summary: "Team — {{fields.title}}", fields: &sectionHeading [{ label: Small label, name: label, widget: string, required: false }, { label: Heading (new line = line break), name: title, widget: text, required: false }], hint: "Shows everyone in the Team collection" }
+          - { label: Testimonials, name: testimonials, widget: object, summary: "Testimonials — {{fields.title}}", fields: *sectionHeading, hint: "Shows the Testimonials collection as a slider" }
+          - { label: Perspectives articles, name: perspectives, widget: object, summary: "Perspectives — {{fields.title}}", fields: *sectionHeading, hint: "Shows cards for every Perspectives article" }
+          - label: Clients marquee
+            name: clients
+            widget: object
+            summary: "Clients marquee"
+            fields:
+              - { label: Small label, name: label, widget: string, required: false }
+              - { label: Client names, name: items, widget: list, hint: "Comma separated" }
+          - label: Image gallery
+            name: gallery
+            widget: object
+            summary: "Gallery"
+            fields:
+              - { label: Images, name: images, widget: list, field: { label: Image, name: image, widget: image } }
+          - label: Video
+            name: video
+            widget: object
+            summary: "Video — {{fields.caption}}"
+            fields:
+              - { label: Video ID, name: videoId, widget: string, hint: "YouTube: the part after v= in the URL. Vimeo: the number." }
+              - { label: Video platform, name: videoType, widget: select, options: [youtube, vimeo], default: youtube, required: false }
+              - { label: Caption, name: caption, widget: string, required: false }
+          - label: Call-to-action band
+            name: cta
+            widget: object
+            summary: "Call-to-action — {{fields.title}}"
+            fields:
+              - { label: Small label, name: label, widget: string, required: false }
+              - { label: Heading, name: title, widget: string }
+              - { label: Heading emphasis (italic, new line), name: emphasis, widget: string, required: false }
+              - { label: Subtitle, name: sub, widget: text, required: false }
+              - { label: Button text, name: buttonLabel, widget: string }
+              - { label: Button link, name: buttonLink, widget: string, required: false, hint: "Defaults to /contact. A site path or a full URL." }
+
   # ── Portfolio projects ────────────────────────────────────────────
   - name: projects
     label: Projects

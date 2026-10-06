@@ -1,0 +1,10 @@
+<section class="nl-clients">
+  @if (block.label) { <div class="clients-label section-label reveal">{{ block.label }}</div> }
+  <div class="clients-track-outer">
+    <div class="clients-track">
+      @for (client of looped; track $index) {
+      <span class="client-chip">{{ client }}</span>
+      }
+    </div>
+  </div>
+</section>
