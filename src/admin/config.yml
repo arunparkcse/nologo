@@ -1,0 +1,408 @@
+# Decap CMS — local-only. `npm start` runs decap-server, which reads/writes
+# src/content/** directly on disk. Nothing is committed or published automatically:
+# review the changes, then build and deploy as usual.
+local_backend: true
+backend:
+  name: git-gateway # unused locally; Decap requires a backend entry
+
+media_folder: src/assets/uploads
+public_folder: assets/uploads
+
+# Shared field shapes are YAML anchors (&name) defined at first use and reused (*name).
+collections:
+  # ── Portfolio projects ────────────────────────────────────────────
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: src/content/projects
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    identifier_field: title
+    summary: "{{title}} — {{type}}"
+    sortable_fields: [order, title, type, year]
+    editor: { preview: false }
+    fields:
+      - &order { label: Display order, name: order, widget: number, value_type: int, required: false, hint: "Lower numbers appear first. Leave empty to show last." }
+      - { label: URL slug, name: slug, widget: string, pattern: ["^[a-zA-Z0-9-]+$", "Letters, numbers and hyphens only"], hint: "Becomes the page address, e.g. /films/<slug>. Don't change it for an existing project or old links break." }
+      - { label: Section, name: type, widget: select, options: [films, photography, creative, csr] }
+      - { label: Title, name: title, widget: string }
+      - { label: Category, name: category, widget: string, hint: "e.g. Brand Film, Documentary" }
+      - { label: Client, name: client, widget: string }
+      - { label: Year, name: year, widget: string }
+      - { label: Thumbnail, name: thumb, widget: image }
+      - { label: Gallery images, name: images, widget: list, field: { label: Image, name: image, widget: image } }
+      - { label: Description, name: description, widget: text }
+      - { label: Tags, name: tags, widget: list, hint: "Comma separated" }
+      - { label: Video ID, name: videoId, widget: string, required: false, hint: "YouTube: the part after v= in the URL. Vimeo: the number. Leave empty for an image gallery." }
+      - { label: Video platform, name: videoType, widget: select, options: [youtube, vimeo], required: false }
+
+  # ── Perspectives articles ─────────────────────────────────────────
+  - name: perspectives
+    label: Perspectives
+    label_singular: Article
+    folder: src/content/perspectives
+    sortable_fields: [order]
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    identifier_field: title
+    editor: { preview: false }
+    fields:
+      - *order
+      - { label: URL slug, name: slug, widget: string, pattern: ["^[a-zA-Z0-9-]+$", "Letters, numbers and hyphens only"], hint: "Becomes /perspectives/<slug>" }
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: string, required: false, hint: "Optional, e.g. October 2026. Hidden when empty." }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Cover image, name: image, widget: image }
+      - { label: Paragraphs, name: body, widget: list, field: { label: Paragraph, name: paragraph, widget: text } }
+
+  # ── Testimonials ──────────────────────────────────────────────────
+  - name: testimonials
+    label: Testimonials
+    label_singular: Testimonial
+    folder: src/content/testimonials
+    sortable_fields: [order]
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: author
+    summary: "{{author}} — {{company}}"
+    editor: { preview: false }
+    fields:
+      - *order
+      - { label: Quote, name: quote, widget: text }
+      - { label: Name, name: author, widget: string }
+      - { label: Job title, name: role, widget: string, required: false }
+      - { label: Organisation, name: company, widget: string }
+      - { label: Photo, name: avatar, widget: image, required: false, hint: "Optional — initials are shown when empty" }
+      - { label: Star rating, name: stars, widget: number, value_type: int, min: 1, max: 5, required: false, hint: "Optional — only fill in if the client actually gave one" }
+
+  # ── Team ──────────────────────────────────────────────────────────
+  - name: team
+    label: Team
+    label_singular: Team member
+    folder: src/content/team
+    sortable_fields: [order]
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: name
+    summary: "{{name}} — {{role}}"
+    editor: { preview: false }
+    fields:
+      - *order
+      - { label: Name, name: name, widget: string }
+      - { label: Role, name: role, widget: string }
+      - { label: Department, name: dept, widget: string }
+      - { label: Photo, name: img, widget: image }
+
+  # ── Page copy (one form per page) ─────────────────────────────────
+  - name: pages
+    label: Pages
+    editor: { preview: false }
+    files:
+      - name: home
+        label: Home
+        file: src/content/pages/home.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Badge, name: badge, widget: string }
+              - label: Headline lines
+                name: headline
+                widget: list
+                fields:
+                  - { label: Text, name: text, widget: string }
+                  - { label: Outline style, name: ghost, widget: boolean, default: false }
+              - { label: Accent character, name: accent, widget: string, required: false }
+              - { label: Subtitle, name: sub, widget: text }
+              - label: Stats
+                name: stats
+                widget: list
+                fields:
+                  - { label: Number, name: value, widget: string }
+                  - { label: Label, name: label, widget: string }
+              - label: Primary button
+                name: primaryButton
+                widget: object
+                fields: &button
+                  - { label: Text, name: label, widget: string }
+                  - { label: Link, name: link, widget: string, hint: "e.g. /films" }
+              - { label: Secondary button, name: secondaryButton, widget: object, fields: *button }
+              - { label: Showreel YouTube ID, name: showreelYoutubeId, widget: string }
+              - { label: Showreel label, name: showreelLabel, widget: string }
+              - { label: Side text, name: sideText, widget: string }
+              - { label: Scrolling ticker, name: ticker, widget: list, hint: "Comma separated" }
+          - label: Selected work
+            name: selectedWork
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: View-all link text, name: viewAllLabel, widget: string }
+              - { label: View-all link, name: viewAllLink, widget: string }
+              - { label: Featured projects, name: projects, widget: relation, collection: projects, value_field: slug, search_fields: [title, client], display_fields: [title], multiple: true, hint: "The card uses each project's own thumbnail and title" }
+          - label: Philosophy
+            name: mission
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Quote, name: quote, widget: string }
+              - { label: Quote emphasis (italic), name: quoteEmphasis, widget: string }
+              - { label: Body, name: body, widget: text }
+          - label: Services
+            name: services
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading (new line = line break), name: title, widget: text }
+              - label: Services
+                name: items
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: desc, widget: text }
+                  - { label: Tags, name: tags, widget: list }
+                  - { label: Link, name: link, widget: string }
+          - label: Testimonials heading
+            name: testimonials
+            widget: object
+            fields: &heading
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading (new line = line break), name: title, widget: text }
+          - { label: Team heading, name: team, widget: object, fields: *heading }
+          - { label: Perspectives heading, name: perspectives, widget: object, fields: *heading }
+          - label: Clients marquee
+            name: clients
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Client names, name: items, widget: list, hint: "Comma separated" }
+          - label: Bottom call-to-action
+            name: cta
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading, name: title, widget: string }
+              - { label: Heading emphasis (italic), name: emphasis, widget: string }
+              - { label: Subtitle, name: sub, widget: text }
+              - { label: Button text, name: buttonLabel, widget: string }
+
+      - name: about
+        label: About
+        file: src/content/pages/about.json
+        fields:
+          - &hero
+            label: Page hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Title (new line = line break), name: title, widget: text }
+              - { label: Accent character, name: accent, widget: string, required: false, hint: "Shown in red after the title, e.g. . or ?" }
+              - { label: Subtitle, name: sub, widget: text }
+          - label: Story
+            name: story
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Badge number, name: badgeNumber, widget: string }
+              - { label: Badge label, name: badgeLabel, widget: string }
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading (new line = line break), name: title, widget: text }
+              - { label: Paragraphs, name: paragraphs, widget: list, field: { label: Paragraph, name: paragraph, widget: text }, hint: "Wrap words in **double asterisks** for bold" }
+              - { label: Closing line (bold), name: closing, widget: string, required: false }
+              - { label: Button text, name: buttonLabel, widget: string }
+          - label: Stats bar
+            name: stats
+            widget: list
+            fields:
+              - { label: Number, name: value, widget: string }
+              - { label: Suffix (red), name: suffix, widget: string, required: false, hint: "e.g. +" }
+              - { label: Label, name: label, widget: string }
+          - { label: Team heading, name: team, widget: object, fields: *heading }
+          - label: Values
+            name: values
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading, name: title, widget: string }
+              - label: Values
+                name: items
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: desc, widget: text }
+          - label: What we do
+            name: whatWeDo
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading (new line = line break), name: title, widget: text }
+              - { label: Accent character, name: accent, widget: string, required: false }
+              - label: Services
+                name: items
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: desc, widget: text }
+              - { label: Button text, name: buttonLabel, widget: string }
+              - { label: Button link, name: buttonLink, widget: string }
+
+      - name: contact
+        label: Contact
+        file: src/content/pages/contact.json
+        fields:
+          - *hero
+          - { label: Offices label, name: officesLabel, widget: string }
+          - { label: Offices heading (new line = line break), name: officesTitle, widget: text }
+          - label: Offices
+            name: offices
+            widget: list
+            fields:
+              - { label: City, name: city, widget: string }
+              - { label: Address (new line = line break), name: address, widget: text }
+              - label: Phone numbers
+                name: phones
+                widget: list
+                fields:
+                  - { label: Displayed as, name: label, widget: string }
+                  - { label: Number to dial, name: number, widget: string, hint: "Digits only, e.g. +919841195181" }
+          - label: Contact form
+            name: form
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: Service options, name: services, widget: list, hint: "Comma separated" }
+              - { label: Success title, name: successTitle, widget: string }
+              - { label: Success message, name: successText, widget: text }
+
+      - name: careers
+        label: Careers
+        file: src/content/pages/careers.json
+        fields:
+          - *hero
+          - { label: Culture images, name: cultureImages, widget: list, field: { label: Image, name: image, widget: image } }
+          - label: Intro
+            name: intro
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading (new line = line break), name: title, widget: text }
+              - { label: Accent character, name: accent, widget: string, required: false }
+              - { label: Text before email, name: textBeforeEmail, widget: text }
+              - { label: Text after email, name: textAfterEmail, widget: text, hint: "The email address itself comes from Site settings" }
+          - label: Perks
+            name: perks
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading, name: title, widget: string }
+              - label: Perks
+                name: items
+                widget: list
+                fields:
+                  - { label: Title, name: label, widget: string }
+                  - { label: Description, name: desc, widget: text }
+          - label: Job openings
+            name: openings
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading, name: title, widget: string }
+              - label: Openings
+                name: items
+                widget: list
+                fields:
+                  - { label: Role, name: role, widget: string }
+                  - { label: Department, name: dept, widget: string }
+                  - { label: Type, name: type, widget: string, hint: "e.g. Full-time" }
+                  - { label: Location, name: location, widget: string }
+          - label: Open application
+            name: openApplication
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading, name: title, widget: string }
+              - { label: Text, name: text, widget: string }
+              - { label: Button text, name: buttonLabel, widget: string }
+
+      - name: films
+        label: Films
+        file: src/content/pages/films.json
+        fields:
+          - *hero
+          - { label: Featured film label, name: featuredLabel, widget: string }
+          - &cta
+            label: Call-to-action band
+            name: cta
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading (new line = line break), name: title, widget: text }
+              - { label: Accent character, name: accent, widget: string, required: false }
+              - { label: Button text, name: buttonLabel, widget: string }
+
+      - name: photography
+        label: Photography
+        file: src/content/pages/photography.json
+        fields: [*hero, *cta]
+
+      - name: creative
+        label: Creative
+        file: src/content/pages/creative.json
+        fields: [*hero, *cta]
+
+      - name: csr
+        label: CSR / Social
+        file: src/content/pages/csr.json
+        fields:
+          - *hero
+          - label: Impact stats
+            name: stats
+            widget: list
+            fields:
+              - { label: Number, name: number, widget: string }
+              - { label: Label, name: label, widget: string }
+          - label: Intro
+            name: intro
+            widget: object
+            fields:
+              - { label: Small label, name: label, widget: string }
+              - { label: Heading (new line = line break), name: title, widget: text }
+              - { label: Paragraphs, name: paragraphs, widget: list, field: { label: Paragraph, name: paragraph, widget: text } }
+          - { label: Services label, name: servicesLabel, widget: string }
+          - { label: Services, name: services, widget: list, hint: "Comma separated" }
+
+  # ── Site-wide settings ────────────────────────────────────────────
+  - name: settings
+    label: Site settings
+    editor: { preview: false }
+    files:
+      - name: site
+        label: Contact details & footer
+        file: src/content/site.json
+        fields:
+          - { label: Footer description, name: brandDescription, widget: text }
+          - { label: Email, name: email, widget: string }
+          - { label: Phone (displayed), name: phone, widget: string }
+          - { label: Phone (number to dial), name: phoneHref, widget: string, hint: "Digits only" }
+          - { label: Studio address (new line = line break), name: studioAddress, widget: text }
+          - { label: Copyright line, name: copyright, widget: string }
+          - label: Social links
+            name: social
+            widget: object
+            fields:
+              - { label: Facebook, name: facebook, widget: string }
+              - { label: Instagram, name: instagram, widget: string }
+              - { label: LinkedIn, name: linkedin, widget: string }
+              - { label: YouTube, name: youtube, widget: string }

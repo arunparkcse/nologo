@@ -1,19 +1,19 @@
 {
-  "order": 52,
-  "slug": "vijaya-hospitals-rebrand",
-  "type": "creative",
-  "title": "Vijaya Hospitals",
   "category": "Brand Identity",
   "client": "Vijaya Hospitals",
-  "year": "TBC",
-  "thumb": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
+  "description": "A pioneer in Chennai’s healthcare since 1972, Vijaya Hospitals had gradually faded amid a changing healthcare landscape. The brand was given a much-deserved facelift, bringing its legacy into the present with the best medical professionals and the same devotion to Chennai and its people. ‘We Know This City by Heart’ became the thought that brought it all together.",
   "images": [
     "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80"
   ],
-  "description": "A pioneer in Chennai’s healthcare since 1972, Vijaya Hospitals had gradually faded amid a changing healthcare landscape. The brand was given a much-deserved facelift, bringing its legacy into the present with the best medical professionals and the same devotion to Chennai and its people. ‘We Know This City by Heart’ became the thought that brought it all together.",
+  "order": 52,
+  "slug": "vijaya-hospitals-rebrand",
   "tags": [
     "Brand Identity",
     "Healthcare",
     "Rebrand"
-  ]
+  ],
+  "thumb": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
+  "title": "Vijaya Hospitals",
+  "type": "creative",
+  "year": "TBC"
 }

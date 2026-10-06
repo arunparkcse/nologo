@@ -1,21 +1,21 @@
 {
-  "order": 11,
-  "slug": "hgs-values",
-  "type": "films",
-  "title": "HGS Values",
   "category": "Corporate Film",
   "client": "Hinduja Global Solutions",
-  "year": "2016",
-  "thumb": "https://img.youtube.com/vi/X-Vk_g_OBxM/hqdefault.jpg",
+  "description": "At No Logo, we don’t believe in boxed thinking. We believe in impact. This film celebrates the bold, brave, and boundary-pushing values that define the HGS culture.",
   "images": [
     "https://img.youtube.com/vi/X-Vk_g_OBxM/hqdefault.jpg"
   ],
-  "videoId": "X-Vk_g_OBxM",
-  "videoType": "youtube",
-  "description": "At No Logo, we don’t believe in boxed thinking. We believe in impact. This film celebrates the bold, brave, and boundary-pushing values that define the HGS culture.",
+  "order": 11,
+  "slug": "hgs-values",
   "tags": [
     "Corporate Film",
     "CSR",
     "Brand Film"
-  ]
+  ],
+  "thumb": "https://img.youtube.com/vi/X-Vk_g_OBxM/hqdefault.jpg",
+  "title": "HGS Values",
+  "type": "films",
+  "videoId": "X-Vk_g_OBxM",
+  "videoType": "youtube",
+  "year": "2016"
 }

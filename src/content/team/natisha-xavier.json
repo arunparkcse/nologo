@@ -1,7 +1,7 @@
 {
-  "order": 3,
+  "dept": "Social Impact",
   "img": "assets/team/natisha.jpg",
   "name": "Natisha Xavier",
-  "role": "CSR Lead",
-  "dept": "Social Impact"
+  "order": 3,
+  "role": "CSR Lead"
 }

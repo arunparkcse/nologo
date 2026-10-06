@@ -1,12 +1,7 @@
 {
-  "order": 34,
-  "slug": "black-and-white",
-  "type": "photography",
-  "title": "Black and White",
   "category": "Fine Art Photography",
   "client": "Personal Project",
-  "year": "2019",
-  "thumb": "https://www.nologo.in/assets/images/work/photography/7/image1.jpg",
+  "description": "Stripping away colour to reveal form, texture and emotion in their purest state. A monochrome series that finds drama and beauty in the simplest subjects — shadows, lines, people and moments.",
   "images": [
     "https://www.nologo.in/assets/images/work/photography/7/image1.jpg",
     "https://www.nologo.in/assets/images/work/photography/7/image2.jpg",
@@ -17,10 +12,15 @@
     "https://www.nologo.in/assets/images/work/photography/7/image7.jpg",
     "https://www.nologo.in/assets/images/work/photography/7/image8.jpg"
   ],
-  "description": "Stripping away colour to reveal form, texture and emotion in their purest state. A monochrome series that finds drama and beauty in the simplest subjects — shadows, lines, people and moments.",
+  "order": 34,
+  "slug": "black-and-white",
   "tags": [
     "Fine Art",
     "Monochrome",
     "Abstract"
-  ]
+  ],
+  "thumb": "https://www.nologo.in/assets/images/work/photography/7/image1.jpg",
+  "title": "Black and White",
+  "type": "photography",
+  "year": "2019"
 }

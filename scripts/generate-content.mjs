@@ -11,12 +11,29 @@ const COLLECTIONS = ['projects', 'perspectives', 'testimonials', 'team'];
 
 class ContentError extends Error {}
 
+const sortKeys = v =>
+  Array.isArray(v) ? v.map(sortKeys)
+  : v && typeof v === 'object' ? Object.fromEntries(Object.keys(v).sort().map(k => [k, sortKeys(v[k])]))
+  : v;
+
+let formatted = 0;
+
+// Reads a content file and rewrites it in canonical form (sorted keys, 2-space indent).
+// The CMS saves keys in an unpredictable order; canonicalizing keeps git diffs down to real changes.
 function readJson(file) {
+  let data;
+  const raw = fs.readFileSync(file, 'utf8');
   try {
-    return JSON.parse(fs.readFileSync(file, 'utf8'));
+    data = JSON.parse(raw);
   } catch (err) {
     throw new ContentError(`${path.relative(ROOT, file)}: ${err.message}`);
   }
+  const canonical = JSON.stringify(sortKeys(data), null, 2) + '\n';
+  if (raw.replace(/\r\n/g, '\n') !== canonical) {
+    fs.writeFileSync(file, canonical);
+    formatted++;
+  }
+  return data;
 }
 
 function readCollection(name) {
@@ -55,6 +72,7 @@ function validate(content) {
 }
 
 function generate() {
+  formatted = 0;
   const content = {
     site: readJson(path.join(CONTENT_DIR, 'site.json')),
     pages: readPages(),
@@ -68,7 +86,8 @@ function generate() {
     fs.writeFileSync(OUT_FILE, json);
   }
   console.log(`[content] ${content.projects.length} projects, ${content.perspectives.length} perspectives, ` +
-    `${content.testimonials.length} testimonials, ${content.team.length} team, ${Object.keys(content.pages).length} pages`);
+    `${content.testimonials.length} testimonials, ${content.team.length} team, ${Object.keys(content.pages).length} pages` +
+    (formatted ? ` (formatted ${formatted} file${formatted === 1 ? '' : 's'})` : ''));
 }
 
 function run() {

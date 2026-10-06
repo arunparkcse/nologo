@@ -1,10 +1,4 @@
 {
-  "order": 2,
-  "slug": "shooting-in-the-rural-heartlands-of-india",
-  "title": "Shooting in the Rural Heartlands of India",
-  "date": "",
-  "excerpt": "The camera doesn’t always know where the story is. Some of our shoots have taken us a long way from studios, controlled lighting and comfortable production schedules — down roads that don’t quite appear on Google Maps.",
-  "image": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&q=80",
   "body": [
     "The camera doesn’t always know where the story is.",
     "Some of our shoots have taken us a long way from studios, controlled lighting and comfortable production schedules. Down roads that don’t quite appear on Google Maps.",
@@ -15,5 +9,11 @@
     "Some of the best moments we’ve captured have happened when nobody was “performing”. A woman going about her morning. A child watching the crew from a distance. A farmer explaining something with his hands because words aren’t quite enough. Someone laughing between takes. Those moments can’t really be scripted. That’s perhaps the biggest lesson rural shoots have taught us.",
     "Don’t arrive with the entire film already in your head.",
     "Arrive prepared, of course. Know what you’re looking for. Know what you need. But leave enough room to discover something you didn’t come looking for. Because sometimes the most important frame on a shoot is the one that wasn’t on the shot list. And sometimes, the best thing a filmmaker can do is stop directing and start paying attention."
-  ]
+  ],
+  "date": "",
+  "excerpt": "The camera doesn’t always know where the story is. Some of our shoots have taken us a long way from studios, controlled lighting and comfortable production schedules — down roads that don’t quite appear on Google Maps.",
+  "image": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&q=80",
+  "order": 2,
+  "slug": "shooting-in-the-rural-heartlands-of-india",
+  "title": "Shooting in the Rural Heartlands of India"
 }

@@ -1,10 +1,4 @@
 {
-  "hero": {
-    "label": "Join Us",
-    "title": "ARE YOU FULL\nOF INCREDIBLE\nIDEAS",
-    "accent": "?",
-    "sub": "We're a creative blend of problem solvers, storytellers and designers always on the lookout for talented individuals."
-  },
   "cultureImages": [
     "https://template.dsngrid.com/mexdot/light/assets/img/team/5.jpg",
     "https://template.dsngrid.com/mexdot/light/assets/img/team/6.jpg",
@@ -12,36 +6,69 @@
     "https://template.dsngrid.com/mexdot/light/assets/img/team/7.jpg",
     "https://template.dsngrid.com/mexdot/light/assets/img/team/8.jpg"
   ],
+  "hero": {
+    "accent": "?",
+    "label": "Join Us",
+    "sub": "We're a creative blend of problem solvers, storytellers and designers always on the lookout for talented individuals.",
+    "title": "ARE YOU FULL\nOF INCREDIBLE\nIDEAS"
+  },
   "intro": {
-    "label": "Work With Us",
-    "title": "Join The\nNologo Family",
     "accent": ".",
+    "label": "Work With Us",
+    "textAfterEmail": "telling us why you think you'd be an amazing fit.",
     "textBeforeEmail": "We're a creative blend of problem solvers, storytellers and designers always on the lookout for talented individuals to join nologo. Send your CV to",
-    "textAfterEmail": "telling us why you think you'd be an amazing fit."
-  },
-  "perks": {
-    "label": "Why Nologo",
-    "title": "What You Get",
-    "items": [
-      { "label": "Creative Freedom", "desc": "Work on meaningful projects that make a real difference." },
-      { "label": "Travel", "desc": "Explore new places as part of your work — literally." },
-      { "label": "Growth", "desc": "Continuously learn, evolve and expand your craft." },
-      { "label": "Impact", "desc": "Your work will reach audiences and change minds." }
-    ]
-  },
-  "openings": {
-    "label": "Open Positions",
-    "title": "Current Vacancies",
-    "items": [
-      { "role": "Cinematographer", "dept": "Film", "type": "Full-time", "location": "Chennai" },
-      { "role": "Photographer", "dept": "Photography", "type": "Full-time", "location": "Chennai / Delhi" },
-      { "role": "Graphic Designer", "dept": "Creative", "type": "Full-time", "location": "Chennai" }
-    ]
+    "title": "Join The\nNologo Family"
   },
   "openApplication": {
+    "buttonLabel": "Send Your CV",
     "label": "Open Application",
-    "title": "Don't see your role?",
     "text": "We're always looking for exceptional talent. Reach out.",
-    "buttonLabel": "Send Your CV"
+    "title": "Don't see your role?"
+  },
+  "openings": {
+    "items": [
+      {
+        "dept": "Film",
+        "location": "Chennai",
+        "role": "Cinematographer",
+        "type": "Full-time"
+      },
+      {
+        "dept": "Photography",
+        "location": "Chennai / Delhi",
+        "role": "Photographer",
+        "type": "Full-time"
+      },
+      {
+        "dept": "Creative",
+        "location": "Chennai",
+        "role": "Graphic Designer",
+        "type": "Full-time"
+      }
+    ],
+    "label": "Open Positions",
+    "title": "Current Vacancies"
+  },
+  "perks": {
+    "items": [
+      {
+        "desc": "Work on meaningful projects that make a real difference.",
+        "label": "Creative Freedom"
+      },
+      {
+        "desc": "Explore new places as part of your work — literally.",
+        "label": "Travel"
+      },
+      {
+        "desc": "Continuously learn, evolve and expand your craft.",
+        "label": "Growth"
+      },
+      {
+        "desc": "Your work will reach audiences and change minds.",
+        "label": "Impact"
+      }
+    ],
+    "label": "Why Nologo",
+    "title": "What You Get"
   }
 }

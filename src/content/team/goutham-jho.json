@@ -1,7 +1,7 @@
 {
-  "order": 1,
+  "dept": "Film & Photography",
   "img": "assets/team/goutham.jpg",
   "name": "Goutham Jho",
-  "role": "Creative Director",
-  "dept": "Film & Photography"
+  "order": 1,
+  "role": "Creative Director"
 }

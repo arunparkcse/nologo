@@ -1,12 +1,7 @@
 {
-  "order": 27,
-  "slug": "faces-can-talk",
-  "type": "photography",
-  "title": "Faces Can Talk",
   "category": "Portrait Photography",
   "client": "Editorial",
-  "year": "2019",
-  "thumb": "https://www.nologo.in/assets/images/work/photography/1/image1.jpg",
+  "description": "A portrait series that explores the infinite stories written on human faces — joy, grief, resilience, wisdom. Every face a universe, every gaze a chapter waiting to be read. Shot across Tamil Nadu and Delhi.",
   "images": [
     "https://www.nologo.in/assets/images/work/photography/1/image1.jpg",
     "https://www.nologo.in/assets/images/work/photography/1/image2.jpg",
@@ -19,10 +14,15 @@
     "https://www.nologo.in/assets/images/work/photography/1/image9.jpg",
     "https://www.nologo.in/assets/images/work/photography/1/image10.jpg"
   ],
-  "description": "A portrait series that explores the infinite stories written on human faces — joy, grief, resilience, wisdom. Every face a universe, every gaze a chapter waiting to be read. Shot across Tamil Nadu and Delhi.",
+  "order": 27,
+  "slug": "faces-can-talk",
   "tags": [
     "Portrait",
     "Editorial",
     "People"
-  ]
+  ],
+  "thumb": "https://www.nologo.in/assets/images/work/photography/1/image1.jpg",
+  "title": "Faces Can Talk",
+  "type": "photography",
+  "year": "2019"
 }

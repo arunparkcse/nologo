@@ -1,21 +1,21 @@
 {
-  "order": 12,
-  "slug": "cbm-let-not-cbm-be-a-barrier-to-vision-impairment",
-  "type": "films",
-  "title": "Let not CBM be a barrier to vision impairment",
   "category": "Corporate Film",
   "client": "CBM",
-  "year": "2017",
-  "thumb": "https://img.youtube.com/vi/7yrGZsQVQ-U/hqdefault.jpg",
+  "description": "This film depicts the dreams and vibrant spirit of differently-abled persons across myriad regions of India and highlights the work that CBM has been doing to promote their rights by championing the cause of building an inclusive society.",
   "images": [
     "https://img.youtube.com/vi/7yrGZsQVQ-U/hqdefault.jpg"
   ],
-  "videoId": "7yrGZsQVQ-U",
-  "videoType": "youtube",
-  "description": "This film depicts the dreams and vibrant spirit of differently-abled persons across myriad regions of India and highlights the work that CBM has been doing to promote their rights by championing the cause of building an inclusive society.",
+  "order": 12,
+  "slug": "cbm-let-not-cbm-be-a-barrier-to-vision-impairment",
   "tags": [
     "Corporate Film",
     "CSR",
     "Brand Film"
-  ]
+  ],
+  "thumb": "https://img.youtube.com/vi/7yrGZsQVQ-U/hqdefault.jpg",
+  "title": "Let not CBM be a barrier to vision impairment",
+  "type": "films",
+  "videoId": "7yrGZsQVQ-U",
+  "videoType": "youtube",
+  "year": "2017"
 }

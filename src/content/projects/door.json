@@ -1,12 +1,7 @@
 {
-  "order": 30,
-  "slug": "door",
-  "type": "photography",
-  "title": "Door",
   "category": "Fine Art Photography",
   "client": "Personal Project",
-  "year": "2018",
-  "thumb": "https://www.nologo.in/assets/images/work/photography/4/image1.jpg",
+  "description": "Doors as metaphors — thresholds between worlds, between past and future, between the known and the unknown. A fine art series exploring architecture, light and the poetry of passage.",
   "images": [
     "https://www.nologo.in/assets/images/work/photography/4/image1.jpg",
     "https://www.nologo.in/assets/images/work/photography/4/image2.jpg",
@@ -19,10 +14,15 @@
     "https://www.nologo.in/assets/images/work/photography/4/image9.jpg",
     "https://www.nologo.in/assets/images/work/photography/4/image10.jpg"
   ],
-  "description": "Doors as metaphors — thresholds between worlds, between past and future, between the known and the unknown. A fine art series exploring architecture, light and the poetry of passage.",
+  "order": 30,
+  "slug": "door",
   "tags": [
     "Fine Art",
     "Architecture",
     "Abstract"
-  ]
+  ],
+  "thumb": "https://www.nologo.in/assets/images/work/photography/4/image1.jpg",
+  "title": "Door",
+  "type": "photography",
+  "year": "2018"
 }

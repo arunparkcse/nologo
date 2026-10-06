@@ -1,21 +1,21 @@
 {
-  "order": 14,
-  "slug": "hgs-health-center-of-excellence-in-india",
-  "type": "films",
-  "title": "Health Center of Excellence in India",
   "category": "Corporate Film",
   "client": "Hinduja Global Solutions",
-  "year": "2017",
-  "thumb": "https://img.youtube.com/vi/Tw30ht9nTr4/hqdefault.jpg",
+  "description": "The films speak about the technological solutions delivered by Hinduja Global Solutions (HGS) through voice contact service centres, management of healthcare industry’s front office and back office, and deploying robotic process automation to deliver optimized outcomes to its clients.",
   "images": [
     "https://img.youtube.com/vi/Tw30ht9nTr4/hqdefault.jpg"
   ],
-  "videoId": "Tw30ht9nTr4",
-  "videoType": "youtube",
-  "description": "The films speak about the technological solutions delivered by Hinduja Global Solutions (HGS) through voice contact service centres, management of healthcare industry’s front office and back office, and deploying robotic process automation to deliver optimized outcomes to its clients.",
+  "order": 14,
+  "slug": "hgs-health-center-of-excellence-in-india",
   "tags": [
     "Corporate Film",
     "CSR",
     "Brand Film"
-  ]
+  ],
+  "thumb": "https://img.youtube.com/vi/Tw30ht9nTr4/hqdefault.jpg",
+  "title": "Health Center of Excellence in India",
+  "type": "films",
+  "videoId": "Tw30ht9nTr4",
+  "videoType": "youtube",
+  "year": "2017"
 }

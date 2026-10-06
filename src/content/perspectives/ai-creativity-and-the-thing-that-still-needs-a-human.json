@@ -1,10 +1,4 @@
 {
-  "order": 1,
-  "slug": "ai-creativity-and-the-thing-that-still-needs-a-human",
-  "title": "AI, Creativity & the Thing That Still Needs a Human",
-  "date": "",
-  "excerpt": "AI can write. AI can design. AI can make a film. So where does that leave creativity? Perhaps the more interesting question isn’t whether AI can create — it clearly can. The question is what makes something worth creating in the first place.",
-  "image": "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1200&q=80",
   "body": [
     "AI can write. AI can design. AI can make a film. AI can give you ten ideas before you’ve finished your coffee. So, where does that leave creativity?",
     "It is a question we’re hearing more and more. And understandably so. The tools are getting better at a dizzying pace. What took a designer hours can now happen in minutes. A rough thought can become a visual. A few lines can become a film. A blank page suddenly has plenty on it. But perhaps the more interesting question isn’t whether AI can create. It clearly can.",
@@ -16,5 +10,11 @@
     "We’ve always believed that good communication begins with good thinking. AI doesn’t change that. If anything, it makes it more important. When everyone can make almost anything, the real differentiator may no longer be the ability to produce. It may be the ability to notice, question, edit and choose.",
     "So yes, we’ll use AI. We’ll experiment with it. Learn from it. Let it challenge the way we work. But we’ll also keep doing some very old-fashioned things. Walking around. Talking to people. Looking closely. Getting things wrong. Arguing about one word. Sitting with an idea until it becomes clearer. And occasionally throwing away ten perfectly good options because the eleventh one feels right.",
     "The tools may change. The need for curiosity doesn’t."
-  ]
+  ],
+  "date": "",
+  "excerpt": "AI can write. AI can design. AI can make a film. So where does that leave creativity? Perhaps the more interesting question isn’t whether AI can create — it clearly can. The question is what makes something worth creating in the first place.",
+  "image": "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1200&q=80",
+  "order": 1,
+  "slug": "ai-creativity-and-the-thing-that-still-needs-a-human",
+  "title": "AI, Creativity & the Thing That Still Needs a Human"
 }

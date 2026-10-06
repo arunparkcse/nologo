@@ -83,7 +83,17 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "assets": [
+                "src/favicon.ico",
+                "src/assets",
+                "src/404.html",
+                {
+                  "glob": "**/*",
+                  "input": "src/admin",
+                  "output": "admin"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"

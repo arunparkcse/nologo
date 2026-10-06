@@ -1,21 +1,21 @@
 {
-  "order": 26,
-  "slug": "hues-of-life",
-  "type": "films",
-  "title": "Hues of Life",
   "category": "Documentary",
   "client": "No Logo",
-  "year": "2017",
-  "thumb": "https://www.nologo.in/assets/images/work/film/thumb5.jpg",
+  "description": "This video edited with a collage of visuals shot by nologo, is our tribute to the people we have brought in front of our cameras, celebrating their actions and emotions",
   "images": [
     "https://www.nologo.in/assets/images/work/film/thumb5.jpg"
   ],
-  "videoId": "227863376",
-  "videoType": "vimeo",
-  "description": "This video edited with a collage of visuals shot by nologo, is our tribute to the people we have brought in front of our cameras, celebrating their actions and emotions",
+  "order": 26,
+  "slug": "hues-of-life",
   "tags": [
     "Documentary",
     "Art Film",
     "People"
-  ]
+  ],
+  "thumb": "https://www.nologo.in/assets/images/work/film/thumb5.jpg",
+  "title": "Hues of Life",
+  "type": "films",
+  "videoId": "227863376",
+  "videoType": "vimeo",
+  "year": "2017"
 }

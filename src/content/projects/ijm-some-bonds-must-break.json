@@ -1,19 +1,19 @@
 {
-  "order": 51,
-  "slug": "ijm-some-bonds-must-break",
-  "type": "films",
-  "title": "IJM — Some Bonds Must Break",
   "category": "Social Impact Film",
   "client": "IJM (International Justice Mission)",
-  "year": "TBC",
-  "thumb": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80",
+  "description": "For IJM, Some Bonds Must Break is a fictional account inspired by the lives of bonded labourers in Tamil Nadu. The film portrays the abuse, exploitation and lack of freedom they face every day, bringing their lived realities to the forefront and highlighting the need to break the cycles that keep people trapped in bonded labour.",
   "images": [
     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80"
   ],
-  "description": "For IJM, Some Bonds Must Break is a fictional account inspired by the lives of bonded labourers in Tamil Nadu. The film portrays the abuse, exploitation and lack of freedom they face every day, bringing their lived realities to the forefront and highlighting the need to break the cycles that keep people trapped in bonded labour.",
+  "order": 51,
+  "slug": "ijm-some-bonds-must-break",
   "tags": [
     "Social Impact",
     "Documentary",
     "Human Rights"
-  ]
+  ],
+  "thumb": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80",
+  "title": "IJM — Some Bonds Must Break",
+  "type": "films",
+  "year": "TBC"
 }

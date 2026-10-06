@@ -1,12 +1,7 @@
 {
-  "order": 44,
-  "slug": "sharon-medical-trust",
-  "type": "creative",
-  "title": "Sharon Medical Trust",
   "category": "Website Design",
   "client": "Sharon Medical Trust",
-  "year": "2020",
-  "thumb": "https://www.nologo.in/assets/images/work/design/10/image1.jpg",
+  "description": "sharon is a medical and charitable trust. we designed a logo for sharon using the image of a tri-colored butterfly to depict its three wings of activities and a cross to highlight its christian faith and developed all the stationeries to match the concept. we brought in the concept of care and support using creative photography and informative content to create brochure and posters for sharon palliative care.",
   "images": [
     "https://www.nologo.in/assets/images/work/design/10/image1.jpg",
     "https://www.nologo.in/assets/images/work/design/10/image2.jpg",
@@ -15,10 +10,15 @@
     "https://www.nologo.in/assets/images/work/design/10/image5.jpg",
     "https://www.nologo.in/assets/images/work/design/10/image6.jpg"
   ],
-  "description": "sharon is a medical and charitable trust. we designed a logo for sharon using the image of a tri-colored butterfly to depict its three wings of activities and a cross to highlight its christian faith and developed all the stationeries to match the concept. we brought in the concept of care and support using creative photography and informative content to create brochure and posters for sharon palliative care.",
+  "order": 44,
+  "slug": "sharon-medical-trust",
   "tags": [
     "Annual Report",
     "Foundation",
     "Print Design"
-  ]
+  ],
+  "thumb": "https://www.nologo.in/assets/images/work/design/10/image1.jpg",
+  "title": "Sharon Medical Trust",
+  "type": "creative",
+  "year": "2020"
 }

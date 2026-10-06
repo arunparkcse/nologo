@@ -1,12 +1,7 @@
 {
-  "order": 35,
-  "slug": "way-of-life",
-  "type": "photography",
-  "title": "Way of Life",
   "category": "Documentary Photography",
   "client": "Editorial",
-  "year": "2021",
-  "thumb": "https://www.nologo.in/assets/images/work/photography/11/image1.jpg",
+  "description": "A documentary photography series capturing the rhythms and rituals of daily life — from street vendors and craftspeople to festivals and quiet domestic moments. Real people, real stories, real India.",
   "images": [
     "https://www.nologo.in/assets/images/work/photography/11/image1.jpg",
     "https://www.nologo.in/assets/images/work/photography/11/image2.jpg",
@@ -17,10 +12,15 @@
     "https://www.nologo.in/assets/images/work/photography/11/image7.jpg",
     "https://www.nologo.in/assets/images/work/photography/11/image8.jpg"
   ],
-  "description": "A documentary photography series capturing the rhythms and rituals of daily life — from street vendors and craftspeople to festivals and quiet domestic moments. Real people, real stories, real India.",
+  "order": 35,
+  "slug": "way-of-life",
   "tags": [
     "Documentary",
     "Street",
     "People"
-  ]
+  ],
+  "thumb": "https://www.nologo.in/assets/images/work/photography/11/image1.jpg",
+  "title": "Way of Life",
+  "type": "photography",
+  "year": "2021"
 }

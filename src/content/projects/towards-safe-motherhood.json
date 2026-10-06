@@ -1,21 +1,21 @@
 {
-  "order": 17,
-  "slug": "towards-safe-motherhood",
-  "type": "films",
-  "title": "Towards Safe Motherhood",
   "category": "Corporate Film",
   "client": "Nologo",
-  "year": "2018",
-  "thumb": "https://img.youtube.com/vi/EU174p5lKaQ/hqdefault.jpg",
+  "description": "Safe motherhood is every woman’s right. Through this campaign, we highlight the stories of mothers and children, emphasizing the critical need for safe delivery and care. It’s a celebration of life, motherhood, and the journey towards a healthier future.",
   "images": [
     "https://img.youtube.com/vi/EU174p5lKaQ/hqdefault.jpg"
   ],
-  "videoId": "EU174p5lKaQ",
-  "videoType": "youtube",
-  "description": "Safe motherhood is every woman’s right. Through this campaign, we highlight the stories of mothers and children, emphasizing the critical need for safe delivery and care. It’s a celebration of life, motherhood, and the journey towards a healthier future.",
+  "order": 17,
+  "slug": "towards-safe-motherhood",
   "tags": [
     "Corporate Film",
     "CSR",
     "Brand Film"
-  ]
+  ],
+  "thumb": "https://img.youtube.com/vi/EU174p5lKaQ/hqdefault.jpg",
+  "title": "Towards Safe Motherhood",
+  "type": "films",
+  "videoId": "EU174p5lKaQ",
+  "videoType": "youtube",
+  "year": "2018"
 }

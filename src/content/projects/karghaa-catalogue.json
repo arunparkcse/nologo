@@ -1,12 +1,7 @@
 {
-  "order": 37,
-  "slug": "karghaa-catalogue",
-  "type": "creative",
-  "title": "Karghaa Catalogue",
   "category": "Catalogue Design",
   "client": "Chenetha Colour Weaves",
-  "year": "2017",
-  "thumb": "https://www.nologo.in/assets/images/work/design/6/image1.jpg",
+  "description": "With impressive product photography, vibrant graphic design and descriptive text content, we brought alive the world of weavers in Nalgonda and their handloom brand Karghaa in its product catalogue. A celebration of craft, colour and community.",
   "images": [
     "https://www.nologo.in/assets/images/work/design/6/image1.jpg",
     "https://www.nologo.in/assets/images/work/design/6/image2.jpg",
@@ -14,10 +9,15 @@
     "https://www.nologo.in/assets/images/work/design/6/image4.jpg",
     "https://www.nologo.in/assets/images/work/design/6/image5.jpg"
   ],
-  "description": "With impressive product photography, vibrant graphic design and descriptive text content, we brought alive the world of weavers in Nalgonda and their handloom brand Karghaa in its product catalogue. A celebration of craft, colour and community.",
+  "order": 37,
+  "slug": "karghaa-catalogue",
   "tags": [
     "Catalogue",
     "Print",
     "Textile"
-  ]
+  ],
+  "thumb": "https://www.nologo.in/assets/images/work/design/6/image1.jpg",
+  "title": "Karghaa Catalogue",
+  "type": "creative",
+  "year": "2017"
 }

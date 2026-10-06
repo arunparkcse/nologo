@@ -1,14 +1,14 @@
 {
-  "hero": {
-    "label": "Our Work",
-    "title": "PHOTO\nGRAPHY",
-    "accent": ".",
-    "sub": "Moments that speak volumes — brand, editorial, portrait and documentary photography."
-  },
   "cta": {
-    "label": "Capture Your Story",
-    "title": "Every Frame\nTells A Story",
     "accent": ".",
-    "buttonLabel": "Get In Touch"
+    "buttonLabel": "Get In Touch",
+    "label": "Capture Your Story",
+    "title": "Every Frame\nTells A Story"
+  },
+  "hero": {
+    "accent": ".",
+    "label": "Our Work",
+    "sub": "Moments that speak volumes — brand, editorial, portrait and documentary photography.",
+    "title": "PHOTO\nGRAPHY"
   }
 }

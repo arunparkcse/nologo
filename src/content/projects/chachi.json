@@ -1,21 +1,21 @@
 {
-  "order": 22,
-  "slug": "chachi",
-  "type": "films",
-  "title": "Chachi",
   "category": "Social Film",
   "client": "Social Campaign",
-  "year": "2017",
-  "thumb": "https://img.youtube.com/vi/FpsbNfk1hM8/hqdefault.jpg",
+  "description": "A powerful social impact film that tells the story of resilience, community and the unsung heroes who hold families together. Shot with unflinching honesty, this film resonated deeply with audiences across the country.",
   "images": [
     "https://img.youtube.com/vi/FpsbNfk1hM8/hqdefault.jpg"
   ],
-  "videoId": "FpsbNfk1hM8",
-  "videoType": "youtube",
-  "description": "A powerful social impact film that tells the story of resilience, community and the unsung heroes who hold families together. Shot with unflinching honesty, this film resonated deeply with audiences across the country.",
+  "order": 22,
+  "slug": "chachi",
   "tags": [
     "Social Film",
     "Impact",
     "Documentary"
-  ]
+  ],
+  "thumb": "https://img.youtube.com/vi/FpsbNfk1hM8/hqdefault.jpg",
+  "title": "Chachi",
+  "type": "films",
+  "videoId": "FpsbNfk1hM8",
+  "videoType": "youtube",
+  "year": "2017"
 }

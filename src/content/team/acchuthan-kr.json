@@ -1,7 +1,7 @@
 {
-  "order": 4,
+  "dept": "Film & Video",
   "img": "assets/team/acchuthan.jpg",
   "name": "Acchuthan KR",
-  "role": "Production",
-  "dept": "Film & Video"
+  "order": 4,
+  "role": "Production"
 }

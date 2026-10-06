@@ -1,7 +1,7 @@
 {
-  "order": 2,
+  "dept": "Creative & Design",
   "img": "assets/team/sanjay.jpg",
   "name": "Sanjay S",
-  "role": "Brand Strategy",
-  "dept": "Creative & Design"
+  "order": 2,
+  "role": "Brand Strategy"
 }

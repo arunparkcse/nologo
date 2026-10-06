@@ -1,64 +1,128 @@
 {
   "hero": {
-    "label": "About Us",
-    "title": "OUR\nSTORY",
     "accent": ".",
-    "sub": "We don't start with the logo.\nWe start with what makes you, you."
+    "label": "About Us",
+    "sub": "We don't start with the logo.\nWe start with what makes you, you.",
+    "title": "OUR\nSTORY"
   },
+  "stats": [
+    {
+      "label": "Years of Storytelling",
+      "suffix": "+",
+      "value": "10"
+    },
+    {
+      "label": "Stories Told",
+      "suffix": "+",
+      "value": "100"
+    },
+    {
+      "label": "Cities — Chennai & Delhi",
+      "suffix": "",
+      "value": "2"
+    },
+    {
+      "label": "Service Verticals",
+      "suffix": "",
+      "value": "4"
+    }
+  ],
   "story": {
-    "image": "https://www.nologo.in/abt.png",
-    "badgeNumber": "2010",
     "badgeLabel": "Est.",
+    "badgeNumber": "2010",
+    "buttonLabel": "Work With Us",
+    "closing": "18 years on, the journey continues…",
+    "image": "https://www.nologo.in/abt.png",
     "label": "Our Story",
-    "title": "Born From A\nLove Of Stories",
     "paragraphs": [
       "Many years ago, a bunch of youngsters, bitten by the travel bug and curious about the world, set out on a journey.",
       "Along the way, they met like-minded people — clients, collaborators and team members across sectors and geographies — who shared their belief that good communication begins with good thinking.",
       "Somewhere along that journey, **nologo** was born.",
       "From brand identities and films to campaigns, social impact and digital content, we've continued to explore new ways of making communication relevant, distinctive and memorable."
     ],
-    "closing": "18 years on, the journey continues…",
-    "buttonLabel": "Work With Us"
+    "title": "Born From A\nLove Of Stories"
   },
-  "stats": [
-    { "value": "10", "suffix": "+", "label": "Years of Storytelling" },
-    { "value": "100", "suffix": "+", "label": "Stories Told" },
-    { "value": "2", "suffix": "", "label": "Cities — Chennai & Delhi" },
-    { "value": "4", "suffix": "", "label": "Service Verticals" }
-  ],
   "team": {
     "label": "The Studio",
     "title": "People behind\nthe lens."
   },
   "values": {
-    "label": "What Drives Us",
-    "title": "Our Values",
     "items": [
-      { "title": "Stay curious", "desc": "We ask questions, look closer and never assume we already know the answer." },
-      { "title": "Keep it simple", "desc": "We believe clarity takes thinking. We strip away the unnecessary until the idea speaks for itself." },
-      { "title": "Be original", "desc": "We don’t chase what’s already been done. We look for an approach that feels right for the brand, the audience and the moment." },
-      { "title": "Stay human", "desc": "People are at the centre of everything we create. We listen, respect context and never lose sight of who we’re communicating with." },
-      { "title": "Care about the work", "desc": "From the first thought to the final frame, we care about the details — and about making something we can stand behind." },
-      { "title": "Do it together", "desc": "The best ideas rarely belong to one person. We believe in open conversations, different perspectives and making the work better together." }
-    ]
+      {
+        "desc": "We ask questions, look closer and never assume we already know the answer.",
+        "title": "Stay curious"
+      },
+      {
+        "desc": "We believe clarity takes thinking. We strip away the unnecessary until the idea speaks for itself.",
+        "title": "Keep it simple"
+      },
+      {
+        "desc": "We don’t chase what’s already been done. We look for an approach that feels right for the brand, the audience and the moment.",
+        "title": "Be original"
+      },
+      {
+        "desc": "People are at the centre of everything we create. We listen, respect context and never lose sight of who we’re communicating with.",
+        "title": "Stay human"
+      },
+      {
+        "desc": "From the first thought to the final frame, we care about the details — and about making something we can stand behind.",
+        "title": "Care about the work"
+      },
+      {
+        "desc": "The best ideas rarely belong to one person. We believe in open conversations, different perspectives and making the work better together.",
+        "title": "Do it together"
+      }
+    ],
+    "label": "What Drives Us",
+    "title": "Our Values"
   },
   "whatWeDo": {
-    "label": "What We Do",
-    "title": "Integrated\nCommunication",
     "accent": ".",
-    "items": [
-      { "title": "Brand Strategy", "desc": "Positioning, purpose, messaging and communication strategy." },
-      { "title": "Brand Identity", "desc": "Naming, visual identity, brand language and guidelines." },
-      { "title": "Campaigns", "desc": "Big ideas, creative platforms and integrated campaigns." },
-      { "title": "Films", "desc": "Brand films, corporate films, documentaries, impact films and digital video." },
-      { "title": "Design", "desc": "Print, digital, publications, presentations and visual communication." },
-      { "title": "Content", "desc": "Copywriting, editorial, scripts, social content and branded content." },
-      { "title": "Digital & Social", "desc": "Digital campaigns, social media strategy, content and creative." },
-      { "title": "Animation & Motion", "desc": "Explainers, motion graphics, animation and visual storytelling." },
-      { "title": "Photography", "desc": "Brand, people, products, events and documentary photography." },
-      { "title": "Communication Collateral", "desc": "Brochures, reports, presentations, toolkits and campaign material." }
-    ],
     "buttonLabel": "View Our Work",
-    "buttonLink": "/films"
+    "buttonLink": "/films",
+    "items": [
+      {
+        "desc": "Positioning, purpose, messaging and communication strategy.",
+        "title": "Brand Strategy"
+      },
+      {
+        "desc": "Naming, visual identity, brand language and guidelines.",
+        "title": "Brand Identity"
+      },
+      {
+        "desc": "Big ideas, creative platforms and integrated campaigns.",
+        "title": "Campaigns"
+      },
+      {
+        "desc": "Brand films, corporate films, documentaries, impact films and digital video.",
+        "title": "Films"
+      },
+      {
+        "desc": "Print, digital, publications, presentations and visual communication.",
+        "title": "Design"
+      },
+      {
+        "desc": "Copywriting, editorial, scripts, social content and branded content.",
+        "title": "Content"
+      },
+      {
+        "desc": "Digital campaigns, social media strategy, content and creative.",
+        "title": "Digital & Social"
+      },
+      {
+        "desc": "Explainers, motion graphics, animation and visual storytelling.",
+        "title": "Animation & Motion"
+      },
+      {
+        "desc": "Brand, people, products, events and documentary photography.",
+        "title": "Photography"
+      },
+      {
+        "desc": "Brochures, reports, presentations, toolkits and campaign material.",
+        "title": "Communication Collateral"
+      }
+    ],
+    "label": "What We Do",
+    "title": "Integrated\nCommunication"
   }
 }

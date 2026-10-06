@@ -23,6 +23,24 @@ npm start
 # Open http://localhost:4200 — edits under src/content/ reload live
 ```
 
+## Editing Content (local CMS)
+
+The site has a content manager (Decap CMS) for editing everything without touching code. It runs **only on your machine** — it is never part of the deployed site.
+
+1. `npm start`
+2. Open **http://localhost:4200/nologo/admin/index.html** and click **Login** (no password — it's local)
+3. Edit, add or delete content, then **Publish → Publish now**. The site at http://localhost:4200/nologo/ updates within a second or two.
+4. When happy, build and deploy as usual (`npm run build`, then copy/push `docs/`). Changes are plain files under `src/content/` and `src/assets/uploads/` — commit them with git.
+
+What's editable: Projects, Perspectives, Testimonials, Team, every page's copy (Pages), and contact details / footer (Site settings).
+
+Notes:
+- "Publish" in the CMS only saves files on your machine — nothing goes live until you build and deploy.
+- Uploaded images go to `src/assets/uploads/`. Deleting an entry doesn't delete its image; remove unused images from the CMS **Media** tab.
+- Use **Sort by → Display order** in a list to see entries in the order the site shows them.
+- A project's **URL slug** is its page address; changing it on an existing project breaks old links.
+- The CMS needs internet access the first time it loads (the editor itself is loaded from a CDN).
+
 ## Project Structure
 
 ```
@@ -46,12 +64,13 @@ nologo-ng/
 │   │       ├── careers/            # Careers — culture strip + perks + job openings
 │   │       ├── contact/            # Contact — offices + form
 │   │       └── project-detail/     # Generic detail page (reads :type/:slug from route)
+│   ├── admin/                      # Local CMS (dev builds only, never in docs/)
 │   ├── content/                    # ALL editable site content (see below)
 │   ├── styles.scss                 # Global styles (Mexdot Creative theme)
 │   └── index.html                  # App shell
 ├── scripts/
-│   ├── generate-content.mjs        # src/content/ → src/app/data/generated/content.json
-│   └── dev.mjs                     # npm start: content watcher + ng serve
+│   ├── generate-content.mjs        # src/content/ → src/app/data/generated/content.json (+ validate, format)
+│   └── dev.mjs                     # npm start: content watcher + CMS backend + ng serve
 ├── angular.json                    # Build config (outputPath: docs)
 └── package.json
 ```
@@ -88,6 +107,7 @@ All copy, images and lists shown on the site live here as JSON — no content is
 - Text fields use `
 ` for line breaks. In paragraphs, `**text**` renders bold.
 - Home "Selected Work" lists project **slugs** in `pages/home.json` — the card uses that project's own thumb and title.
+- Files are auto-formatted (sorted keys) on every generate, so `git diff` after a CMS edit shows only real changes.
 - `npm run content` regenerates and validates (missing fields, duplicate slugs, unknown Selected Work slugs) without a full build.
 
 Each project has: `slug`, `type` (`films` | `photography` | `creative` | `csr`), `title`, `category`, `client`, `year`, `thumb`, `images[]`, `description`, `tags[]`, and optional `videoId` + `videoType` (`youtube` | `vimeo`).

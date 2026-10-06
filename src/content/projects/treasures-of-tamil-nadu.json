@@ -1,19 +1,19 @@
 {
-  "order": 46,
-  "slug": "treasures-of-tamil-nadu",
-  "type": "films",
-  "title": "Treasures of Tamil Nadu",
   "category": "Documentary Film",
   "client": "TBC",
-  "year": "TBC",
-  "thumb": "https://template.dsngrid.com/mexdot/light/assets/img/portfolio/project1/1.jpg",
+  "description": "Treasures of Tamil Nadu is a film celebrating the state’s GI-tagged products through the stories of the people who make them. From jewellery and textiles to food and handicrafts, every treasure becomes a story of skill passed down through generations, connecting the maker, the product and the place it comes from.",
   "images": [
     "https://template.dsngrid.com/mexdot/light/assets/img/portfolio/project1/1.jpg"
   ],
-  "description": "Treasures of Tamil Nadu is a film celebrating the state’s GI-tagged products through the stories of the people who make them. From jewellery and textiles to food and handicrafts, every treasure becomes a story of skill passed down through generations, connecting the maker, the product and the place it comes from.",
+  "order": 46,
+  "slug": "treasures-of-tamil-nadu",
   "tags": [
     "Documentary",
     "Culture",
     "Brand Film"
-  ]
+  ],
+  "thumb": "https://template.dsngrid.com/mexdot/light/assets/img/portfolio/project1/1.jpg",
+  "title": "Treasures of Tamil Nadu",
+  "type": "films",
+  "year": "TBC"
 }
