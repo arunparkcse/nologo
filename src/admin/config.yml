@@ -1,9 +1,12 @@
 # Decap CMS — local-only. `npm start` runs decap-server, which reads/writes
 # src/content/** directly on disk. Nothing is committed or published automatically:
 # review the changes, then build and deploy as usual.
-local_backend: true
+# Talk straight to decap-server — no hosted login, so there's never an email/password screen.
+# 127.0.0.1, not "localhost": decap-server only listens on IPv4, and browsers that resolve
+# localhost to IPv6 (::1) first would fail to connect.
 backend:
-  name: git-gateway # unused locally; Decap requires a backend entry
+  name: proxy
+  proxy_url: http://127.0.0.1:8081/api/v1
 
 media_folder: src/assets/uploads
 public_folder: assets/uploads

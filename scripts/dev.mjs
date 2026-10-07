@@ -50,7 +50,7 @@ fs.watch(GENERATOR, () => {
   }, 300);
 });
 
-// Reads/writes src/content/** on disk for the /admin UI (local_backend in src/admin/config.yml).
+// Reads/writes src/content/** on disk for the /admin UI (the "proxy" backend in src/admin/config.yml).
 // It has no authentication, so bind to this machine only — by default it listens on every
 // network interface, which would let anyone on the same Wi-Fi edit or delete site files.
 start('npx', ['decap-server'], { env: { ...process.env, BIND_HOST: '127.0.0.1' } });
