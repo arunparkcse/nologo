@@ -53,7 +53,9 @@ function readCollection(name) {
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir)
     .filter(f => f.endsWith('.json'))
-    .map(f => readJson(path.join(dir, f)))
+    // __file (generated output only) lets the CMS live preview find the entry being edited,
+    // even after its slug field is changed in the form.
+    .map(f => ({ ...readJson(path.join(dir, f)), __file: path.basename(f, '.json') }))
     // Entries without an explicit order (e.g. newly added in the CMS) go last.
     .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity));
 }

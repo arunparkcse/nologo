@@ -24,7 +24,6 @@ collections:
     identifier_field: name
     summary: "{{name}} — /{{fields.slug}}"
     sortable_fields: [order, name]
-    editor: { preview: false }
     fields:
       - &order { label: Display order, name: order, widget: number, value_type: int, required: false, hint: "Lower numbers appear first. Leave empty to show last." }
       - { label: URL slug, name: slug, widget: string, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers and hyphens only"], hint: "The page address, e.g. events → /events. Can't be about, careers, contact, perspectives, admin or assets. Don't change it once projects use it." }
@@ -95,7 +94,6 @@ collections:
     identifier_field: title
     summary: "{{title}} — /{{fields.slug}}"
     sortable_fields: [order, title]
-    editor: { preview: false }
     fields:
       - *order
       - { label: URL slug, name: slug, widget: string, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers and hyphens only"], hint: "The page address, e.g. awards → /awards. Can't match a category or be about, careers, contact, perspectives, admin or assets." }
@@ -252,7 +250,6 @@ collections:
     identifier_field: title
     summary: "{{title}} — {{type}}"
     sortable_fields: [order, title, type, year]
-    editor: { preview: false }
     fields:
       - *order
       - { label: URL slug, name: slug, widget: string, pattern: ["^[a-zA-Z0-9-]+$", "Letters, numbers and hyphens only"], hint: "Becomes the page address, e.g. /films/<slug>. Don't change it for an existing project or old links break." }
@@ -280,7 +277,6 @@ collections:
     delete: true
     slug: "{{fields.slug}}"
     identifier_field: title
-    editor: { preview: false }
     fields:
       - *order
       - { label: URL slug, name: slug, widget: string, pattern: ["^[a-zA-Z0-9-]+$", "Letters, numbers and hyphens only"], hint: "Becomes /perspectives/<slug>" }
@@ -302,7 +298,6 @@ collections:
     delete: true
     identifier_field: author
     summary: "{{author}} — {{company}}"
-    editor: { preview: false }
     fields:
       - *order
       - { label: Quote, name: quote, widget: text }
@@ -324,7 +319,6 @@ collections:
     delete: true
     identifier_field: name
     summary: "{{name}} — {{role}}"
-    editor: { preview: false }
     fields:
       - *order
       - { label: Name, name: name, widget: string }
@@ -335,7 +329,6 @@ collections:
   # ── Page copy (one form per page) ─────────────────────────────────
   - name: pages
     label: Pages
-    editor: { preview: false }
     files:
       - name: home
         label: Home
@@ -560,7 +553,6 @@ collections:
   # ── Site-wide settings ────────────────────────────────────────────
   - name: settings
     label: Site settings
-    editor: { preview: false }
     files:
       - name: site
         label: Contact details & footer

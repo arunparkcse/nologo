@@ -34,8 +34,11 @@ The site has a content manager (Decap CMS) for editing everything without touchi
 
 What's editable: Projects, Perspectives, Testimonials, Team, every page's copy (Pages), and contact details / footer (Site settings).
 
+**Live preview:** the editor shows the form (~30%) next to the real page it changes (~70%), and the page updates as you type — before you publish. Drag the divider to resize (the CMS remembers it); the eye icon hides the preview. A new project, category or custom page previews once its URL slug is filled in. Images uploaded but not yet published show in the preview too.
+
 Notes:
 - "Publish" in the CMS only saves files on your machine — nothing goes live until you build and deploy.
+- After pulling changes to `src/admin/` (e.g. a new CMS file), restart `npm start` — the dev server only picks up admin files that existed when it started.
 - Uploaded images go to `src/assets/uploads/`. Deleting an entry doesn't delete its image; remove unused images from the CMS **Media** tab.
 - Use **Sort by → Display order** in a list to see entries in the order the site shows them.
 - A project's **URL slug** is its page address; changing it on an existing project breaks old links. The same goes for moving a project to another category (`/films/x` → `/events/x`).

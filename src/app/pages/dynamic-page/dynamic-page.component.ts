@@ -7,6 +7,7 @@ import { PhotographyComponent } from '../photography/photography.component';
 import { CreativeComponent } from '../creative/creative.component';
 import { CsrComponent } from '../csr/csr.component';
 import { CustomPageComponent } from '../custom-page/custom-page.component';
+import { PREVIEW_MODE } from '../../data/preview';
 
 /**
  * Serves every CMS-defined top-level page at /<slug>: portfolio categories (rendered with the
@@ -43,7 +44,9 @@ export class DynamicPageComponent implements OnInit {
       this.customPage = this.category ? undefined : getCustomPage(slug);
       const name = this.category?.name ?? this.customPage?.title;
       if (!name) {
-        this.router.navigate(['/']);
+        // In the CMS preview a brand-new entry only exists once its draft arrives (then the page
+        // is re-created), so wait rather than redirect.
+        if (!PREVIEW_MODE) this.router.navigate(['/']);
         return;
       }
       this.title.setTitle(`${name} — No Logo`);

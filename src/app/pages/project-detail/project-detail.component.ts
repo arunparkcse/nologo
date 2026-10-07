@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Project, getProjectBySlug, getProjectsByType } from '../../data/projects.data';
+import { PREVIEW_MODE } from '../../data/preview';
 
 @Component({
   selector: 'app-project-detail',
@@ -33,7 +34,8 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       const slug = params['slug'];
       this.project = getProjectBySlug(type, slug);
       if (!this.project) {
-        this.router.navigate(['/']);
+        // In the CMS preview a new project only exists once its draft arrives; wait, don't redirect.
+        if (!PREVIEW_MODE) this.router.navigate(['/']);
         return;
       }
       this.activeImage = 0;

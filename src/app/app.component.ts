@@ -1,9 +1,10 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
+import { applyPreview, PreviewMessage, PREVIEW_MODE } from './data/preview';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,39 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private revealObserver!: IntersectionObserver;
   private routerSub!: Subscription;
 
-  constructor(private router: Router) {}
+  /** CMS live preview: only in development builds, and only when loaded by the CMS preview pane. */
+  readonly previewMode = PREVIEW_MODE;
+  /** Toggled off and on to re-create the whole page with the CMS draft applied. */
+  showShell = true;
+  private remountTimer: ReturnType<typeof setTimeout> | undefined;
+
+  constructor(private router: Router, private cdr: ChangeDetectorRef) {}
+
+  private onPreviewMessage = (e: MessageEvent) => {
+    if (e.origin !== window.location.origin || (e.data as PreviewMessage)?.type !== 'cms-preview') return;
+    if (applyPreview(e.data as PreviewMessage)) this.remount();
+  };
+
+  // Re-creating header, page and footer rebuilds every derived list (menus, project grids, …).
+  private remount() {
+    clearTimeout(this.remountTimer);
+    this.remountTimer = setTimeout(() => {
+      const y = window.scrollY;
+      this.showShell = false;
+      this.cdr.detectChanges();
+      this.showShell = true;
+      this.cdr.detectChanges();
+      requestAnimationFrame(() => window.scrollTo(0, y));
+    }, 120);
+  }
 
   ngAfterViewInit() {
     if (typeof window === 'undefined') return;
+    if (this.previewMode) {
+      document.documentElement.classList.add('cms-preview');
+      window.addEventListener('message', this.onPreviewMessage);
+      window.parent.postMessage({ type: 'cms-preview-ready' }, window.location.origin);
+    }
     this.initCursor();
     // Run reveal on initial load
     setTimeout(() => this.initReveal(), 120);
@@ -30,6 +60,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    window.removeEventListener('message', this.onPreviewMessage);
+    clearTimeout(this.remountTimer);
     if (this.revealObserver) this.revealObserver.disconnect();
     if (this.routerSub) this.routerSub.unsubscribe();
   }
