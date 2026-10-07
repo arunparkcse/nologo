@@ -22,7 +22,7 @@ collections:
     delete: true
     slug: "{{fields.slug}}"
     identifier_field: name
-    summary: "{{name}} — /{{slug}}"
+    summary: "{{name}} — /{{fields.slug}}"
     sortable_fields: [order, name]
     editor: { preview: false }
     fields:
@@ -93,7 +93,7 @@ collections:
     delete: true
     slug: "{{fields.slug}}"
     identifier_field: title
-    summary: "{{title}} — /{{slug}}"
+    summary: "{{title}} — /{{fields.slug}}"
     sortable_fields: [order, title]
     editor: { preview: false }
     fields:
