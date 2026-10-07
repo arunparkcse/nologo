@@ -3,9 +3,9 @@
   "client": "Cheyyar SEZ Developers",
   "description": "The brochure developed for the CSR program Beyond of Cheyyar SEZ Developers talks about the various social outreach activities undertaken by the company in the areas of Education, Health and Sanitation, Sports and Infrastructure to support the communities surrounding it. The deliberate usage of minimalistic design and poignant photographs add to its simplicity and appeal.",
   "images": [
-    "https://nologo.in/assets/images/csr/beyond/beyond2.jpg",
-    "https://nologo.in/assets/images/csr/beyond/beyond3.jpg",
-    "https://nologo.in/assets/images/csr/beyond/beyond4.jpg"
+    "assets/uploads/csr-beyond-beyond2.jpg",
+    "assets/uploads/csr-beyond-beyond3.jpg",
+    "assets/uploads/csr-beyond-beyond4.jpg"
   ],
   "order": 7,
   "slug": "csr-brochure",
@@ -13,7 +13,7 @@
     "CSR",
     "Brochure"
   ],
-  "thumb": "https://nologo.in/assets/images/csr/beyond/beyond1.jpg",
+  "thumb": "assets/uploads/csr-beyond-beyond1.jpg",
   "title": "CSR Brochure",
   "type": "csr",
   "year": "2024"

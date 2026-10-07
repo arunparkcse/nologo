@@ -3,12 +3,12 @@
   "client": "Co-optex",
   "description": "The Grace campaign for Co-optex celebrates the timeless elegance of handloom textiles — sophisticated, refined and enduring. Where Bold was urban energy, Grace is poetic femininity. A campaign built around the idea that true grace never goes out of style.",
   "images": [
-    "https://nologo.in/assets/images/work/photography/13/1.jpg",
-    "https://nologo.in/assets/images/work/photography/13/3.jpg",
-    "https://nologo.in/assets/images/work/photography/13/4.jpg",
-    "https://nologo.in/assets/images/work/photography/13/5.jpg",
-    "https://nologo.in/assets/images/work/photography/13/6.jpg",
-    "https://nologo.in/assets/images/work/photography/13/7.jpg"
+    "assets/uploads/work-photography-13-1.jpg",
+    "assets/uploads/work-photography-13-3.jpg",
+    "assets/uploads/work-photography-13-4.jpg",
+    "assets/uploads/work-photography-13-5.jpg",
+    "assets/uploads/work-photography-13-6.jpg",
+    "assets/uploads/work-photography-13-7.jpg"
   ],
   "order": 38,
   "slug": "co-optex-grace",
@@ -17,7 +17,7 @@
     "Brand Campaign",
     "Fashion"
   ],
-  "thumb": "https://nologo.in/assets/images/work/photography/12/thumb.jpg",
+  "thumb": "assets/uploads/work-photography-12-thumb.jpg",
   "title": "Co-optex Grace Print Ads",
   "type": "creative",
   "year": "2019"

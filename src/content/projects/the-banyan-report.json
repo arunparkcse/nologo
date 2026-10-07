@@ -3,11 +3,11 @@
   "client": "The Banyan",
   "description": "An annual report for The Banyan, dedicated to mental health and homelessness. A publication that brings data, stories and impact together in a human narrative.",
   "images": [
-    "https://nologo.in/assets/images/work/design/banyan/The-Banyan_01.jpg",
-    "https://nologo.in/assets/images/work/design/banyan/The-Banyan_02.jpg",
-    "https://nologo.in/assets/images/work/design/banyan/The-Banyan_03.jpg",
-    "https://nologo.in/assets/images/work/design/banyan/The-Banyan_04.jpg",
-    "https://nologo.in/assets/images/work/design/banyan/The-Banyan_05.jpg"
+    "assets/uploads/work-design-banyan-the-banyan_01.jpg",
+    "assets/uploads/work-design-banyan-the-banyan_02.jpg",
+    "assets/uploads/work-design-banyan-the-banyan_03.jpg",
+    "assets/uploads/work-design-banyan-the-banyan_04.jpg",
+    "assets/uploads/work-design-banyan-the-banyan_05.jpg"
   ],
   "order": 39,
   "slug": "the-banyan-report",
@@ -16,7 +16,7 @@
     "NGO",
     "Publication"
   ],
-  "thumb": "https://nologo.in/assets/images/work/design/banyan/The-Banyan_01.jpg",
+  "thumb": "assets/uploads/work-design-banyan-the-banyan_01.jpg",
   "title": "The Banyan Annual Report",
   "type": "creative",
   "year": "2019"

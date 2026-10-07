@@ -3,14 +3,14 @@
   "client": "Editorial",
   "description": "An intimate look at the wild — macro, landscape and creature photography from the forests and wetlands of South India. A reminder that the natural world is the greatest storyteller of all.",
   "images": [
-    "https://nologo.in/assets/images/work/photography/5/image1.jpg",
-    "https://nologo.in/assets/images/work/photography/5/image2.jpg",
-    "https://nologo.in/assets/images/work/photography/5/image3.jpg",
-    "https://nologo.in/assets/images/work/photography/5/image4.jpg",
-    "https://nologo.in/assets/images/work/photography/5/image5.jpg",
-    "https://nologo.in/assets/images/work/photography/5/image6.jpg",
-    "https://nologo.in/assets/images/work/photography/5/image7.jpg",
-    "https://nologo.in/assets/images/work/photography/5/image8.jpg"
+    "assets/uploads/work-photography-5-image1.jpg",
+    "assets/uploads/work-photography-5-image2.jpg",
+    "assets/uploads/work-photography-5-image3.jpg",
+    "assets/uploads/work-photography-5-image4.jpg",
+    "assets/uploads/work-photography-5-image5.jpg",
+    "assets/uploads/work-photography-5-image6.jpg",
+    "assets/uploads/work-photography-5-image7.jpg",
+    "assets/uploads/work-photography-5-image8.jpg"
   ],
   "order": 28,
   "slug": "products",
@@ -19,7 +19,7 @@
     "Wildlife",
     "Macro"
   ],
-  "thumb": "https://nologo.in/assets/images/work/photography/5/image1.jpg",
+  "thumb": "assets/uploads/work-photography-5-image1.jpg",
   "title": "Products",
   "type": "photography",
   "year": "2020"

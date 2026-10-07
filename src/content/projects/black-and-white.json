@@ -3,14 +3,14 @@
   "client": "Personal Project",
   "description": "Stripping away colour to reveal form, texture and emotion in their purest state. A monochrome series that finds drama and beauty in the simplest subjects — shadows, lines, people and moments.",
   "images": [
-    "https://nologo.in/assets/images/work/photography/7/image1.jpg",
-    "https://nologo.in/assets/images/work/photography/7/image2.jpg",
-    "https://nologo.in/assets/images/work/photography/7/image3.jpg",
-    "https://nologo.in/assets/images/work/photography/7/image4.jpg",
-    "https://nologo.in/assets/images/work/photography/7/image5.jpg",
-    "https://nologo.in/assets/images/work/photography/7/image6.jpg",
-    "https://nologo.in/assets/images/work/photography/7/image7.jpg",
-    "https://nologo.in/assets/images/work/photography/7/image8.jpg"
+    "assets/uploads/work-photography-7-image1.jpg",
+    "assets/uploads/work-photography-7-image2.jpg",
+    "assets/uploads/work-photography-7-image3.jpg",
+    "assets/uploads/work-photography-7-image4.jpg",
+    "assets/uploads/work-photography-7-image5.jpg",
+    "assets/uploads/work-photography-7-image6.jpg",
+    "assets/uploads/work-photography-7-image7.jpg",
+    "assets/uploads/work-photography-7-image8.jpg"
   ],
   "order": 34,
   "slug": "black-and-white",
@@ -19,7 +19,7 @@
     "Monochrome",
     "Abstract"
   ],
-  "thumb": "https://nologo.in/assets/images/work/photography/7/image1.jpg",
+  "thumb": "assets/uploads/work-photography-7-image1.jpg",
   "title": "Black and White",
   "type": "photography",
   "year": "2019"

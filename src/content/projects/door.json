@@ -3,16 +3,16 @@
   "client": "Personal Project",
   "description": "Doors as metaphors — thresholds between worlds, between past and future, between the known and the unknown. A fine art series exploring architecture, light and the poetry of passage.",
   "images": [
-    "https://nologo.in/assets/images/work/photography/4/image1.jpg",
-    "https://nologo.in/assets/images/work/photography/4/image2.jpg",
-    "https://nologo.in/assets/images/work/photography/4/image3.jpg",
-    "https://nologo.in/assets/images/work/photography/4/image4.jpg",
-    "https://nologo.in/assets/images/work/photography/4/image5.jpg",
-    "https://nologo.in/assets/images/work/photography/4/image6.jpg",
-    "https://nologo.in/assets/images/work/photography/4/image7.jpg",
-    "https://nologo.in/assets/images/work/photography/4/image8.jpg",
-    "https://nologo.in/assets/images/work/photography/4/image9.jpg",
-    "https://nologo.in/assets/images/work/photography/4/image10.jpg"
+    "assets/uploads/work-photography-4-image1.jpg",
+    "assets/uploads/work-photography-4-image2.jpg",
+    "assets/uploads/work-photography-4-image3.jpg",
+    "assets/uploads/work-photography-4-image4.jpg",
+    "assets/uploads/work-photography-4-image5.jpg",
+    "assets/uploads/work-photography-4-image6.jpg",
+    "assets/uploads/work-photography-4-image7.jpg",
+    "assets/uploads/work-photography-4-image8.jpg",
+    "assets/uploads/work-photography-4-image9.jpg",
+    "assets/uploads/work-photography-4-image10.jpg"
   ],
   "order": 30,
   "slug": "door",
@@ -21,7 +21,7 @@
     "Architecture",
     "Abstract"
   ],
-  "thumb": "https://nologo.in/assets/images/work/photography/4/image1.jpg",
+  "thumb": "assets/uploads/work-photography-4-image1.jpg",
   "title": "Door",
   "type": "photography",
   "year": "2018"

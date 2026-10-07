@@ -3,10 +3,10 @@
   "client": "Jungle Jewels",
   "description": "Jungle Jewels is an eco-friendly accessory brand that uses natural products. we created a catalogue for this brand using aesthetic nature based photography of its products, simple graphic design and captivating content.",
   "images": [
-    "https://nologo.in/assets/images/work/design/5/image1.jpg",
-    "https://nologo.in/assets/images/work/design/5/image2.jpg",
-    "https://nologo.in/assets/images/work/design/5/image3.jpg",
-    "https://nologo.in/assets/images/work/design/5/image4.jpg"
+    "assets/uploads/work-design-5-image1.jpg",
+    "assets/uploads/work-design-5-image2.jpg",
+    "assets/uploads/work-design-5-image3.jpg",
+    "assets/uploads/work-design-5-image4.jpg"
   ],
   "order": 29,
   "slug": "go-wild",
@@ -15,7 +15,7 @@
     "People",
     "Style"
   ],
-  "thumb": "https://nologo.in/assets/images/work/design/5/image1.jpg",
+  "thumb": "assets/uploads/work-design-5-image1.jpg",
   "title": "Go Wild",
   "type": "photography",
   "year": "2020"

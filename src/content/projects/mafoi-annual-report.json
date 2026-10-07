@@ -3,10 +3,10 @@
   "client": "Ma Foi Foundation",
   "description": "The Ma Foi Annual Report is a publication that celebrates the individuals and organisations rewriting the rules of social enterprise in India. Bold design meets purposeful storytelling.",
   "images": [
-    "https://nologo.in/assets/images/work/design/The_Mofai_Annual_Report/The_Mofai_Annual_Report_01.jpg",
-    "https://nologo.in/assets/images/work/design/The_Mofai_Annual_Report/The_Mofai_Annual_Report_02.jpg",
-    "https://nologo.in/assets/images/work/design/The_Mofai_Annual_Report/The_Mofai_Annual_Report_03.jpg",
-    "https://nologo.in/assets/images/work/design/The_Mofai_Annual_Report/The_Mofai_Annual_Report_04.jpg"
+    "assets/uploads/work-design-the_mofai_annual_report-the_mofai_annual_report_01.jpg",
+    "assets/uploads/work-design-the_mofai_annual_report-the_mofai_annual_report_02.jpg",
+    "assets/uploads/work-design-the_mofai_annual_report-the_mofai_annual_report_03.jpg",
+    "assets/uploads/work-design-the_mofai_annual_report-the_mofai_annual_report_04.jpg"
   ],
   "order": 42,
   "slug": "mafoi-annual-report",
@@ -15,7 +15,7 @@
     "Foundation",
     "Print Design"
   ],
-  "thumb": "https://nologo.in/assets/images/work/design/The_Mofai_Annual_Report/The_Mofai_Annual_Report_01.jpg",
+  "thumb": "assets/uploads/work-design-the_mofai_annual_report-the_mofai_annual_report_01.jpg",
   "title": "Ma Foi Annual Report",
   "type": "creative",
   "year": "2018"

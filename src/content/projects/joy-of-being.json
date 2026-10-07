@@ -3,13 +3,13 @@
   "client": "EKAM Foundation",
   "description": "The brochure developed for the CSR program Joy of Being of EKAM Foundation talks about the various social outreach activities undertaken by the foundation in the areas of Education, Health and Sanitation, Sports and Infrastructure to support the communities surrounding it. The deliberate usage of minimalistic design and poignant photographs add to its simplicity and appeal.",
   "images": [
-    "https://nologo.in/assets/images/csr/joy/joy2.jpg",
-    "https://nologo.in/assets/images/csr/joy/joy3.jpg",
-    "https://nologo.in/assets/images/csr/joy/joy4.jpg",
-    "https://nologo.in/assets/images/csr/joy/joy5.jpg",
-    "https://nologo.in/assets/images/csr/joy/joy6.jpg",
-    "https://nologo.in/assets/images/csr/joy/joy7.jpg",
-    "https://nologo.in/assets/images/csr/joy/joy8.jpg"
+    "assets/uploads/csr-joy-joy2.jpg",
+    "assets/uploads/csr-joy-joy3.jpg",
+    "assets/uploads/csr-joy-joy4.jpg",
+    "assets/uploads/csr-joy-joy5.jpg",
+    "assets/uploads/csr-joy-joy6.jpg",
+    "assets/uploads/csr-joy-joy7.jpg",
+    "assets/uploads/csr-joy-joy8.jpg"
   ],
   "order": 8,
   "slug": "joy-of-being",
@@ -17,7 +17,7 @@
     "CSR",
     "Brochure"
   ],
-  "thumb": "https://nologo.in/assets/images/csr/joy/joy1.jpg",
+  "thumb": "assets/uploads/csr-joy-joy1.jpg",
   "title": "Joy of Being",
   "type": "csr",
   "year": "2024"

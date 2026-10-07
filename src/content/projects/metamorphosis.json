@@ -3,13 +3,13 @@
   "client": "Social Enterprise",
   "description": "Metamorphosis is a publication that celebrates the individuals and organisations rewriting the rules of social enterprise in India. Bold design meets purposeful storytelling.",
   "images": [
-    "https://nologo.in/assets/images/work/design/2/image1.jpg",
-    "https://nologo.in/assets/images/work/design/2/image2.jpg",
-    "https://nologo.in/assets/images/work/design/2/image3.jpg",
-    "https://nologo.in/assets/images/work/design/2/image4.jpg",
-    "https://nologo.in/assets/images/work/design/2/image5.jpg",
-    "https://nologo.in/assets/images/work/design/2/image6.jpg",
-    "https://nologo.in/assets/images/work/design/2/image7.jpg"
+    "assets/uploads/work-design-2-image1.jpg",
+    "assets/uploads/work-design-2-image2.jpg",
+    "assets/uploads/work-design-2-image3.jpg",
+    "assets/uploads/work-design-2-image4.jpg",
+    "assets/uploads/work-design-2-image5.jpg",
+    "assets/uploads/work-design-2-image6.jpg",
+    "assets/uploads/work-design-2-image7.jpg"
   ],
   "order": 43,
   "slug": "metamorphosis",
@@ -18,7 +18,7 @@
     "Foundation",
     "Print Design"
   ],
-  "thumb": "https://nologo.in/assets/images/work/design/2/image1.jpg",
+  "thumb": "assets/uploads/work-design-2-image1.jpg",
   "title": "Metamorphosis",
   "type": "creative",
   "year": "2020"
